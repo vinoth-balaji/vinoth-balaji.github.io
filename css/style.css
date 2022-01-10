@@ -89,6 +89,13 @@ header nav .left a {
   margin-right: 2rem;
   text-transform: uppercase;
   transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: end;
+}
+header nav .left a .fa {
+  font-size: 1.5rem;
+  margin-right: 10px;
 }
 
 header nav .left a:hover {
