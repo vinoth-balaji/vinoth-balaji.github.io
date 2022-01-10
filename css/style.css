@@ -184,6 +184,16 @@ section.projects .project-summary {
   border-radius: 10% 40%;
 }
 
+.read-more {
+  width: 100%;
+}
+.read-more .btn {
+  padding: 5px;
+  border-radius: 10px;
+  text-transform: capitalize;
+  float: right;
+}
+
 section.about .variable,
 section.projects .variable {
   color: var(--orange);
@@ -205,6 +215,7 @@ section.projects .value {
 section.about .bracket,
 section.projects .bracket {
   color: var(--orange);
+  font-weight: 600;
 }
 
 section.about .social {
@@ -595,6 +606,128 @@ section.about .social {
   color: var(--orange);
 }
 
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  position: relative;
+  background-color: #fefefe;
+  margin: auto;
+  padding: 0;
+  height: 80%;
+  width: 80%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  -webkit-animation-name: animatetop;
+  -webkit-animation-duration: 0.4s;
+  animation-name: animatetop;
+  animation-duration: 0.4s;
+  border-radius: 10px;
+}
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+  from {
+    top: -300px;
+    opacity: 0;
+  }
+  to {
+    top: 0;
+    opacity: 1;
+  }
+}
+
+@keyframes animatetop {
+  from {
+    top: -300px;
+    opacity: 0;
+  }
+  to {
+    top: 0;
+    opacity: 1;
+  }
+}
+
+/* The Close Button */
+.close-modal {
+  color: var(--orange);
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  margin-right: 15px;
+}
+
+.close-modal:hover,
+.close-modal:focus {
+  /* color: #000; */
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal-header {
+  text-align: center;
+  padding: 1rem 0;
+  background-color: var(--dark);
+  color: var(--primary);
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.modal-body {
+  margin: 1rem 3rem 0 3rem;
+  padding-right: 0.8rem;
+  height: 85%;
+  overflow-y: auto;
+}
+
+.modal-body ul {
+  padding: revert;
+  height: 100%;
+  /* overflow: auto; */
+  width: 100%;
+}
+
+.modal-body li {
+  padding: 0 1rem 1rem 0;
+}
+
+.modal-body .abstract {
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+.modal-body .abstract-details {
+  margin-bottom: 2rem;
+}
+
+.modal-body .res-title {
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+.modal-body .res-title span {
+  color: var(--primary);
+}
+
+.modal-details {
+  display: none;
+}
+
+.modal-details.active {
+  display: block;
+}
+
 @media (max-width: 1024px) {
   #main-nav {
     display: none;
@@ -632,6 +765,8 @@ section.about .social {
   section.about .about-me-img {
     height: 150px;
     border-radius: 50%;
+    float: right;
+    padding-right: 20px;
   }
   .skills .card {
     flex-basis: 43%;
@@ -766,9 +901,9 @@ section.about .social {
 
   section.projects .project-summary {
     border-radius: 25% 10%;
-    height: 400px;
+    height: 480px;
     width: auto;
-    padding: 0 20px 0 30px;
+    padding: 0 30px 0 30px;
     flex-basis: 100%;
   }
 
@@ -780,5 +915,26 @@ section.about .social {
   .projects .tech img {
     width: 80px;
     margin: 6px 5px 5px;
+  }
+
+  .read-more {
+    text-align: center;
+  }
+  .read-more .btn {
+    float: unset;
+    margin-top: 2rem;
+  }
+
+  .modal {
+    padding-top: 2rem;
+  }
+
+  .modal-body {
+    margin: 1rem 1rem 0 1rem;
+  }
+
+  .modal-content {
+    height: 95%;
+    width: 90%;
   }
 }
