@@ -574,18 +574,27 @@ section.about .social {
   overflow-x: hidden;
 }
 
-.main-site-wrapper .hamberger {
+.main-site-wrapper .hamberger-wrapper {
+  display: none;
   position: absolute;
-  color: var(--primary);
-  top: 40px;
-  right: 40px;
+  top: 20px;
   z-index: 1;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+}
+.hamberger-wrapper .branding img {
+  margin-left: 15px;
+}
+
+.main-site-wrapper .hamberger {
+  color: var(--primary);
+  margin-right: 40px;
   background: transparent;
   border: none;
   outline: none;
   cursor: pointer;
   font-size: 3rem;
-  display: none;
 }
 
 .mobile-nav {
@@ -758,8 +767,8 @@ section.about .social {
     margin-bottom: 2rem;
   }
 
-  .main-site-wrapper .hamberger {
-    display: block;
+  .main-site-wrapper .hamberger-wrapper {
+    display: flex;
   }
 
   .hero .left img {
