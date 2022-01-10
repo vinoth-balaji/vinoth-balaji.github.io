@@ -144,6 +144,11 @@ header nav .branding {
   margin-bottom: 2rem;
 }
 
+.branding img {
+  width: 100px;
+  cursor: pointer;
+}
+
 section {
   padding-bottom: 3rem;
 }
@@ -189,12 +194,14 @@ section.projects .project-summary {
 
 .read-more {
   width: 100%;
+  margin-top: 1rem;
 }
 .read-more .btn {
   padding: 5px;
   border-radius: 10px;
   text-transform: capitalize;
   float: right;
+  height: auto;
 }
 
 section.about .variable,
@@ -737,6 +744,11 @@ section.about .social {
     display: none;
   }
 
+  .mobile-nav img {
+    width: 150px;
+    margin-bottom: 2rem;
+  }
+
   .main-site-wrapper .hamberger {
     display: block;
   }
@@ -825,7 +837,7 @@ section.about .social {
     padding-bottom: 15rem;
   }
   .hero .right {
-    margin-top: -6rem;
+    margin-top: 2rem;
     position: absolute;
     top: 260px;
     padding: 0 1.5rem;
