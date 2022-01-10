@@ -4,7 +4,7 @@ $(document).ready(function () {
     dots: true,
     appendDots: ".slider-dots",
     dotsClass: "dots",
-    autoplay: true,
+    // autoplay: true,
   });
 
   let hamberger = document.querySelector(".hamberger");
