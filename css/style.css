@@ -552,16 +552,17 @@ section.about .social {
 
 .mobile-nav {
   position: fixed;
-  top: 0;
-  left: 0;
   z-index: 1001;
-  background: var(--light);
+  background: var(--dark);
   width: 100%;
   height: 100%;
   padding: 2rem;
-  padding-top: 5rem;
   transform: translateX(-100%);
   transition: all 0.5s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 
 .open {
@@ -573,17 +574,18 @@ section.about .social {
   list-style-type: none;
 }
 .mobile-nav ul li a {
-  color: var(--secondary);
+  color: var(--primary);
   text-decoration: none;
   font-size: 2rem;
 }
 
 .close {
-  position: fixed;
+  margin-top: 3rem;
   top: 30px;
   right: 30px;
-  font-size: 3rem;
+  font-size: 5rem;
   cursor: pointer;
+  color: var(--orange);
 }
 
 @media (max-width: 1024px) {
