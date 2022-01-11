@@ -461,9 +461,9 @@ section.about .social {
 }
 
 .contact .left a:hover .fa {
-  background: var(--primary) !important;
-  color: var(--dark) !important;
-  border: 2px solid var(--primary);
+    background: var(--dark) !important;
+    color: var(--primary) !important;
+    border: 2px solid var(--primary);
 }
 .contact .left a:hover .fa + span {
   color: var(--primary) !important;
