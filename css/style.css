@@ -464,9 +464,11 @@ section.about .social {
     background: var(--dark) !important;
     color: var(--primary) !important;
     border: 2px solid var(--primary);
+	transition: all 0.5s ease-in-out;
 }
 .contact .left a:hover .fa + span {
   color: var(--primary) !important;
+  transition: all 0.5s ease-in-out;
 }
 
 .contact .left span {
