@@ -552,6 +552,19 @@ section.about .social {
 .contact .right .direct {
   margin-bottom: 2rem;
 }
+
+.contact .right .direct:hover .fa-phone,
+.contact .right .direct:hover .fa-envelope {
+  color: var(--primary) !important;
+}
+
+/* .contact .right .details .fa:hover {
+  font-size: 1.8rem;
+}
+.contact .right .details a:hover {
+  font-size: 1.6rem;
+} */
+
 .contact .right .fa {
   color: var(--pure);
   font-size: 4rem;
