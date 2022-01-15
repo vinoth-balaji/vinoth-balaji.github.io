@@ -1,4 +1,7 @@
 $(document).ready(function () {
+  // console.log(window.screen.width);
+
+  // if (window.screen.width > 780) {
   $(".slider").slick({
     arrows: false,
     dots: true,
@@ -6,7 +9,7 @@ $(document).ready(function () {
     dotsClass: "dots",
     autoplay: true,
   });
-
+  // }
   let hamberger = document.querySelector(".hamberger");
   let close = document.querySelector(".close");
   let mobileNav = document.querySelector(".mobile-nav");
