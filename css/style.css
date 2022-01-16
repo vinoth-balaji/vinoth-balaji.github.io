@@ -206,6 +206,10 @@ section.projects .project-summary {
   border-radius: 10% 40%;
 }
 
+.tech-box {
+  display: none;
+}
+
 .read-more {
   width: 100%;
   margin-top: 1rem;
@@ -917,7 +921,7 @@ section.about .social {
     position: relative;
     width: 360px;
     height: 360px;
-    background: var(--dark);
+    background: #161616cc;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1033,40 +1037,119 @@ section.about .social {
   }
 
   section.projects .project-summary {
-    border-radius: 0;
-    height: 530px;
+    border-radius: 10px;
+    height: 540px;
     min-width: 100%;
-    padding: 0 30px 0 30px;
+    padding: 15px 30px 35px 30px;
     flex-basis: 100%;
 
     position: relative;
-    background-clip: padding-box;
-    border: solid 6px transparent;
-    border-radius: 10%;
+    /* background-clip: padding-box; */
+    /* border: solid 6px transparent; */
+    /* border-radius: 10%; */
+    border-bottom-left-radius: 15%;
+    border-bottom-right-radius: 15%;
+    padding-bottom: 35px;
   }
   section.projects .project-summary:before {
-    content: "";
+    /* content: "";
     position: absolute;
     top: 0;
     right: 0;
     bottom: 0;
     left: 0;
     z-index: -1;
-    margin: -6px; /* !importanté */
-    border-radius: inherit; /* !importanté */
+    margin: -6px; 
+    border-radius: inherit; 
     background: linear-gradient(
       to right,
       rgb(18, 194, 233),
       rgb(196, 113, 237),
       rgb(246, 79, 89)
-    );
+    ); */
+  }
+  .slide {
+    padding: 0 20px;
+    margin-bottom: 4rem;
+  }
+
+  .tech-box {
+    position: relative;
+    width: 250px;
+    height: 300px;
+    background: #111845;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 20px 50px rgb(23 32 90);
+    margin-top: -35px;
+    z-index: 1;
+    border: 2px solid #2a3cad;
+    display: block;
+  }
+
+  .tech-box .span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 250px;
+    height: 300px;
+    display: block;
   }
 
   .tech-stack {
     flex-basis: 100%;
     margin-top: 1rem;
     margin-bottom: 2rem;
+    display: none;
   }
+
+  .tech-skills-list {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    right: 15px;
+    bottom: 15px;
+    border: 1px solid #f0a591;
+    padding: 20px 0;
+    text-align: center;
+    box-shadow: 0 5px 10px rgb(9 0 0 / 50%);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .tech-button {
+    /* flex-basis: 50%; */
+    margin: 5px 10px;
+  }
+
+  .tech-button button {
+    padding: 8px 15px;
+    border-radius: 999px;
+    background: linear-gradient(#d55757 49%, #bf3030 51%);
+    color: var(--pure);
+    outline: none;
+  }
+
+  .tech-box .span:nth-child(2) {
+    transform: rotate(90deg);
+    height: 250px;
+    width: 300px;
+    top: 25px;
+    left: -25px;
+  }
+
+  .tech-box .span:nth-child(4) {
+    transform: rotate(270deg);
+    height: 250px;
+    width: 300px;
+    top: 25px;
+    left: -25px;
+  }
+
   .projects .tech img {
     width: 80px;
     margin: 6px 5px 5px;
@@ -1074,6 +1157,7 @@ section.about .social {
 
   .read-more {
     text-align: center;
+    margin-bottom: 1rem;
   }
   .read-more .btn {
     float: unset;
