@@ -223,7 +223,7 @@ section.projects .variable {
   color: var(--orange);
   font-weight: 600;
   font-size: 1.2rem;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
 }
 section.about .key,
 section.projects .key {
@@ -958,6 +958,14 @@ section.about .social {
     animation: animate 4s linear infinite;
   }
 
+  section.about .about-me-content .cont .value,
+  section.projects .project-summary .cont .value {
+    padding-bottom: 5px;
+  }
+  section.about .about-me-content .cont,
+  section.projects .project-summary .cont {
+    flex-direction: column;
+  }
   section.about .about-me-content {
     border-radius: 0%;
     height: 330px;
@@ -1026,7 +1034,7 @@ section.about .social {
 
   section.projects .project-summary {
     border-radius: 0;
-    height: 480px;
+    height: 530px;
     min-width: 100%;
     padding: 0 30px 0 30px;
     flex-basis: 100%;
