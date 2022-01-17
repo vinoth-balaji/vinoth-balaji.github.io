@@ -80,7 +80,17 @@ html {
 
 header {
   background: var(--dark);
+  position: fixed;
+  height: 140px;
+  width: 100%;
+  z-index: 2;
+}
+
+.intro {
+  margin-top: 140px;
+  background: var(--dark);
   clip-path: polygon(0 0, 100% 0, 100% 100%, 70% 87%, 0 100%);
+  padding-top: 20px;
 }
 
 header nav .left a {
@@ -110,7 +120,7 @@ header nav .branding {
 }
 
 .hero {
-  padding: 0rem 0 8rem 0;
+  padding: 0rem 0 5rem 0;
 }
 
 .profile-2 {
@@ -612,7 +622,7 @@ section.about .social {
 .main-site-wrapper .hamberger-wrapper {
   display: none;
   position: absolute;
-  top: 20px;
+  padding-top: 20px;
   z-index: 1;
   width: 100%;
   align-items: center;
@@ -796,6 +806,9 @@ section.about .social {
   #main-nav {
     display: none;
   }
+  header {
+    display: none;
+  }
 
   .mobile-nav img {
     width: 150px;
@@ -804,12 +817,17 @@ section.about .social {
 
   .main-site-wrapper .hamberger-wrapper {
     display: flex;
+    position: fixed;
+    background: var(--dark);
+    z-index: 2;
   }
 
   .hero .left img {
     width: 250px;
     transform: scale(2.2);
     margin-top: 1rem;
+    padding-right: 2rem;
+    padding-left: 1rem;
   }
 
   .hero .right h1 {
@@ -822,7 +840,8 @@ section.about .social {
     margin-top: -3rem;
   }
 
-  header {
+  .intro {
+    margin-top: 20px;
     clip-path: polygon(0 0, 100% 0, 100% 100%, 27% 94%, 0 100%);
   }
   .download {
@@ -888,7 +907,7 @@ section.about .social {
 @media (max-width: 800px) {
   .hero {
     flex-direction: column;
-    padding-bottom: 20rem;
+    padding-bottom: 15rem;
   }
   .hero .right {
     margin-top: 2rem;
@@ -902,6 +921,12 @@ section.about .social {
     margin-right: -14rem;
     padding-bottom: 4rem;
   }
+
+  .hero .left img {
+    padding-right: 3rem;
+    padding-left: 0;
+  }
+
   .about {
     padding-top: 0rem;
     padding-bottom: 3rem;
@@ -1129,9 +1154,11 @@ section.about .social {
   .tech-button button {
     padding: 8px 15px;
     border-radius: 999px;
-    background: linear-gradient(#d55757 49%, #bf3030 51%);
+    /* background: linear-gradient(#d55757 49%, #bf3030 51%); */
+    background: linear-gradient(#238b8b 49%, #1d7373 51%);
     color: var(--pure);
     outline: none;
+    border: none;
   }
 
   .tech-box .span:nth-child(2) {
