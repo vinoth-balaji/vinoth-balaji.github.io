@@ -211,6 +211,10 @@ section.projects .project-summary {
   line-height: 1.2rem;
 }
 
+.pno {
+  display: none;
+}
+
 section.projects .project-summary {
   height: 360px;
   border-radius: 10% 40%;
@@ -1025,6 +1029,34 @@ section.about .social {
     padding-bottom: 4rem;
   }
 
+  .project-summary {
+    overflow: hidden;
+  }
+  .pno {
+    display: block;
+    position: absolute;
+    font-size: 50px;
+    width: 100%;
+    left: -15px;
+    top: -15px;
+  }
+
+  .pno span {
+    display: inline-flex;
+    width: 75px;
+    height: 75px;
+    background: var(--primary);
+    color: var(--pure);
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+  }
+
+  .desc {
+    position: relative;
+    top: 50px;
+  }
+
   .contact {
     clip-path: polygon(0 0, 100% 0, 100% 100%, 70% 95%, 0 100%);
     padding-bottom: 3rem;
@@ -1063,7 +1095,7 @@ section.about .social {
 
   section.projects .project-summary {
     border-radius: 10px;
-    height: 540px;
+    height: 575px;
     min-width: 100%;
     padding: 15px 30px 35px 30px;
     flex-basis: 100%;
