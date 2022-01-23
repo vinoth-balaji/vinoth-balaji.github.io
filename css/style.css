@@ -1034,11 +1034,12 @@ section.about .social {
   }
   .pno {
     display: block;
-    position: absolute;
+    position: relative;
     font-size: 50px;
     width: 100%;
-    left: -15px;
-    top: -15px;
+    left: -40px;
+    top: -30px;
+    padding-bottom: 15px;
   }
 
   .pno span {
@@ -1053,8 +1054,8 @@ section.about .social {
   }
 
   .desc {
-    position: relative;
-    top: 50px;
+    /* position: relative;
+    top: 50px; */
   }
 
   .contact {
@@ -1095,7 +1096,7 @@ section.about .social {
 
   section.projects .project-summary {
     border-radius: 10px;
-    height: 575px;
+    height: 625px;
     min-width: 100%;
     padding: 15px 30px 35px 30px;
     flex-basis: 100%;
