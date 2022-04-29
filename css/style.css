@@ -139,6 +139,7 @@ header nav .branding {
 .hero .right {
   color: var(--pure);
   margin-top: 2rem;
+  z-index: 1;
 }
 
 .hero .right h6 {
@@ -180,6 +181,7 @@ section {
 section.about .about-me-img {
   height: 450px;
   float: right;
+  padding-right: 3rem;
 }
 
 section.about h1 {
@@ -830,8 +832,8 @@ section.about .social {
     width: 250px;
     transform: scale(2.2);
     margin-top: 1rem;
-    padding-right: 2rem;
-    padding-left: 1rem;
+    padding-right: 0;
+    padding-left: 0;
   }
 
   .hero .right h1 {
