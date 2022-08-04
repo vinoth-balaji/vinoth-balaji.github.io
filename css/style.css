@@ -207,10 +207,16 @@ section.projects .project-summary {
   height: 300px;
   min-width: 450px;
   max-width: 600px;
-  background: var(--dark);
   padding: 0 50px;
   font-family: "Ubuntu Mono", monospace;
   line-height: 1.2rem;
+}
+section.projects .project-summary {
+  background: var(--dark);
+}
+section.about .about-me-content {
+  /* background: var(--primary); */
+  background: var(--dark);
 }
 
 .pno {
@@ -238,7 +244,7 @@ section.projects .project-summary {
   height: auto;
 }
 
-section.about .variable,
+/* section.about .variable, */
 section.projects .variable {
   color: var(--orange);
   font-weight: 600;
@@ -1290,4 +1296,44 @@ section.about .social {
     transform: scaleX(0);
     transform-origin: right;
   }
+}
+
+pre {
+  max-height: calc(400px - 50px);
+  margin: 0;
+  overflow-y: auto;
+}
+
+#myDetails {
+  font-size: 15px;
+  line-height: 1.5;
+  color: rgb(207, 210, 209);
+}
+
+.pro {
+  font-size: 14px;
+  line-height: 1.5;
+  color: rgb(207, 210, 209);
+}
+
+.json-title {
+  font-size: 16px;
+}
+
+.json-key {
+  color: #a074c4 !important;
+  white-space: break-spaces;
+  word-break: break-word;
+}
+
+.json-value {
+  color: navy;
+  white-space: break-spaces;
+  word-break: break-word;
+}
+
+.json-string {
+  color: var(--primary);
+  white-space: break-spaces;
+  word-break: break-word;
 }
