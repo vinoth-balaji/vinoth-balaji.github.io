@@ -1046,8 +1046,16 @@ section.about .social {
     font-size: 50px;
     width: 100%;
     left: -40px;
-    top: -30px;
+    top: -20px;
     padding-bottom: 15px;
+  }
+
+  .pno.ewb {
+    top: -10px;
+  }
+
+  .pno.qp {
+    top: -32px;
   }
 
   .pno span {
@@ -1104,9 +1112,9 @@ section.about .social {
 
   section.projects .project-summary {
     border-radius: 10px;
-    height: 625px;
+    height: 540px;
     min-width: 100%;
-    padding: 15px 30px 35px 30px;
+    padding: 5px 30px 35px 30px;
     flex-basis: 100%;
 
     position: relative;
