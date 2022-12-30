@@ -133,7 +133,7 @@ header nav .branding {
 .hero .left img {
   width: 400px;
   padding-right: 3rem;
-  transform: scale(1.3);
+  transform: scale(1.2);
 }
 
 .hero .right {
@@ -299,6 +299,7 @@ section.about .social {
 }
 
 .skills {
+  margin-top: 125px;
   padding-top: 2.5rem;
   padding-bottom: 6rem;
   background: var(--dark);
@@ -1344,4 +1345,9 @@ pre {
   color: var(--primary);
   white-space: break-spaces;
   word-break: break-word;
+}
+
+.adjust-header {
+  padding-top: 145px;
+  margin-top: -145px;
 }
