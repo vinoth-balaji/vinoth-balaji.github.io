@@ -34,17 +34,17 @@ $(document).ready(function () {
 
   myDetails = {
     From: "Vellore, Tamil Nadu",
-    "Graduated In": "Computer Science (2013-2017)",
+    Education: "B.E C.S.E (2013-2017)",
     "Working In": "Flutura Business Solutions, Bangalore",
     Designation: "Associate Tech Lead - Full Stack",
-    "Years of Experience": "4.5+",
+    "Years of Experience": "5+",
   };
 
   ewb = {
     Organization: "Flutura Business Solutions, Bangalore",
     Duration: "Jan 2020 - Till Date",
     Designation: "Associate Tech Lead / Senior Programmer",
-    "Team Size": "8-10",
+    "Team Size": "10-15",
   };
 
   qp = {
