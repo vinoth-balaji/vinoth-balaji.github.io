@@ -3,10 +3,17 @@ $(document).ready(function () {
 
   function syntaxHighlight(json) {
     // console.log(json)
+
+    let idx = 0;
+    let key = "",
+      value = "";
+
     json = json
       .replace(/&/g, "&amp;")
       .replace(/</g, "&lt;")
       .replace(/>/g, "&gt;");
+
+    // console.log(json);
     return json.replace(
       /("(\\u[a-zA-Z0-9]{4}|\\[^u]|[^\\"])*"(\s*:)?|\b(true|false|null)\b|-?\d+(?:\.\d*)?(?:[eE][+\-]?\d+)?)/g,
       function (match) {
@@ -26,6 +33,17 @@ $(document).ready(function () {
         }
 
         // console.log(match, match.substring(1, match.length - 1));
+
+        // console.log(match);
+
+        // if (idx % 2 == 0) {
+        //   key = '<span class="' + cls + '">' + match + "</span>";
+        //   idx += 1;
+        // } else {
+        //   value = '<span class="' + cls + '">' + match + "</span>";
+        //   idx += 1;
+        //   return "<div>" + key + value + " </div>";
+        // }
 
         return '<span class="' + cls + '">' + match + "</span>";
       }
