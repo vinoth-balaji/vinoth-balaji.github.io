@@ -18,7 +18,8 @@
 }
 
 body {
-  font-family: "Poppins", sans-serif;
+  /* font-family: "Poppins", sans-serif; */
+  font-family: "Playfair Display", serif;
 }
 
 html {
@@ -344,7 +345,7 @@ section.about .social {
 }
 
 .card-container {
-  width: 85%;
+  /* width: 85%; */
   flex-wrap: wrap;
 }
 
@@ -356,7 +357,71 @@ section.about .social {
   clip-path: polygon(0 0, 100% 0, 100% 100%, 70% 87%, 0 100%);
 }
 
-.skills .card {
+.card {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 28%;
+  margin: 20px;
+  /* padding: 16px; */
+  border-radius: 8px;
+  margin-bottom: 50px;
+  /* max-width: 350px; */
+  justify-content: center;
+  align-items: center;
+}
+.card > div {
+  box-shadow: 0 15px 20px 0 rgba(0, 0, 0, 0.5);
+}
+.card-image {
+  width: 350px;
+  height: 250px;
+  background: var(--pure);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+}
+.card-image > img {
+  width: calc(100% - 75px);
+  height: calc(100% - 75px);
+  object-fit: contain;
+  /* object-position: bottom; */
+}
+.card-text {
+  margin: -30px auto;
+  margin-bottom: -50px;
+  height: 150px;
+  width: 250px;
+  background-color: #1d1c20;
+  color: var(--pure);
+  padding: 20px;
+  border-radius: 10px;
+}
+.card-meal-type {
+  font-style: italic;
+}
+.card-title {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  margin-top: 5px;
+}
+.card-body {
+  font-size: 1.25rem;
+}
+.card-price {
+  width: 100px;
+  height: 100px;
+  background-color: #970c0a;
+  color: var(--pure);
+  margin-left: auto;
+  font-size: 1.6rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+}
+
+/* .skills .card {
   flex-basis: 28%;
   margin: 20px;
   padding: 16px;
@@ -386,9 +451,9 @@ section.about .social {
   font-weight: 600;
   color: var(--dark);
   /* font-size: 1.2rem; */
-  margin-bottom: 8px;
-}
-
+/* margin-bottom: 8px;
+} */
+/* 
 .skills .card .bars .bar {
   border-radius: 4px;
   display: inline-block;
@@ -404,7 +469,7 @@ section.about .social {
 
 .skills .card .right img {
   width: 150px;
-}
+} */
 
 .projects {
   padding-top: 0rem;
@@ -925,7 +990,7 @@ section.about .social {
     float: right;
     padding-right: 20px;
   }
-  .skills .card {
+  /* .skills .card {
     flex-basis: 43%;
     padding: 12px;
   }
@@ -938,7 +1003,7 @@ section.about .social {
   }
   .skills {
     clip-path: polygon(0 0, 100% 0, 100% 100%, 70% 90%, 0 100%);
-  }
+  } */
 
   .slide {
     padding: 0 20px;
@@ -1080,13 +1145,13 @@ section.about .social {
     display: none;
   }
 
-  .skills .card {
+  /* .skills .card {
     flex-basis: 95%;
   }
   .skills {
     clip-path: polygon(0 0, 100% 0, 100% 100%, 70% 95%, 0 100%);
     padding-bottom: 4rem;
-  }
+  } */
 
   .project-summary {
     overflow: hidden;
