@@ -178,6 +178,56 @@ section {
   padding-bottom: 3rem;
 }
 
+.underline {
+  /* text-decoration: underline;
+  text-decoration-color: var(--btn); */
+  border-bottom: 1px solid var(--dark);
+  outline: 1rem solid rgba(205, 202, 162, 0);
+  z-index: 1;
+  position: relative;
+  cursor: pointer;
+}
+.underline:hover {
+  background: rgba(205, 202, 162, 0.16);
+  outline: 3px solid rgba(205, 202, 162, 0.16);
+  border-width: 3px;
+}
+
+.intro-skills {
+  /* background: rgba(205, 202, 162, 0.16); */
+  /* box-shadow: 0 10px 0 -5px var(--shadow); */
+  /* padding: 1.5rem; */
+  padding: 1rem;
+  width: 80%;
+  margin: 20px auto;
+  margin-top: 30px;
+  padding-bottom: 10px;
+}
+
+.intro-skills .intro-about {
+  padding-bottom: 10px;
+}
+
+.intro-skills .skills-images {
+  display: flex;
+  width: 60%;
+  align-items: center;
+  justify-content: space-around;
+  margin: auto;
+  border: 1px solid var(--dark);
+  border-radius: 50px;
+  padding: 10px;
+  /* margin-bottom: 10px; */
+}
+.intro-skills .skills-images img {
+  max-height: 75px;
+  cursor: pointer;
+  z-index: 1;
+}
+.intro-skills .skills-images img:hover {
+  transform: scale(1.2);
+}
+
 section.about .about-me-img {
   height: 450px;
   float: right;

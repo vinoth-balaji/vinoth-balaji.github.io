@@ -50,68 +50,68 @@ $(document).ready(function () {
     );
   }
 
-  myDetails = {
-    From: "Vellore, Tamil Nadu",
-    Education: "B.E C.S.E (2013-2017)",
-    "Working In": "Flutura Business Solutions, Bangalore",
-    Designation: "Associate Tech Lead - Full Stack",
-    "Years of Experience": "5+",
-  };
+  // myDetails = {
+  //   From: "Vellore, Tamil Nadu",
+  //   Education: "B.E C.S.E (2013-2017)",
+  //   "Working In": "Flutura Business Solutions, Bangalore",
+  //   Designation: "Associate Tech Lead - Full Stack",
+  //   "Years of Experience": "5+",
+  // };
 
-  ewb = {
-    Organization: "Flutura Business Solutions, Bangalore",
-    Duration: "Jan 2020 - Till Date",
-    Designation: "Associate Tech Lead / Senior Programmer",
-    "Team Size": "10-15",
-  };
+  // ewb = {
+  //   Organization: "Flutura Business Solutions, Bangalore",
+  //   Duration: "Jan 2020 - Till Date",
+  //   Designation: "Associate Tech Lead / Senior Programmer",
+  //   "Team Size": "10-15",
+  // };
 
-  qp = {
-    Organization: "Flutura Business Solutions, Bangalore",
-    Duration: "June 2019 - Dec 2019",
-    Designation: "Programmer",
-    "Team Size": "6-8",
-  };
+  // qp = {
+  //   Organization: "Flutura Business Solutions, Bangalore",
+  //   Duration: "June 2019 - Dec 2019",
+  //   Designation: "Programmer",
+  //   "Team Size": "6-8",
+  // };
 
-  qd = {
-    Organization: "Flutura Business Solutions, Bangalore",
-    Duration: "Sep 2018 - May 2019",
-    Designation: "Programmer",
-    "Team Size": "10-12",
-  };
+  // qd = {
+  //   Organization: "Flutura Business Solutions, Bangalore",
+  //   Duration: "Sep 2018 - May 2019",
+  //   Designation: "Programmer",
+  //   "Team Size": "10-12",
+  // };
 
-  sc = {
-    Organization: "Flutura Business Solutions, Bangalore",
-    Duration: "Oct 2017 - Aug 2018",
-    Designation: "Programmer",
-    "Team Size": "4-6",
-  };
+  // sc = {
+  //   Organization: "Flutura Business Solutions, Bangalore",
+  //   Duration: "Oct 2017 - Aug 2018",
+  //   Designation: "Programmer",
+  //   "Team Size": "4-6",
+  // };
 
-  myDetails = JSON.stringify(myDetails, undefined, 4);
-  myDetails = syntaxHighlight(myDetails);
-  document.getElementById("myDetails").innerHTML =
-    '<span class="json-string json-title">Vinoth: </span>' + myDetails;
+  // myDetails = JSON.stringify(myDetails, undefined, 4);
+  // myDetails = syntaxHighlight(myDetails);
+  // document.getElementById("myDetails").innerHTML =
+  //   '<span class="json-string json-title">Vinoth: </span>' + myDetails;
 
-  ewb = JSON.stringify(ewb, undefined, 4);
-  ewb = syntaxHighlight(ewb);
-  document.getElementById("ewb").innerHTML =
-    '<span class="json-string json-title">Engineering Workbench: </span>' + ewb;
+  // ewb = JSON.stringify(ewb, undefined, 4);
+  // ewb = syntaxHighlight(ewb);
+  // document.getElementById("ewb").innerHTML =
+  //   '<span class="json-string json-title">Engineering Workbench: </span>' + ewb;
 
-  qp = JSON.stringify(qp, undefined, 4);
-  qp = syntaxHighlight(qp);
-  document.getElementById("qp").innerHTML =
-    '<span class="json-string json-title">Quality Pulse: </span>' + qp;
+  // qp = JSON.stringify(qp, undefined, 4);
+  // qp = syntaxHighlight(qp);
+  // document.getElementById("qp").innerHTML =
+  //   '<span class="json-string json-title">Quality Pulse: </span>' + qp;
 
-  qd = JSON.stringify(qd, undefined, 4);
-  qd = syntaxHighlight(qd);
-  document.getElementById("qd").innerHTML =
-    '<span class="json-string json-title">Quality Diagnostics and Prognostics: </span>' +
-    qd;
+  // qd = JSON.stringify(qd, undefined, 4);
+  // qd = syntaxHighlight(qd);
+  // document.getElementById("qd").innerHTML =
+  //   '<span class="json-string json-title">Quality Diagnostics and Prognostics: </span>' +
+  //   qd;
 
-  sc = JSON.stringify(sc, undefined, 4);
-  sc = syntaxHighlight(sc);
-  document.getElementById("sc").innerHTML =
-    '<span class="json-string json-title">PFEP (Plan for Every Part): </span>' +
-    sc;
+  // sc = JSON.stringify(sc, undefined, 4);
+  // sc = syntaxHighlight(sc);
+  // document.getElementById("sc").innerHTML =
+  //   '<span class="json-string json-title">PFEP (Plan for Every Part): </span>' +
+  //   sc;
 
   if (window.screen.width > 780) {
     $(".slider").slick({
