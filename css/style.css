@@ -354,7 +354,7 @@ section.about .social {
   padding-top: 2.5rem;
   padding-bottom: 6rem;
   background: var(--dark);
-  clip-path: polygon(0 0, 100% 0, 100% 100%, 70% 87%, 0 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 70% 92%, 0 100%);
 }
 
 .skills .skills-title {
