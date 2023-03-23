@@ -357,6 +357,16 @@ section.about .social {
   clip-path: polygon(0 0, 100% 0, 100% 100%, 70% 87%, 0 100%);
 }
 
+.skills .skills-title {
+  color: var(--pure);
+  font-size: 1.6rem;
+  padding-top: 1rem;
+}
+.skills .skills-title span {
+  color: var(--primary);
+  font-weight: 600;
+}
+
 .card {
   display: flex;
   flex-direction: column;
