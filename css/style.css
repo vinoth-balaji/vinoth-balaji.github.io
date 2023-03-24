@@ -1078,13 +1078,22 @@ section.about .social {
 
   .intro-skills {
     margin-top: 0;
-    margin-bottom: 0;
+    margin-bottom: 30px;
     padding-top: 0;
     padding-bottom: 0;
     scroll-margin-top: 110px;
+    width: 90%;
   }
   .intro-skills .skills-images {
-    display: none;
+    /* display: none; */
+    width: 100%;
+    flex-wrap: wrap;
+  }
+  .intro-skills .skills-images img {
+    max-height: 50px;
+    cursor: pointer;
+    z-index: 1;
+    margin: 5px;
   }
 
   .download {
