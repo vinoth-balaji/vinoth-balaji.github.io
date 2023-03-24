@@ -170,6 +170,7 @@ header nav .branding {
 .hero .right p {
   line-height: 1.9;
   margin-bottom: 2rem;
+  text-align: justify;
 }
 
 .branding img {
@@ -211,6 +212,7 @@ section {
 .intro-skills .intro-about {
   padding-bottom: 30px;
   padding-top: 30px;
+  text-align: justify;
 }
 
 .intro-skills .skills-images {
@@ -573,6 +575,7 @@ section.about .social {
   margin-top: 1rem;
   color: var(--pure);
   padding: 15px;
+  text-align: justify;
 }
 .pro-details {
   padding: 15px;
