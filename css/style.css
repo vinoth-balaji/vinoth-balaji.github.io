@@ -501,6 +501,8 @@ section.about .social {
 .projects {
   font-family: "Nixie One", cursive;
   padding: 30px;
+  width: 80%;
+  margin: 0 auto;
 }
 
 .projects .title {
