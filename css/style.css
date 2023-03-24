@@ -231,6 +231,7 @@ section {
 }
 .intro-skills .skills-images img:hover {
   transform: scale(1.2);
+  transition: transform 500ms ease-in-out;
 }
 
 section.about .about-me-img {
@@ -392,6 +393,7 @@ section.about .social {
 }
 .card > div {
   box-shadow: 0 15px 20px 0 rgba(0, 0, 0, 0.5);
+  z-index: 1;
 }
 .card-image {
   width: 350px;
@@ -408,6 +410,21 @@ section.about .social {
   object-fit: contain;
   /* object-position: bottom; */
 }
+
+.card-image > img:hover {
+  opacity: 1;
+  -webkit-animation: flash 1.5s;
+  animation: flash 1.5s;
+}
+@keyframes flash {
+  0% {
+    opacity: 0.4;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 .card-text {
   margin: -30px auto;
   margin-bottom: -50px;
@@ -1031,6 +1048,8 @@ section.about .social {
   .hero .left img {
     width: 250px;
     transform: scale(2.2);
+    transition: transform 2s ease-in-out;
+    /* transition-duration: 2s; */
     margin-top: 1rem;
     padding-right: 0;
     padding-left: 0;
