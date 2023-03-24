@@ -1165,9 +1165,15 @@ section.about .social {
     /* overflow-x: hidden; */
   }
 
+  .hero .right h6 {
+    display: flex;
+    flex-direction: column;
+    line-height: 1;
+  }
+
   .hero {
     flex-direction: column;
-    padding-bottom: 15rem;
+    padding-bottom: 17rem;
   }
   .hero .right {
     margin-top: 2rem;
@@ -1619,6 +1625,6 @@ pre {
 
 @media (max-width: 1200px) {
   .projects {
-    width: 95%;
+    width: 100%;
   }
 }
