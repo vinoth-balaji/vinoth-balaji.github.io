@@ -184,7 +184,7 @@ section {
 .underline {
   /* text-decoration: underline;
   text-decoration-color: var(--btn); */
-  border-bottom: 1px solid var(--dark);
+  border-bottom: 1px solid var(--orange);
   outline: 1rem solid rgba(205, 202, 162, 0);
   z-index: 1;
   position: relative;
