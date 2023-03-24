@@ -1542,6 +1542,18 @@ pre {
 }
 
 .adjust-header {
-  padding-top: 145px;
-  margin-top: -145px;
+  /* padding-top: 145px;
+  margin-top: -145px; */
+}
+
+.reveal {
+  position: relative;
+  transform: translateY(150px);
+  opacity: 0;
+  transition: 1s all ease;
+}
+
+.reveal.active {
+  transform: translateY(0);
+  opacity: 1;
 }
