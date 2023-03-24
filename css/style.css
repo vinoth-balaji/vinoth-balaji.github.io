@@ -81,14 +81,16 @@ html {
 
 header {
   background: var(--dark);
-  position: fixed;
+  /* position: fixed; */
+  position: sticky;
+  top: 0;
   height: 140px;
   width: 100%;
   z-index: 2;
 }
 
 .intro {
-  margin-top: 140px;
+  /* margin-top: 140px; */
   background: var(--dark);
   clip-path: polygon(0 0, 100% 0, 100% 100%, 70% 87%, 0 100%);
   padding-top: 20px;
@@ -203,10 +205,12 @@ section {
   margin: 20px auto;
   margin-top: 30px;
   padding-bottom: 10px;
+  scroll-margin-top: 135px;
 }
 
 .intro-skills .intro-about {
-  padding-bottom: 10px;
+  padding-bottom: 30px;
+  padding-top: 30px;
 }
 
 .intro-skills .skills-images {
@@ -355,12 +359,13 @@ section.about .social {
 }
 
 .skills {
-  margin-top: 125px;
+  margin-top: 50px;
   padding-top: 2.5rem;
   padding-bottom: 6rem;
   background: var(--dark);
   clip-path: polygon(0 0, 100% 0, 100% 100%, 70% 92%, 0 100%);
   font-family: "Playfair Display", serif;
+  scroll-margin-top: 135px;
 }
 
 .skills .skills-title {
@@ -490,6 +495,7 @@ section.about .social {
 .projects {
   padding-top: 0rem;
   padding-bottom: 3rem;
+  scroll-margin-top: 135px;
 }
 
 .projects {
@@ -636,6 +642,7 @@ section.about .social {
 .contact {
   background: var(--dark);
   padding-top: 3rem;
+  scroll-margin-top: 135px;
 }
 .contact .title {
   font-size: 1.6rem;
@@ -812,7 +819,7 @@ section.about .social {
 
 .main-site-wrapper {
   position: relative;
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
 }
 
 .main-site-wrapper .hamberger-wrapper {
@@ -889,6 +896,7 @@ section.about .social {
   overflow: auto; /* Enable scroll if needed */
   background-color: rgb(0, 0, 0); /* Fallback color */
   background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+  backdrop-filter: blur(5px);
 }
 
 /* Modal Content */
@@ -901,9 +909,9 @@ section.about .social {
   width: 90%;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   -webkit-animation-name: animatetop;
-  -webkit-animation-duration: 0.4s;
+  -webkit-animation-duration: 1s;
   animation-name: animatetop;
-  animation-duration: 0.4s;
+  animation-duration: 1s;
   border-radius: 10px;
 }
 
