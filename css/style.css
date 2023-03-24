@@ -1203,6 +1203,7 @@ section.about .social {
   .hero .left img {
     padding-right: 3rem;
     padding-left: 0;
+    opacity: 0.5;
   }
 
   .about {
