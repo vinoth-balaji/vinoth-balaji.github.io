@@ -1026,6 +1026,10 @@ section.about .social {
 }
 
 @media (max-width: 1024px) {
+  .projects {
+    width: 95%;
+  }
+
   #main-nav {
     display: none;
   }
@@ -1040,7 +1044,8 @@ section.about .social {
 
   .main-site-wrapper .hamberger-wrapper {
     display: flex;
-    position: fixed;
+    position: sticky;
+    top: 0;
     background: var(--dark);
     z-index: 2;
   }
@@ -1059,16 +1064,29 @@ section.about .social {
     font-size: 2.9rem;
   }
   .hero {
-    padding-top: 10rem;
+    padding-top: 2rem;
   }
   .hero .right {
     margin-top: -3rem;
   }
 
   .intro {
-    margin-top: 20px;
+    margin-top: -5px;
     clip-path: polygon(0 0, 100% 0, 100% 100%, 27% 94%, 0 100%);
+    overflow: hidden;
   }
+
+  .intro-skills {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    scroll-margin-top: 110px;
+  }
+  .intro-skills .skills-images {
+    display: none;
+  }
+
   .download {
     text-align: center;
   }
@@ -1130,9 +1148,23 @@ section.about .social {
   .about {
     margin-right: 20px;
   }
+
+  .skills {
+    margin-top: 10px;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 70% 98%, 0 100%);
+    scroll-margin-top: 110px;
+  }
+
+  .card {
+    /* flex-basis: 90%; */
+  }
 }
 
 @media (max-width: 800px) {
+  .main-site-wrapper {
+    /* overflow-x: hidden; */
+  }
+
   .hero {
     flex-direction: column;
     padding-bottom: 15rem;
@@ -1292,8 +1324,10 @@ section.about .social {
 
   .contact {
     clip-path: polygon(0 0, 100% 0, 100% 100%, 70% 95%, 0 100%);
-    padding-bottom: 3rem;
-    padding-top: 3rem;
+    /* padding-bottom: 3rem;
+    padding-top: 3rem; */
+    padding: 3rem 1rem;
+    scroll-margin-top: 110px;
   }
   .contact-container {
     flex-direction: column;
@@ -1321,24 +1355,28 @@ section.about .social {
     width: 90%;
     margin-bottom: 2rem;
   }
+  .projects {
+    width: 98%;
+    scroll-margin-top: 110px;
+  }
   .project-wrapper {
     width: 100%;
     flex-wrap: wrap;
+    flex-basis: 98%;
   }
 
   section.projects .project-summary {
-    border-radius: 10px;
-    height: 540px;
+    /* border-radius: 10px; */
+    height: 650px;
     min-width: 100%;
-    padding: 5px 30px 35px 30px;
+    /* padding: 5px 30px 35px 30px; */
     flex-basis: 100%;
-
     position: relative;
     /* background-clip: padding-box; */
     /* border: solid 6px transparent; */
     /* border-radius: 10%; */
-    border-bottom-left-radius: 15%;
-    border-bottom-right-radius: 15%;
+    /* border-bottom-left-radius: 15%; */
+    /* border-bottom-right-radius: 15%; */
     padding-bottom: 35px;
   }
   section.projects .project-summary:before {
@@ -1577,4 +1615,10 @@ pre {
 .reveal.active {
   transform: translateY(0);
   opacity: 1;
+}
+
+@media (max-width: 1200px) {
+  .projects {
+    width: 95%;
+  }
 }
