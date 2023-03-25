@@ -147,6 +147,7 @@ header nav .branding {
   padding-right: 3rem;
   transform: scale(1.2);
   transition: all 2s ease-in-out;
+  cursor: pointer;
 }
 .hero .left img:hover {
   filter: grayscale(100%);
@@ -448,12 +449,13 @@ section.about .social {
   height: calc(100% - 75px);
   object-fit: contain;
   /* object-position: bottom; */
+  cursor: pointer;
 }
 
 .card-image > img:hover {
   opacity: 1;
-  -webkit-animation: flash 1.5s;
-  animation: flash 1.5s;
+  -webkit-animation: flash 2s;
+  animation: flash 2s;
 }
 @keyframes flash {
   0% {
