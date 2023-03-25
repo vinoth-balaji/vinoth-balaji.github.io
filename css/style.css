@@ -119,7 +119,7 @@ header nav .left .header-texts a .fa {
   margin-right: 10px;
 }
 
-header nav .left .header-texts a :hover {
+header nav .left .header-texts a:hover {
   /* color: var(--primary); */
   --_p: 0%;
 }
@@ -228,7 +228,8 @@ section {
   padding-top: 30px; */
   text-align: justify;
   display: inline;
-
+}
+.intro-skills .intro-about.reveal.active {
   color: #0000;
   background: linear-gradient(-90deg, var(--dark) 5px, #0000 0) 10px 0,
     linear-gradient(var(--dark) 0 0) 0 0;
@@ -564,6 +565,7 @@ section.about .social {
   font-size: 1.6rem;
   text-align: center;
   margin-bottom: 1.5rem;
+  font-family: "Playfair Display", serif;
 }
 
 .projects .title span {

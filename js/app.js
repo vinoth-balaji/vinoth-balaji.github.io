@@ -170,8 +170,6 @@ window.onclick = function (event) {
 };
 
 function reveal() {
-  var reveals = document.querySelectorAll(".reveal");
-
   for (var i = 0; i < reveals.length; i++) {
     var windowHeight = window.innerHeight;
     var elementTop = reveals[i].getBoundingClientRect().top;
@@ -185,5 +183,42 @@ function reveal() {
   }
 }
 
-window.addEventListener("scroll", reveal);
+function isElementPartiallyInViewport(el, threshold = 10) {
+  const rect = el.getBoundingClientRect();
+  const windowHeight =
+    window.innerHeight || document.documentElement.clientHeight;
+  const windowWidth = window.innerWidth || document.documentElement.clientWidth;
+
+  const vertInView = rect.top <= windowHeight && rect.top + rect.height >= 0;
+  const horInView = rect.left <= windowWidth && rect.left + rect.width >= 0;
+
+  if (vertInView && horInView) {
+    const partialVisible =
+      (rect.top < 0 && rect.bottom > 0) ||
+      (rect.top >= 0 && rect.bottom <= windowHeight);
+    if (partialVisible) {
+      const percentage =
+        ((Math.min(rect.bottom, windowHeight) - Math.max(rect.top, 0)) /
+          rect.height) *
+        100;
+      return percentage >= threshold ? el : null;
+    }
+    return el;
+  }
+  return null;
+}
+
+function handleScroll() {
+  const reveals = document.querySelectorAll(".reveal");
+  for (const reveal of reveals) {
+    const active = isElementPartiallyInViewport(reveal);
+    if (active) {
+      active.classList.add("active");
+    } else {
+      reveal.classList.remove("active");
+    }
+  }
+}
+
+window.addEventListener("scroll", handleScroll);
 // });
