@@ -1,6 +1,53 @@
 // $(document).ready(function () {
 // console.log(window.screen.width);
 
+// Get all sections that have an ID defined
+const sections = document.querySelectorAll("section[id]");
+
+// Add an event listener listening for scroll
+window.addEventListener("scroll", navHighlighter);
+
+function navHighlighter() {
+  // Get current scroll position
+  let scrollY = window.pageYOffset;
+
+  // Now we loop through sections to get height, top and ID values for each
+  sections.forEach((current) => {
+    const sectionHeight = current.offsetHeight;
+    const sectionTop = current.offsetTop - 150;
+    sectionId = current.getAttribute("id");
+    // console.log(sections);
+    // console.log(sectionId);
+
+    /*
+    - If our current scroll position enters the space where current section on screen is, add .active class to corresponding navigation link, else remove it
+    - To know which link needs an active class, we use sectionId variable we are getting while looping through sections as an selector
+    */
+
+    const doc = document.querySelector(
+      ".header-texts a[href*=" + sectionId + "]"
+    );
+
+    if (doc) {
+      if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+        doc.classList.add("active");
+      } else {
+        doc.classList.remove("active");
+      }
+    }
+  });
+}
+
+const scrollProgress = document.getElementById("scroll-progress");
+const height =
+  document.documentElement.scrollHeight - document.documentElement.clientHeight;
+
+window.addEventListener("scroll", () => {
+  const scrollTop =
+    document.body.scrollTop || document.documentElement.scrollTop;
+  scrollProgress.style.width = `${(scrollTop / height) * 100}%`;
+});
+
 function syntaxHighlight(json) {
   // console.log(json)
 

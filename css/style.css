@@ -79,6 +79,15 @@ html {
   }
 }
 
+#scroll-progress {
+  position: fixed;
+  top: 0;
+  width: 0%;
+  height: 4px;
+  background: var(--primary);
+  z-index: 10000;
+}
+
 header {
   background: var(--dark);
   /* position: fixed; */
@@ -94,6 +103,7 @@ header {
   background: var(--dark);
   clip-path: polygon(0 0, 100% 0, 100% 100%, 70% 87%, 0 100%);
   padding-top: 20px;
+  scroll-margin-top: 140px;
 }
 
 header nav .left .header-texts a {
@@ -112,6 +122,10 @@ header nav .left .header-texts a {
   background-clip: text;
   transition: 0.4s;
   font-weight: bold;
+}
+
+header nav .left .header-texts a.active {
+  color: var(--primary);
 }
 
 header nav .left .header-texts a .fa {
