@@ -244,7 +244,7 @@ section {
   text-align: justify;
   display: inline;
 }
-.intro-skills .intro-about.reveal.active {
+/* .intro-skills .intro-about.reveal.active {
   color: #0000;
   background: linear-gradient(-90deg, var(--dark) 5px, #0000 0) 10px 0,
     linear-gradient(var(--dark) 0 0) 0 0;
@@ -254,7 +254,7 @@ section {
   background-repeat: no-repeat;
   animation: b 0.3s infinite steps(1),
     t calc(var(--n) * 0.03s) steps(var(--n)) forwards;
-}
+} */
 
 @keyframes t {
   from {
