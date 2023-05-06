@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
@@ -9,8 +8,9 @@
     <meta property="og:title" content="Vinoth's Portfolio" />  
     <meta property="og:image" content="./images/thumbnail.jpg" /> -->
 
-
-    <meta property="og:image" content="https://vinoth-balaji.github.io/images/thumbnail.JPG" />
+    <meta
+      property="og:image"
+      content="https://vinoth-balaji.github.io/images/thumbnail.JPG" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vinoth</title>
     <meta name="description" content="Vinoth's Portfolio" />
@@ -20,269 +20,302 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Ubuntu+Mono&family=Playfair+Display:ital,wght@0,400;0,900;1,400;1,900&family=Nixie+One&display=swap"
-        rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Ubuntu+Mono&family=Playfair+Display:ital,wght@0,400;0,900;1,400;1,900&family=Nixie+One&display=swap"
+      rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
 
     <link rel="stylesheet" href="css/style.css" />
-</head>
+  </head>
 
-<body>
+  <body>
     <div class="main-site-wrapper">
-        <div class="hamberger-wrapper">
-            <div class="branding">
-                <a href="#"><img src="./images/logo.png" alt="logo" /></a>
-            </div>
-
-            <button class="hamberger">
-                <i class="fa fa-bars" aria-hidden="true"></i>
-            </button>
+      <div class="hamberger-wrapper">
+        <div class="branding">
+          <a href="#"><img src="./images/logo.png" alt="logo" /></a>
         </div>
 
-        <div class="mobile-nav">
-            <div class="branding">
-                <a href="#"><img src="./images/logo.png" alt="logo" /></a>
-            </div>
+        <button class="hamberger">
+          <i class="fa fa-bars" aria-hidden="true"></i>
+        </button>
+      </div>
 
-            <ul>
-                <li onclick="removeMenu()">
-                    <a href="#">
-                        <i class="fa fa-home" aria-hidden="true"></i>
-                        Home
-                    </a>
-                </li>
-                <li onclick="removeMenu()">
-                    <a href="#about">
-                        <i class="fa fa-info-circle" aria-hidden="true"></i>
-                        Intro
-                    </a>
-                </li>
-                <li onclick="removeMenu()">
-                    <a href="#skills">
-                        <i class="fa fa-star" aria-hidden="true"></i>
-                        Skills
-                    </a>
-                </li>
-                <li onclick="removeMenu()">
-                    <a href="#projects">
-                        <i class="fa fa-tasks" aria-hidden="true"></i>
-                        Projects
-                    </a>
-                </li>
-            </ul>
-            <i class="fa fa-times close" aria-hidden="true"></i>
+      <div class="mobile-nav">
+        <div class="branding">
+          <a href="#"><img src="./images/logo.png" alt="logo" /></a>
         </div>
 
-        <header>
-            <div id="scroll-progress"></div>
-            <div class="container">
-                <nav id="main-nav" class="flex item-center justify-between">
-                    <div class="left flex items-center">
-                        <div class="branding">
-                            <a href="#"><img src="./images/logo.png" alt="logo" /></a>
-                        </div>
-                        <div class="header-texts">
-                            <a class="active" href="#home">
-                                <i class="fa fa-home" aria-hidden="true"></i>
-                                Home
-                            </a>
-                            <a href="#about">
-                                <i class="fa fa-info-circle" aria-hidden="true"></i>
-                                Intro
-                            </a>
-                            <a href="#skills">
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                                Skills
-                            </a>
-                            <a href="#projects">
-                                <i class="fa fa-tasks" aria-hidden="true"></i>
-                                Projects
-                            </a>
-                        </div>
-                    </div>
-                    <div class="right flex items-center">
-                        <a href="#contact" class="a-as-button btn btn-primary">Contact</a>
-                    </div>
-                </nav>
+        <ul>
+          <li onclick="removeMenu()">
+            <a href="#">
+              <i class="fa fa-home" aria-hidden="true"></i>
+              Home
+            </a>
+          </li>
+          <li onclick="removeMenu()">
+            <a href="#about">
+              <i class="fa fa-info-circle" aria-hidden="true"></i>
+              Intro
+            </a>
+          </li>
+          <li onclick="removeMenu()">
+            <a href="#skills">
+              <i class="fa fa-star" aria-hidden="true"></i>
+              Skills
+            </a>
+          </li>
+          <li onclick="removeMenu()">
+            <a href="#projects">
+              <i class="fa fa-tasks" aria-hidden="true"></i>
+              Projects
+            </a>
+          </li>
+        </ul>
+        <i class="fa fa-times close" aria-hidden="true"></i>
+      </div>
+
+      <header>
+        <div id="scroll-progress"></div>
+        <div class="container">
+          <nav id="main-nav" class="flex item-center justify-between">
+            <div class="left flex items-center">
+              <div class="branding">
+                <a href="#"><img src="./images/logo.png" alt="logo" /></a>
+              </div>
+              <div class="header-texts">
+                <a class="active" href="#home">
+                  <i class="fa fa-home" aria-hidden="true"></i>
+                  Home
+                </a>
+                <a href="#about">
+                  <i class="fa fa-info-circle" aria-hidden="true"></i>
+                  Intro
+                </a>
+                <a href="#skills">
+                  <i class="fa fa-star" aria-hidden="true"></i>
+                  Skills
+                </a>
+                <a href="#projects">
+                  <i class="fa fa-tasks" aria-hidden="true"></i>
+                  Projects
+                </a>
+              </div>
             </div>
-        </header>
+            <div class="right flex items-center">
+              <a href="#contact" class="a-as-button btn btn-primary">Contact</a>
+            </div>
+          </nav>
+        </div>
+      </header>
 
-        <section id="home" class="intro">
-            <div class="container adjust-header ">
-                <div class="hero flex items-center">
-                    <div class="left flex-1 flex justify-center">
-                        <img src="./images/profile-1.png" alt="Vinoth" />
-                    </div>
-                    <div class="right flex-1 ">
-                        <h6>Vinoth. B
-                            <!-- <i style="font-size: 0.8rem;font-weight: bold;">(H1B visa approved)</i> -->
-                        </h6>
-                        <h1>
-                            I'm a Full Stack
-                            <span class="role">Developer</span>
-                        </h1>
-                        <h2>What's your superpower?</h2>
-                        <p> A digital innovator who loves bringing digital dreams to life and constantly
-                            seeks new ways
-                            to enhance people's lives through cutting-edge websites and technology. I
-                            am motivated by a desire to create meaningful solutions, and the pure joy of crafting code
-                            that brings my visions to life. <i style="font-family: 'Playfair Display', serif;">My
-                                canvas is code, and my art is impact.</i>
-                        </p>
+      <section id="home" class="intro">
+        <div class="container adjust-header">
+          <div class="hero flex items-center">
+            <div class="left flex-1 flex justify-center">
+              <img src="./images/profile-1.png" alt="Vinoth" />
+            </div>
+            <div class="right flex-1">
+              <h6>
+                Vinoth. B
+                <!-- <i style="font-size: 0.8rem;font-weight: bold;">(H1B visa approved)</i> -->
+              </h6>
+              <h1>
+                I'm a Full Stack
+                <span class="role">Developer</span>
+              </h1>
+              <h2>What's your superpower?</h2>
+              <p>
+                A digital innovator who loves bringing digital dreams to life
+                and constantly seeks new ways to enhance people's lives through
+                cutting-edge websites and technology. I am motivated by a desire
+                to create meaningful solutions, and the pure joy of crafting
+                code that brings my visions to life.
+                <i style="font-family: 'Playfair Display', serif">
+                  My canvas is code, and my art is impact.
+                </i>
+              </p>
 
-                        <div class="download">
-                            <button type="submit" onclick="window.open('./resume/Resume_Vinoth.pdf')"
-                                class="dr btn btn-secondary margin-r15">
-                                Download Resume
-                            </button>
-                            <button type="submit" onclick="window.open('./resume/CV_Vinoth.pdf')"
+              <div class="download" style="text-align: center">
+                <button
+                  type="submit"
+                  onclick="window.open('./resume/Resume_Vinoth.pdf')"
+                  class="dr btn btn-secondary margin-r15">
+                  Download Resume
+                </button>
+                <!-- <button type="submit" onclick="window.open('./resume/CV_Vinoth.pdf')"
                                 class="dcv btn btn-secondary">
                                 Download CV
-                            </button>
-                        </div>
-                        <div class="social flex items-center justify-center">
-                            <a href="https://www.linkedin.com/in/vinoth-balaji/" ref="noopener noreferer"
-                                target="_blank">
-                                <i class="fa fa-linkedin" aria-hidden="true"></i>
-                            </a>
-                            <a href="https://github.com/vinoth-balaji" ref="noopener noreferer" target="_blank">
-                                <i class="fa fa-github" aria-hidden="true"></i>
-                            </a>
-                            <a href="https://twitter.com/vinoth_balaji_" ref="noopener noreferer" target="_blank">
-                                <i class="fa fa-twitter" aria-hidden="true"></i>
-                            </a>
-                            <a href="https://www.facebook.com/123vincy" ref="noopener noreferer" target="_blank">
-                                <i class="fa fa-facebook" aria-hidden="true"></i>
-                            </a>
-                            <a href="https://www.instagram.com/vinoth___balaji/" ref="noopener noreferer"
-                                target="_blank">
-                                <i class="fa fa-instagram" aria-hidden="true"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
+                            </button> -->
+              </div>
+              <div class="social flex items-center justify-center">
+                <a
+                  href="https://www.linkedin.com/in/vinoth-balaji/"
+                  ref="noopener noreferer"
+                  target="_blank">
+                  <i class="fa fa-linkedin" aria-hidden="true"></i>
+                </a>
+                <a
+                  href="https://github.com/vinoth-balaji"
+                  ref="noopener noreferer"
+                  target="_blank">
+                  <i class="fa fa-github" aria-hidden="true"></i>
+                </a>
+                <a
+                  href="https://twitter.com/vinoth_balaji_"
+                  ref="noopener noreferer"
+                  target="_blank">
+                  <i class="fa fa-twitter" aria-hidden="true"></i>
+                </a>
+                <a
+                  href="https://www.facebook.com/123vincy"
+                  ref="noopener noreferer"
+                  target="_blank">
+                  <i class="fa fa-facebook" aria-hidden="true"></i>
+                </a>
+                <a
+                  href="https://www.instagram.com/vinoth___balaji/"
+                  ref="noopener noreferer"
+                  target="_blank">
+                  <i class="fa fa-instagram" aria-hidden="true"></i>
+                </a>
+              </div>
             </div>
-        </section>
+          </div>
+        </div>
+      </section>
 
-        <section id="about" class="intro-skills">
-            <div class="intro-about reveal" style="--n:342">
-                I am a Computer Science graduate currently employed as an
-                <span class="underline">Associate Technical Lead - Full Stack</span>
-                at
-                <span class="underline">Flutura Business Solutions</span>
-                in
-                <span class="underline">Bangalore</span>
-                , where I have been working since 2017. My passion lies in creating innovative solutions and bringing
-                ideas to life through coding. I regard coding as an art form and strive to make a positive impact with
-                my work.
-                </br></br>
+      <section id="about" class="intro-skills">
+        <div class="intro-about reveal" style="--n: 342">
+          I am a Computer Science graduate currently employed as an
+          <span class="underline">Associate Technical Lead - Full Stack</span>
+          at
+          <span class="underline">Flutura Business Solutions</span>
+          in
+          <span class="underline">Bangalore</span>
+          , where I have been working since 2017. My passion lies in creating
+          innovative solutions and bringing ideas to life through coding. I
+          regard coding as an art form and strive to make a positive impact with
+          my work.
+          <br />
+          <br />
 
-                I specialize in both front-end and back-end development and play a crucial role in the entire software
-                development process, from requirement gathering to risk assessment and delivery.
-                </br></br>
-                With a proven track record of identifying and mitigating risks, I ensure the seamless delivery of
-                projects. As an Associate Technical Lead, I'm an approachable mentor to juniors and freshers, providing
-                technical guidance on various modules of the platform and conducting frequent code reviews.
-                </br></br>
-                As someone who loves to stay on top of the latest trends and technologies, I am passionate about
-                creating visually appealing and dynamic software products. Whether it's building innovative solutions or
-                pushing the boundaries of what's possible, I'm always up for a challenge.
-                </br></br>
-                If you're looking for a professional with extensive experience in software development, I'm here to
-                help. Let's connect and collaborate on creating the next generation of software products.
+          I specialize in both front-end and back-end development and play a
+          crucial role in the entire software development process, from
+          requirement gathering to risk assessment and delivery.
+          <br />
+          <br />
+          With a proven track record of identifying and mitigating risks, I
+          ensure the seamless delivery of projects. As an Associate Technical
+          Lead, I'm an approachable mentor to juniors and freshers, providing
+          technical guidance on various modules of the platform and conducting
+          frequent code reviews.
+          <br />
+          <br />
+          As someone who loves to stay on top of the latest trends and
+          technologies, I am passionate about creating visually appealing and
+          dynamic software products. Whether it's building innovative solutions
+          or pushing the boundaries of what's possible, I'm always up for a
+          challenge.
+          <br />
+          <br />
+          If you're looking for a professional with extensive experience in
+          software development, I'm here to help. Let's connect and collaborate
+          on creating the next generation of software products.
+        </div>
+        <div class="skills-images reveal">
+          <img src="./images/angular.png" alt="angular" />
+          <img src="./images/django.png" alt="django" />
+          <img src="./images/node.png" alt="node" />
+          <img src="./images/mongodb.png" alt="mongodb" />
+          <img src="./images/postgres.png" alt="sql" />
+          <img src="./images/docker.png" alt="docker" />
+        </div>
+      </section>
+
+      <section
+        id="skills"
+        class="skills flex justify-center items-center flex-column">
+        <div class="skills-title">
+          My
+          <span>Skills</span>
+        </div>
+
+        <div class="card-container reveal flex align-center justify-center">
+          <div class="card">
+            <div class="card-image">
+              <img src="./images/angular.png" alt="angular" />
             </div>
-            <div class="skills-images reveal">
-                <img src="./images/angular.png" alt="angular" />
-                <img src="./images/django.png" alt="django" />
-                <img src="./images/node.png" alt="node" />
-                <img src="./images/mongodb.png" alt="mongodb" />
-                <img src="./images/postgres.png" alt="sql" />
-                <img src="./images/docker.png" alt="docker" />
+            <div class="card-text">
+              <p class="card-meal-type">4 Projects</p>
+              <h2 class="card-title">Angular (V.13)</h2>
+              <!-- <p class="card-body">Eggs Benedict with hollandaise sauce, crispy bacon and an assortment of
+                            garden herbs.</p> -->
             </div>
-        </section>
-
-
-        <section id="skills" class="skills flex justify-center items-center flex-column">
-            <div class="skills-title">
-                My
-                <span>Skills</span>
+            <div class="card-price">5 Years</div>
+          </div>
+          <div class="card">
+            <div class="card-image">
+              <img src="./images/django.png" alt="django" />
             </div>
+            <div class="card-text">
+              <p class="card-meal-type">4 Projects</p>
+              <h2 class="card-title">Django (Python)</h2>
+              <!-- <p class="card-body">Eggs Benedict with hollandaise sauce, crispy bacon and an assortment of
+                            garden herbs.</p> -->
+            </div>
+            <div class="card-price">5 Years</div>
+          </div>
+          <div class="card">
+            <div class="card-image">
+              <img src="./images/node.png" alt="node" />
+            </div>
+            <div class="card-text">
+              <p class="card-meal-type">3 Projects</p>
+              <h2 class="card-title">Express (Node JS)</h2>
+              <!-- <p class="card-body">Eggs Benedict with hollandaise sauce, crispy bacon and an assortment of
+                            garden herbs.</p> -->
+            </div>
+            <div class="card-price">4 Years</div>
+          </div>
+          <div class="card">
+            <div class="card-image">
+              <img src="./images/mongodb.png" alt="mongodb" />
+            </div>
+            <div class="card-text">
+              <p class="card-meal-type">3 Projects</p>
+              <h2 class="card-title">Mongo DB</h2>
+              <!-- <p class="card-body">Eggs Benedict with hollandaise sauce, crispy bacon and an assortment of
+                            garden herbs.</p> -->
+            </div>
+            <div class="card-price">4 Years</div>
+          </div>
+          <div class="card">
+            <div class="card-image">
+              <img src="./images/postgres.png" alt="postgres" />
+            </div>
+            <div class="card-text">
+              <p class="card-meal-type">4 Projects</p>
+              <h2 class="card-title">SQL (PostgreSQL)</h2>
+              <!-- <p class="card-body">Eggs Benedict with hollandaise sauce, crispy bacon and an assortment of
+                            garden herbs.</p> -->
+            </div>
+            <div class="card-price">5 Years</div>
+          </div>
+          <div class="card">
+            <div class="card-image">
+              <img src="./images/docker.png" alt="docker" />
+            </div>
+            <div class="card-text">
+              <p class="card-meal-type">1 Project</p>
+              <h2 class="card-title">Docker & NGiNX</h2>
+              <!-- <p class="card-body">Eggs Benedict with hollandaise sauce, crispy bacon and an assortment of
+                            garden herbs.</p> -->
+            </div>
+            <div class="card-price">2 Years</div>
+          </div>
 
-            <div class="card-container reveal flex align-center justify-center">
-                <div class="card">
-                    <div class="card-image">
-                        <img src="./images/angular.png" alt="angular">
-                    </div>
-                    <div class="card-text">
-                        <p class="card-meal-type">4 Projects</p>
-                        <h2 class="card-title">Angular (V.13)</h2>
-                        <!-- <p class="card-body">Eggs Benedict with hollandaise sauce, crispy bacon and an assortment of
-                            garden herbs.</p> -->
-                    </div>
-                    <div class="card-price">5 Years</div>
-                </div>
-                <div class="card">
-                    <div class="card-image">
-                        <img src="./images/django.png" alt="django">
-                    </div>
-                    <div class="card-text">
-                        <p class="card-meal-type">4 Projects</p>
-                        <h2 class="card-title">Django (Python)</h2>
-                        <!-- <p class="card-body">Eggs Benedict with hollandaise sauce, crispy bacon and an assortment of
-                            garden herbs.</p> -->
-                    </div>
-                    <div class="card-price">5 Years</div>
-                </div>
-                <div class="card">
-                    <div class="card-image">
-                        <img src="./images/node.png" alt="node">
-                    </div>
-                    <div class="card-text">
-                        <p class="card-meal-type">3 Projects</p>
-                        <h2 class="card-title">Express (Node JS)</h2>
-                        <!-- <p class="card-body">Eggs Benedict with hollandaise sauce, crispy bacon and an assortment of
-                            garden herbs.</p> -->
-                    </div>
-                    <div class="card-price">4 Years</div>
-                </div>
-                <div class="card">
-                    <div class="card-image">
-                        <img src="./images/mongodb.png" alt="mongodb">
-                    </div>
-                    <div class="card-text">
-                        <p class="card-meal-type">3 Projects</p>
-                        <h2 class="card-title">Mongo DB</h2>
-                        <!-- <p class="card-body">Eggs Benedict with hollandaise sauce, crispy bacon and an assortment of
-                            garden herbs.</p> -->
-                    </div>
-                    <div class="card-price">4 Years</div>
-                </div>
-                <div class="card">
-                    <div class="card-image">
-                        <img src="./images/postgres.png" alt="postgres">
-                    </div>
-                    <div class="card-text">
-                        <p class="card-meal-type">4 Projects</p>
-                        <h2 class="card-title">SQL (PostgreSQL)</h2>
-                        <!-- <p class="card-body">Eggs Benedict with hollandaise sauce, crispy bacon and an assortment of
-                            garden herbs.</p> -->
-                    </div>
-                    <div class="card-price">5 Years</div>
-                </div>
-                <div class="card">
-                    <div class="card-image">
-                        <img src="./images/docker.png" alt="docker">
-                    </div>
-                    <div class="card-text">
-                        <p class="card-meal-type">1 Project</p>
-                        <h2 class="card-title">Docker & NGiNX</h2>
-                        <!-- <p class="card-body">Eggs Benedict with hollandaise sauce, crispy bacon and an assortment of
-                            garden herbs.</p> -->
-                    </div>
-                    <div class="card-price">2 Years</div>
-                </div>
-
-                <!-- <div class="card flex items-center justify-between">
+          <!-- <div class="card flex items-center justify-between">
                     <div class="right">
                         <img src="./images/angular.png" alt="angular" />
                     </div>
@@ -293,7 +326,7 @@
                         </div>
                         <div class="title">Angular (Version 7+)</div>
                         <div class="angular"></div> -->
-                <!-- <div class="bars flex">
+          <!-- <div class="bars flex">
                             <span class="bar rating"></span>
                             <span class="bar rating"></span>
                             <span class="bar rating"></span>
@@ -305,9 +338,9 @@
                             <span class="bar rating"></span>
                             <span class="bar"></span>
                         </div> -->
-                <!-- </div>
+          <!-- </div>
                 </div> -->
-                <!-- <div class="card flex items-center justify-between">
+          <!-- <div class="card flex items-center justify-between">
                     <div class="left">
                         <div class="title">Django (Python)</div>
                         <div class="exp">
@@ -427,631 +460,701 @@
                         <img src="./images/docker.png" alt="docker" />
                     </div>
                 </div> -->
-            </div>
-        </section>
+        </div>
+      </section>
 
-        <section id="projects" class="projects">
-            <div class="title">
-                My
-                <span>Work</span>
-            </div>
+      <section id="projects" class="projects">
+        <div class="title">
+          My
+          <span>Work</span>
+        </div>
 
-            <div class="projects-details reveal justify-between flex flex-wrap flex-row  items-center">
-                <div class="flex items-center project-wrapper flex-row justify-center items-center">
-                    <div class="project-summary flex flex-column  items-center">
-                        <!-- <div class="pno ewb"><span>1</span></div> -->
+        <div
+          class="projects-details reveal justify-between flex flex-wrap flex-row items-center">
+          <div
+            class="flex items-center project-wrapper flex-row justify-center items-center">
+            <div class="project-summary flex flex-column items-center">
+              <!-- <div class="pno ewb"><span>1</span></div> -->
 
-                        <div class="gradient"></div>
+              <div class="gradient"></div>
 
-                        <div class="desc">
-                            <div class="pro-details">
-                                <div class="pro-title">Engineer's Workbench</div>
-                                <div class="pro-duration">
-                                    <span class="fa fa-calendar"></span>
-                                    Jan 2020 - Present
-                                </div>
-                                <div class="pro-desig">
-                                    <span class="fa fa-level-up"></span>
-                                    Associate Tech Lead
-                                </div>
-                                <div class="pro-org">
-                                    <span class="fa fa-briefcase"></span>
-                                    Flutura Business Solutions, Bangalore
-                                </div>
-                                <div class="pro-team">
-                                    <span class="fa fa-users"></span>
-                                    15-18
-                                </div>
-                            </div>
-                            <!-- <pre> <code id="ewb"> </code></pre> -->
-                        </div>
-                        <div class="summary">
-                            Cerebra Engineer’s Workbench (EWB) is a low-code/no-code self-service data science platform
-                            tailored for engineering data, primarily aimed at engineers and analysts working in the core
-                            engineering domain.
-                            <div class="read-more">
-                                <button onclick="openModal('ewb')" class="btn btn-secondary">
-                                    Read More
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="tech-box box">
-                        <span class="span"></span>
-                        <span class="span"></span>
-                        <span class="span"></span>
-                        <span class="span"></span>
-                        <div class="tech-skills-list">
-                            <div class="tech-button">
-                                <button>Angular</button>
-                            </div>
-                            <div class="tech-button">
-                                <button>Python</button>
-                            </div>
-                            <div class="tech-button">
-                                <button>Django</button>
-                            </div>
-                            <div class="tech-button">
-                                <button>Node JS</button>
-                            </div>
-                            <div class="tech-button">
-                                <button>Postgres</button>
-                            </div>
-                            <div class="tech-button">
-                                <button>Redis</button>
-                            </div>
-                            <div class="tech-button">
-                                <button>Mongo DB</button>
-                            </div>
-                            <div class="tech-button">
-                                <button>Azure</button>
-                            </div>
-                            <div class="tech-button">
-                                <button>Docker</button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="tech-stack">
-                        <div class="tech flex flex-column justify-center">
-                            <img src="./images/angular.png" alt="angular" />
-                            <img src="./images/django.png" alt="django" />
-                            <img src="./images/node.png" alt="node" />
-                            <img src="./images/postgres.png" alt="sql" />
-                            <img src="./images/mongodb.png" alt="mongodb" />
-                            <img src="./images/docker.png" alt="docker" />
-                            <img src="./images/azure.png" alt="azure" />
-                            <img src="./images/redis.png" alt="redis" />
-                        </div>
-                    </div>
+              <div class="desc">
+                <div class="pro-details">
+                  <div class="pro-title">Engineer's Workbench</div>
+                  <div class="pro-duration">
+                    <span class="fa fa-calendar"></span>
+                    Jan 2020 - Present
+                  </div>
+                  <div class="pro-desig">
+                    <span class="fa fa-level-up"></span>
+                    Associate Tech Lead
+                  </div>
+                  <div class="pro-org">
+                    <span class="fa fa-briefcase"></span>
+                    Flutura Business Solutions, Bangalore
+                  </div>
+                  <div class="pro-team">
+                    <span class="fa fa-users"></span>
+                    15-18
+                  </div>
                 </div>
-                <div class="flex items-center project-wrapper flex-row justify-center items-center">
-                    <div class="project-summary flex flex-column  items-center">
-                        <!-- <div class="pno ewb"><span>2</span></div> -->
+                <!-- <pre> <code id="ewb"> </code></pre> -->
+              </div>
+              <div class="summary">
+                Cerebra Engineer’s Workbench (EWB) is a low-code/no-code
+                self-service data science platform tailored for engineering
+                data, primarily aimed at engineers and analysts working in the
+                core engineering domain.
+                <div class="read-more">
+                  <button onclick="openModal('ewb')" class="btn btn-secondary">
+                    Read More
+                  </button>
+                </div>
+              </div>
+            </div>
 
-                        <div class="gradient"></div>
-                        <div class="desc">
-                            <div class="pro-details">
-                                <div class="pro-title">Quality Pulse</div>
-                                <div class="pro-duration">
-                                    <span class="fa fa-calendar"></span>
-                                    June 2019 - Dec 2019
-                                </div>
-                                <div class="pro-desig">
-                                    <span class="fa fa-level-up"></span>
-                                    Programmer
-                                </div>
-                                <div class="pro-org">
-                                    <span class="fa fa-briefcase"></span>
-                                    Flutura Business Solutions, Bangalore
-                                </div>
-                                <div class="pro-team">
-                                    <span class="fa fa-users"></span>
-                                    10-12
-                                </div>
+            <div class="tech-box box">
+              <span class="span"></span>
+              <span class="span"></span>
+              <span class="span"></span>
+              <span class="span"></span>
+              <div class="tech-skills-list">
+                <div class="tech-button">
+                  <button>Angular</button>
+                </div>
+                <div class="tech-button">
+                  <button>Python</button>
+                </div>
+                <div class="tech-button">
+                  <button>Django</button>
+                </div>
+                <div class="tech-button">
+                  <button>Node JS</button>
+                </div>
+                <div class="tech-button">
+                  <button>Postgres</button>
+                </div>
+                <div class="tech-button">
+                  <button>Redis</button>
+                </div>
+                <div class="tech-button">
+                  <button>Mongo DB</button>
+                </div>
+                <div class="tech-button">
+                  <button>Azure</button>
+                </div>
+                <div class="tech-button">
+                  <button>Docker</button>
+                </div>
+              </div>
+            </div>
 
-                                <!-- <pre> <code id="ewb"> </code></pre> -->
-                            </div>
-                            <!-- <div class="pro">
+            <div class="tech-stack">
+              <div class="tech flex flex-column justify-center">
+                <img src="./images/angular.png" alt="angular" />
+                <img src="./images/django.png" alt="django" />
+                <img src="./images/node.png" alt="node" />
+                <img src="./images/postgres.png" alt="sql" />
+                <img src="./images/mongodb.png" alt="mongodb" />
+                <img src="./images/docker.png" alt="docker" />
+                <img src="./images/azure.png" alt="azure" />
+                <img src="./images/redis.png" alt="redis" />
+              </div>
+            </div>
+          </div>
+          <div
+            class="flex items-center project-wrapper flex-row justify-center items-center">
+            <div class="project-summary flex flex-column items-center">
+              <!-- <div class="pno ewb"><span>2</span></div> -->
+
+              <div class="gradient"></div>
+              <div class="desc">
+                <div class="pro-details">
+                  <div class="pro-title">Quality Pulse</div>
+                  <div class="pro-duration">
+                    <span class="fa fa-calendar"></span>
+                    June 2019 - Dec 2019
+                  </div>
+                  <div class="pro-desig">
+                    <span class="fa fa-level-up"></span>
+                    Programmer
+                  </div>
+                  <div class="pro-org">
+                    <span class="fa fa-briefcase"></span>
+                    Flutura Business Solutions, Bangalore
+                  </div>
+                  <div class="pro-team">
+                    <span class="fa fa-users"></span>
+                    10-12
+                  </div>
+
+                  <!-- <pre> <code id="ewb"> </code></pre> -->
+                </div>
+                <!-- <div class="pro">
                             <pre> <code id="qp"> </code></pre>
                           </div> -->
-                        </div>
-                        <div class="summary">
-                            Quality Pulse application is built mainly for quality
-                            benchmarking purposes. The application provides the status of
-                            the “Quality” of the Bulk Material produced in the manufacturing
-                            plant.
-                            <div class="read-more">
-                                <button onclick="openModal('qp')" class="btn btn-secondary">
-                                    Read More
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="tech-box box">
-                        <span class="span"></span>
-                        <span class="span"></span>
-                        <span class="span"></span>
-                        <span class="span"></span>
-                        <div class="tech-skills-list">
-                            <div class="tech-button">
-                                <button>Angular</button>
-                            </div>
-                            <div class="tech-button">
-                                <button>Python</button>
-                            </div>
-                            <div class="tech-button">
-                                <button>Django</button>
-                            </div>
-                            <div class="tech-button">
-                                <button>Node JS</button>
-                            </div>
-                            <div class="tech-button">
-                                <button>Postgres</button>
-                            </div>
-                            <div class="tech-button">
-                                <button>Mongo DB</button>
-                            </div>
-                            <div class="tech-button">
-                                <button>Azure</button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="tech-stack">
-                        <div class="tech flex items-center flex-column justify-center">
-                            <img src="./images/angular.png" alt="angular" />
-                            <img src="./images/django.png" alt="django" />
-                            <img src="./images/node.png" alt="node" />
-                            <img src="./images/postgres.png" alt="sql" />
-                            <img src="./images/mongodb.png" alt="mongodb" />
-                            <img src="./images/azure.png" alt="azure" />
-                        </div>
-                    </div>
+              </div>
+              <div class="summary">
+                Quality Pulse application is built mainly for quality
+                benchmarking purposes. The application provides the status of
+                the “Quality” of the Bulk Material produced in the manufacturing
+                plant.
+                <div class="read-more">
+                  <button onclick="openModal('qp')" class="btn btn-secondary">
+                    Read More
+                  </button>
                 </div>
-                <div class="flex items-center project-wrapper flex-row justify-center items-center">
-                    <div class="project-summary flex flex-column  items-center">
-                        <!-- <div class="pno ewb"><span>3</span></div> -->
+              </div>
+            </div>
 
-                        <div class="gradient"></div>
-                        <div class="desc">
-                            <div class="pro-details">
-                                <div class="pro-title">
-                                    Quality Diagnostics and Prognostics
-                                </div>
-                                <div class="pro-duration">
-                                    <span class="fa fa-calendar"></span>
-                                    Sep 2018 - May 2019
-                                </div>
-                                <div class="pro-desig">
-                                    <span class="fa fa-level-up"></span>
-                                    Programmer
-                                </div>
-                                <div class="pro-org">
-                                    <span class="fa fa-briefcase"></span>
-                                    Flutura Business Solutions, Bangalore
-                                </div>
-                                <div class="pro-team">
-                                    <span class="fa fa-users"></span>
-                                    8-10
-                                </div>
+            <div class="tech-box box">
+              <span class="span"></span>
+              <span class="span"></span>
+              <span class="span"></span>
+              <span class="span"></span>
+              <div class="tech-skills-list">
+                <div class="tech-button">
+                  <button>Angular</button>
+                </div>
+                <div class="tech-button">
+                  <button>Python</button>
+                </div>
+                <div class="tech-button">
+                  <button>Django</button>
+                </div>
+                <div class="tech-button">
+                  <button>Node JS</button>
+                </div>
+                <div class="tech-button">
+                  <button>Postgres</button>
+                </div>
+                <div class="tech-button">
+                  <button>Mongo DB</button>
+                </div>
+                <div class="tech-button">
+                  <button>Azure</button>
+                </div>
+              </div>
+            </div>
 
-                                <!-- <pre> <code id="ewb"> </code></pre> -->
-                            </div>
-                            <!-- <div class="pro">
+            <div class="tech-stack">
+              <div class="tech flex items-center flex-column justify-center">
+                <img src="./images/angular.png" alt="angular" />
+                <img src="./images/django.png" alt="django" />
+                <img src="./images/node.png" alt="node" />
+                <img src="./images/postgres.png" alt="sql" />
+                <img src="./images/mongodb.png" alt="mongodb" />
+                <img src="./images/azure.png" alt="azure" />
+              </div>
+            </div>
+          </div>
+          <div
+            class="flex items-center project-wrapper flex-row justify-center items-center">
+            <div class="project-summary flex flex-column items-center">
+              <!-- <div class="pno ewb"><span>3</span></div> -->
+
+              <div class="gradient"></div>
+              <div class="desc">
+                <div class="pro-details">
+                  <div class="pro-title">
+                    Quality Diagnostics and Prognostics
+                  </div>
+                  <div class="pro-duration">
+                    <span class="fa fa-calendar"></span>
+                    Sep 2018 - May 2019
+                  </div>
+                  <div class="pro-desig">
+                    <span class="fa fa-level-up"></span>
+                    Programmer
+                  </div>
+                  <div class="pro-org">
+                    <span class="fa fa-briefcase"></span>
+                    Flutura Business Solutions, Bangalore
+                  </div>
+                  <div class="pro-team">
+                    <span class="fa fa-users"></span>
+                    8-10
+                  </div>
+
+                  <!-- <pre> <code id="ewb"> </code></pre> -->
+                </div>
+                <!-- <div class="pro">
                             <pre> <code id="qd"> </code></pre>
                           </div> -->
-                        </div>
-                        <div class="summary">
-                            The goal is to build an application that would be utilized for
-                            predicting Quality Scores and individual Output Parameter values
-                            for each batch being produced in the plant today.
-                            <div class="read-more">
-                                <button onclick="openModal('qd')" class="btn btn-secondary">
-                                    Read More
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="tech-box box">
-                        <span class="span"></span>
-                        <span class="span"></span>
-                        <span class="span"></span>
-                        <span class="span"></span>
-                        <div class="tech-skills-list">
-                            <div class="tech-button">
-                                <button>Angular</button>
-                            </div>
-                            <div class="tech-button">
-                                <button>Python</button>
-                            </div>
-                            <div class="tech-button">
-                                <button>Django</button>
-                            </div>
-                            <div class="tech-button">
-                                <button>Node JS</button>
-                            </div>
-                            <div class="tech-button">
-                                <button>Postgres</button>
-                            </div>
-                            <div class="tech-button">
-                                <button>Mongo DB</button>
-                            </div>
-                            <div class="tech-button">
-                                <button>Azure</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="tech-stack">
-                        <div class="tech flex items-center flex-column justify-center">
-                            <img src="./images/angular.png" alt="angular" />
-                            <img src="./images/django.png" alt="django" />
-                            <img src="./images/node.png" alt="node" />
-                            <img src="./images/postgres.png" alt="sql" />
-                            <img src="./images/mongodb.png" alt="mongodb" />
-                            <img src="./images/azure.png" alt="azure" />
-                        </div>
-                    </div>
+              </div>
+              <div class="summary">
+                The goal is to build an application that would be utilized for
+                predicting Quality Scores and individual Output Parameter values
+                for each batch being produced in the plant today.
+                <div class="read-more">
+                  <button onclick="openModal('qd')" class="btn btn-secondary">
+                    Read More
+                  </button>
                 </div>
-                <div class="flex items-center project-wrapper flex-row justify-center items-center">
-                    <div class="project-summary flex flex-column  items-center">
-                        <!-- <div class="pno ewb"><span>4</span></div> -->
+              </div>
+            </div>
+            <div class="tech-box box">
+              <span class="span"></span>
+              <span class="span"></span>
+              <span class="span"></span>
+              <span class="span"></span>
+              <div class="tech-skills-list">
+                <div class="tech-button">
+                  <button>Angular</button>
+                </div>
+                <div class="tech-button">
+                  <button>Python</button>
+                </div>
+                <div class="tech-button">
+                  <button>Django</button>
+                </div>
+                <div class="tech-button">
+                  <button>Node JS</button>
+                </div>
+                <div class="tech-button">
+                  <button>Postgres</button>
+                </div>
+                <div class="tech-button">
+                  <button>Mongo DB</button>
+                </div>
+                <div class="tech-button">
+                  <button>Azure</button>
+                </div>
+              </div>
+            </div>
+            <div class="tech-stack">
+              <div class="tech flex items-center flex-column justify-center">
+                <img src="./images/angular.png" alt="angular" />
+                <img src="./images/django.png" alt="django" />
+                <img src="./images/node.png" alt="node" />
+                <img src="./images/postgres.png" alt="sql" />
+                <img src="./images/mongodb.png" alt="mongodb" />
+                <img src="./images/azure.png" alt="azure" />
+              </div>
+            </div>
+          </div>
+          <div
+            class="flex items-center project-wrapper flex-row justify-center items-center">
+            <div class="project-summary flex flex-column items-center">
+              <!-- <div class="pno ewb"><span>4</span></div> -->
 
-                        <div class="gradient"></div>
-                        <div class="desc">
-                            <div class="pro-details">
-                                <div class="pro-title">PFEP (Plan for Every Part)</div>
-                                <div class="pro-duration">
-                                    <span class="fa fa-calendar"></span>
-                                    Oct 2017 - Aug 2018
-                                </div>
-                                <div class="pro-desig">
-                                    <span class="fa fa-level-up"></span>
-                                    Programmer
-                                </div>
-                                <div class="pro-org">
-                                    <span class="fa fa-briefcase"></span>
-                                    Flutura Business Solutions, Bangalore
-                                </div>
-                                <div class="pro-team">
-                                    <span class="fa fa-users"></span>
-                                    6-8
-                                </div>
+              <div class="gradient"></div>
+              <div class="desc">
+                <div class="pro-details">
+                  <div class="pro-title">PFEP (Plan for Every Part)</div>
+                  <div class="pro-duration">
+                    <span class="fa fa-calendar"></span>
+                    Oct 2017 - Aug 2018
+                  </div>
+                  <div class="pro-desig">
+                    <span class="fa fa-level-up"></span>
+                    Programmer
+                  </div>
+                  <div class="pro-org">
+                    <span class="fa fa-briefcase"></span>
+                    Flutura Business Solutions, Bangalore
+                  </div>
+                  <div class="pro-team">
+                    <span class="fa fa-users"></span>
+                    6-8
+                  </div>
 
-                                <!-- <pre> <code id="ewb"> </code></pre> -->
-                            </div>
-                            <!-- <div class="pro">
+                  <!-- <pre> <code id="ewb"> </code></pre> -->
+                </div>
+                <!-- <div class="pro">
                             <pre> <code id="sc"> </code></pre>
                           </div> -->
-                        </div>
-                        <div class="summary">
-                            The application's goal is to increase competitiveness and customer
-                            satisfaction through Optimized Inventory Management (higher
-                            Inventory Turns), better portfolio management, and transparency
-                            on constraints.
-                            <div class="read-more">
-                                <button onclick="openModal('pfep')" class="btn btn-secondary">
-                                    Read More
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="tech-box box">
-                        <span class="span"></span>
-                        <span class="span"></span>
-                        <span class="span"></span>
-                        <span class="span"></span>
-                        <div class="tech-skills-list">
-                            <div class="tech-button">
-                                <button>Angular</button>
-                            </div>
-                            <div class="tech-button">
-                                <button>Python</button>
-                            </div>
-                            <div class="tech-button">
-                                <button>Django</button>
-                            </div>
-                            <div class="tech-button">
-                                <button>MS SQL</button>
-                            </div>
-                            <div class="tech-button">
-                                <button>SSIS</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="tech-stack">
-                        <div class="tech flex items-center flex-column justify-center">
-                            <img src="./images/angular.png" alt="angular" />
-                            <img src="./images/django.png" alt="django" />
-                            <img src="./images/sql.png" alt="sql" />
-                        </div>
-                    </div>
+              </div>
+              <div class="summary">
+                The application's goal is to increase competitiveness and
+                customer satisfaction through Optimized Inventory Management
+                (higher Inventory Turns), better portfolio management, and
+                transparency on constraints.
+                <div class="read-more">
+                  <button onclick="openModal('pfep')" class="btn btn-secondary">
+                    Read More
+                  </button>
                 </div>
+              </div>
             </div>
-        </section>
-
-        <section id="contact" class="contact">
-            <div class="title">
-                Contact
-                <span>Me</span>
-            </div>
-            <div class="contact-desc">
-                If you're interested in connecting with me, feel free to send me a message. I look forward to hearing
-                from you!
-            </div>
-
-            <div class="contact-container flex items-center reveal">
-                <div class="left social flex justify-center flex-column">
-                    <a href="https://www.linkedin.com/in/vinoth-balaji/" ref="noopener noreferer" target="_blank">
-                        <i class="fa fa-linkedin" aria-hidden="true"></i>
-                        <span>Connect with me on LinkedIn</span>
-                    </a>
-                    <a href="https://github.com/vinoth-balaji" ref="noopener noreferer" target="_blank">
-                        <i class="fa fa-github" aria-hidden="true"></i>
-                        <span>Fork me on GitHub</span>
-                    </a>
-                    <a href="https://twitter.com/vinoth_balaji_" ref="noopener noreferer" target="_blank">
-                        <i class="fa fa-twitter" aria-hidden="true"></i>
-                        <span>Follow me on Twitter</span>
-                    </a>
-                    <a href="https://www.facebook.com/123vincy" ref="noopener noreferer" target="_blank">
-                        <i class="fa fa-facebook" aria-hidden="true"></i>
-                        <span>Like me on Facebook</span>
-                    </a>
-                    <a href="https://www.instagram.com/vinoth___balaji/" ref="noopener noreferer" target="_blank">
-                        <i class="fa fa-instagram" aria-hidden="true"></i>
-                        <span>Follow me on Instagram</span>
-                    </a>
+            <div class="tech-box box">
+              <span class="span"></span>
+              <span class="span"></span>
+              <span class="span"></span>
+              <span class="span"></span>
+              <div class="tech-skills-list">
+                <div class="tech-button">
+                  <button>Angular</button>
                 </div>
-                <div class="divider"></div>
-                <div class="right flex justify-center items-center flex-column">
-                    <div class="direct flex justify-center items-center flex-column">
-                        <div class="fa fa-phone"></div>
-                        <div class="hint">Call Me At</div>
-                        <div class="details">
-                            <a href="https://wa.me/919444733175" ref="noopener noreferer" target="_blank">
-                                <i class="fa fa-whatsapp" aria-hidden="true"></i>
-                            </a>
-                            <a href="tel:919444733175" data-rel="external">91 9444733175</a>
-                        </div>
-                    </div>
-                    <div class="direct flex justify-center items-center flex-column">
-                        <div class="fa fa-envelope"></div>
-                        <div class="hint">Write To Me At</div>
-                        <div class="details">
-                            <a href="mailto:arni.bvinoth@gmail.com" data-rel="external">
-                                arni.bvinoth@gmail.com
-                            </a>
-                        </div>
-                    </div>
+                <div class="tech-button">
+                  <button>Python</button>
                 </div>
+                <div class="tech-button">
+                  <button>Django</button>
+                </div>
+                <div class="tech-button">
+                  <button>MS SQL</button>
+                </div>
+                <div class="tech-button">
+                  <button>SSIS</button>
+                </div>
+              </div>
             </div>
-        </section>
-
-        <div id="project-modal" class="modal">
-            <!-- Modal content -->
-            <div class="modal-content">
-                <div class="modal-header">
-                    <i class="fa fa-times close-modal" aria-hidden="true"></i>
-                    <h2 class="ewb modal-details">Engineer's Workbench</h2>
-                    <h2 class="qp modal-details">Quality Pulse</h2>
-                    <h2 class="qd modal-details">
-                        Quality Diagnostics and Prognostics
-                    </h2>
-                    <h2 class="pfep modal-details">PFEP (Plan for Every Part)</h2>
-                </div>
-                <div class="modal-body">
-                    <div class="ewb modal-details">
-                        <div class="abstract">Abstract</div>
-
-                        <div class="abstract-details">
-                            Cerebra Engineer’s Workbench (EWB) is a low-code/no-code
-                            self-service data science platform tailored for engineering data
-                            analysis. EWB’s primary focus users are Engineers & Analysts
-                            working in the core engineering domain who need to analyze data
-                            generated by systems, equipment, and processes along the
-                            end-to-end life cycle from research & development to customer
-                            service.
-                        </div>
-
-                        <div class="res-title">
-                            Key
-                            <span>Responsibilities</span>
-                        </div>
-
-                        <ul class="res-details">
-                            <li>
-                                Designed, developed, tested, and deployed the Output Engine
-                                module, which allows users to view and interact with visual
-                                outputs in the form of charts and tables.
-                            </li>
-                            <li>
-                                Created a Widget module, a set of customizable charts and
-                                graphs for visual data analysis.
-                            </li>
-                            <li>
-                                Designed, developed, tested, and deployed Aggregation
-                                Framework for visualizing large data sets in a single chart.
-                            </li>
-                            <li>
-                                Implemented Node middleware and user authentication and
-                                authorization via password/Azure AD SSO for the EWB platform.
-                            </li>
-                            <li>
-                                Developed APIs for various use cases and feature requirements.
-                            </li>
-                            <li>
-                                Contributed to the implementation of the user interface and
-                                developed multiple features across the entire application.
-                            </li>
-                            <li>
-                                Worked on the Packaging and Prediction module, which allows
-                                users to package and use ML toolboxes for predicting outcomes
-                                with alternate data sources.
-                            </li>
-                            <li>
-                                Collaborated with product managers, users, and team to design
-                                new, value-adding features for the platform.
-                            </li>
-                            <li>
-                                Dockerize the application making them more portable and easier
-                                to deploy.
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="qp modal-details">
-                        <div class="abstract">Abstract</div>
-
-                        <div class="abstract-details">
-                            Quality Pulse application is built mainly for quality
-                            benchmarking purposes. The application provides the status of
-                            the “Quality” of the Bulk Material produced in the manufacturing
-                            plant. The application will categorize the finished goods into
-                            multiple categories such as excellent, good, bad, and poor. The
-                            basis or the benchmark for categorization is defined by the
-                            manufacturing unit quality team. Each batch manufactured in the
-                            plant is assigned a quality rating for comparison.
-                        </div>
-
-                        <div class="res-title">
-                            Key
-                            <span>Responsibilities</span>
-                        </div>
-
-                        <ul class="res-details">
-                            <li>
-                                Owned entire migration of the existing application from jQuery
-                                to MEAN Stack.
-                            </li>
-                            <li>
-                                Working alongside UX designers for various web design
-                                features.
-                            </li>
-                            <li>
-                                Setting up the Application with Django, Node, and Angular
-                                framework.
-                            </li>
-                            <li>
-                                Adding the user authentication system to the application.
-                            </li>
-                            <li>
-                                Handle a team of developers and communicate well with them for
-                                product roadmap/performance enhancement
-                            </li>
-                            <li>
-                                Development of generic Charts module which can be reused
-                                across webpages and is only driven by meta which can be easily
-                                configured in the backend.
-                            </li>
-                            <li>Designed and Developed Lazy loading tables</li>
-                            <li>
-                                Coordinate between various customer teams and internal teams
-                                for the design and implementation of common features across
-                                applications.
-                            </li>
-                            <li>
-                                Involved in redesigning multiple services to achieve high
-                                performance and optimizations and meet new requirements.
-                            </li>
-                            <li>Developed REST APIs needed for the application.</li>
-                            <li>
-                                Support team to solve technical problems, debugging, code
-                                reviews, and provide feedback.
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="qd modal-details">
-                        <div class="abstract">Abstract</div>
-
-                        <div class="abstract-details">
-                            The goal is to build an application that would be utilized for
-                            predicting Quality Scores and individual Output Parameter values
-                            for each batch being produced in the plant today.
-                        </div>
-
-                        <div class="res-title">
-                            Key
-                            <span>Responsibilities</span>
-                        </div>
-
-                        <ul class="res-details">
-                            <li>
-                                Owned End-To-End Design, Development, and Integration of
-                                entire Front-End Application from scratch.
-                            </li>
-                            <li>
-                                Working alongside UX designers for various web design
-                                features.
-                            </li>
-                            <li>
-                                Setting up the Application with Django, Node, and Angular
-                                framework.
-                            </li>
-                            <li>
-                                Adding the user authentication system to the application.
-                            </li>
-                            <li>
-                                Development of generic Filters module which can be reused
-                                across webpages.
-                            </li>
-                            <li>
-                                Provided guidance to team members on technical design,
-                                debugging, and optimizing the APIs to meet the requirements
-                                for the customer.
-                            </li>
-                            <li>Developed REST APIs needed for the application.</li>
-                            <li>
-                                Involved in Bi-Weekly customer calls for requirements
-                                gathering.
-                            </li>
-                            <li>
-                                Brainstorming with product managers and users and team for
-                                designing new features in the platform which add value to the
-                                product.
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="pfep modal-details">
-                        <div class="abstract">Abstract</div>
-
-                        <div class="abstract-details">
-                            Application's goal is to increase competitiveness and customer
-                            satisfaction through Optimized Inventory Management (higher
-                            Inventory Turns), better portfolio management, and transparency
-                            on constraints.
-                        </div>
-
-                        <div class="res-title">
-                            Key
-                            <span>Responsibilities</span>
-                        </div>
-
-                        <ul class="res-details">
-                            <li>
-                                Involved in weekly customer calls for requirement gathering.
-                            </li>
-                            <li>Perform monthly data loads.</li>
-                            <li>
-                                Design, Develop, and Deployment of Batch Module – A new
-                                dashboard specifically designed to visualize the performance
-                                of the company at a batch level.
-                            </li>
-                            <li>
-                                Optimization of filter module for high performance and quick
-                                load.
-                            </li>
-                            <li>Involved in making the application responsive.</li>
-                            <li>Fixing bugs raised by the customers.</li>
-                            <li>Developed REST APIs needed for the application.</li>
-                        </ul>
-                    </div>
-                </div>
+            <div class="tech-stack">
+              <div class="tech flex items-center flex-column justify-center">
+                <img src="./images/angular.png" alt="angular" />
+                <img src="./images/django.png" alt="django" />
+                <img src="./images/sql.png" alt="sql" />
+              </div>
             </div>
+          </div>
         </div>
+      </section>
+
+      <section id="contact" class="contact">
+        <div class="title">
+          Contact
+          <span>Me</span>
+        </div>
+        <div class="contact-desc">
+          If you're interested in connecting with me, feel free to send me a
+          message. I look forward to hearing from you!
+        </div>
+
+        <div class="contact-container flex items-center reveal">
+          <div class="left social flex justify-center flex-column">
+            <a
+              href="https://www.linkedin.com/in/vinoth-balaji/"
+              ref="noopener noreferer"
+              target="_blank">
+              <i class="fa fa-linkedin" aria-hidden="true"></i>
+              <span>Connect with me on LinkedIn</span>
+            </a>
+            <a
+              href="https://github.com/vinoth-balaji"
+              ref="noopener noreferer"
+              target="_blank">
+              <i class="fa fa-github" aria-hidden="true"></i>
+              <span>Fork me on GitHub</span>
+            </a>
+            <a
+              href="https://twitter.com/vinoth_balaji_"
+              ref="noopener noreferer"
+              target="_blank">
+              <i class="fa fa-twitter" aria-hidden="true"></i>
+              <span>Follow me on Twitter</span>
+            </a>
+            <a
+              href="https://www.facebook.com/123vincy"
+              ref="noopener noreferer"
+              target="_blank">
+              <i class="fa fa-facebook" aria-hidden="true"></i>
+              <span>Like me on Facebook</span>
+            </a>
+            <a
+              href="https://www.instagram.com/vinoth___balaji/"
+              ref="noopener noreferer"
+              target="_blank">
+              <i class="fa fa-instagram" aria-hidden="true"></i>
+              <span>Follow me on Instagram</span>
+            </a>
+          </div>
+          <div class="divider"></div>
+          <div class="right flex justify-center items-center flex-column">
+            <div class="direct flex justify-center items-center flex-column">
+              <div class="fa fa-phone"></div>
+              <div class="hint">Call Me At</div>
+              <div class="details">
+                <a
+                  href="https://wa.me/919444733175"
+                  ref="noopener noreferer"
+                  target="_blank">
+                  <i class="fa fa-whatsapp" aria-hidden="true"></i>
+                </a>
+                <a href="tel:919444733175" data-rel="external">91 9444733175</a>
+              </div>
+            </div>
+            <div class="direct flex justify-center items-center flex-column">
+              <div class="fa fa-envelope"></div>
+              <div class="hint">Write To Me At</div>
+              <div class="details">
+                <a href="mailto:arni.bvinoth@gmail.com" data-rel="external">
+                  arni.bvinoth@gmail.com
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div id="project-modal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+          <div class="modal-header">
+            <i class="fa fa-times close-modal" aria-hidden="true"></i>
+            <h2 class="ewb modal-details">Engineer's Workbench</h2>
+            <h2 class="qp modal-details">Quality Pulse</h2>
+            <h2 class="qd modal-details">
+              Quality Diagnostics and Prognostics
+            </h2>
+            <h2 class="pfep modal-details">PFEP (Plan for Every Part)</h2>
+          </div>
+          <div class="modal-body">
+            <div class="ewb modal-details">
+              <div class="abstract">Abstract</div>
+
+              <div class="abstract-details">
+                Cerebra Engineer’s Workbench (EWB) is a low-code/no-code
+                self-service data science platform tailored for engineering data
+                analysis. EWB’s primary focus users are Engineers & Analysts
+                working in the core engineering domain who need to analyze data
+                generated by systems, equipment, and processes along the
+                end-to-end life cycle from research & development to customer
+                service.
+              </div>
+
+              <div class="res-title">
+                Key
+                <span>Responsibilities</span>
+              </div>
+
+              <ul class="res-details">
+                <li>
+                  Implemented Node.js with the Express framework as middleware
+                  to connect the front-end UI with the Django back-end, enabling
+                  user authentication and authorization via password and Azure
+                  AD SSO using JWT and OAuth for the EWB platform.
+                </li>
+                <li>
+                  Implemented performance optimizations to reduce the initial
+                  loading time of Canvas/Workbook by 70%. Leveraged techniques
+                  such as lazy-loaded components, on-demand loading, and image
+                  replacement of containers to achieve this improvement.
+                </li>
+                <li>
+                  Developed a custom-built logger application from scratch to
+                  obtain user behavior statistics and aid in debugging.
+                </li>
+                <li>
+                  Containerized the application using Docker, improving
+                  portability and streamlining deployment processes.
+                </li>
+                <li>
+                  Created a Template module for efficient packaging of workbooks
+                  into a single executable, enabling users to execute the entire
+                  package with one click. Users can easily customize inputs with
+                  various sources and configurations, saving time and effort in
+                  running multiple toolboxes individually.
+                </li>
+                <li>
+                  Collaborated with cross-functional stakeholders, including
+                  product managers and end-users, to conceptualize and design
+                  innovative features aimed at enhancing the overall value of
+                  the platform.
+                </li>
+                <li>
+                  Spearheaded the design, development, testing, and deployment
+                  of the highly generic and config-driven Output Engine module,
+                  enabling users to interact with visual outputs in the form of
+                  charts and tables.
+                </li>
+                <li>
+                  Addressed identified vulnerabilities during security audits
+                  and implemented necessary fixes to ensure the platform's
+                  security and compliance with industry standards.
+                </li>
+                <li>
+                  Developed a customizable set of charts and graphs for visual
+                  data analysis through the creation of the Widget module.
+                </li>
+                <li>
+                  Implemented real-time communication using technologies such as
+                  WebSockets and Redis to provide users with up-to-date
+                  information and notifications.
+                </li>
+                <li>
+                  Implemented security measures to protect sensitive data and
+                  prevent unauthorized access and session hijacking of the
+                  application.
+                </li>
+                <li>
+                  Architected, developed, tested, and deployed the Aggregation
+                  Framework to visualize large datasets in a single chart,
+                  streamlining data analysis for end-users.
+                </li>
+                <li>
+                  Collaborated with the product team to design and develop the
+                  Packaging and Prediction module, a valuable addition to the
+                  platform. This module enables users to package and employ ML
+                  toolboxes for accurate outcome predictions with alternate data
+                  sources.
+                </li>
+                <li>
+                  Provided technical guidance and mentorship to junior team
+                  members on various platform modules, including conducting code
+                  reviews to ensure adherence to best practices and standards.
+                </li>
+                <li>
+                  Stayed up-to-date with emerging technologies and trends in
+                  software development, and provided recommendations for
+                  incorporating new tools and technologies into the development
+                  process.
+                </li>
+              </ul>
+            </div>
+            <div class="qp modal-details">
+              <div class="abstract">Abstract</div>
+
+              <div class="abstract-details">
+                Quality Pulse application is built mainly for quality
+                benchmarking purposes. The application provides the status of
+                the “Quality” of the Bulk Material produced in the manufacturing
+                plant. The application will categorize the finished goods into
+                multiple categories such as excellent, good, bad, and poor. The
+                basis or the benchmark for categorization is defined by the
+                manufacturing unit quality team. Each batch manufactured in the
+                plant is assigned a quality rating for comparison.
+              </div>
+
+              <div class="res-title">
+                Key
+                <span>Responsibilities</span>
+              </div>
+
+              <ul class="res-details">
+                <li>
+                  Successfully led the migration of applications from jQuery to
+                  the MEAN stack, improving overall performance and
+                  maintainability.
+                </li>
+                <li>
+                  Collaborated with UX designers to implement new features and
+                  improve UI/UX design, resulting in a more user-friendly
+                  experience.
+                </li>
+                <li>
+                  Spearheaded end-to-end design, development, and integration of
+                  the entire front-end application from the ground up.
+                </li>
+                <li>
+                  Collaborated with UX designers to implement various web design
+                  features.
+                </li>
+                <li>
+                  Configured the application with Django, Node, and Angular
+                  frameworks.
+                </li>
+                <li>
+                  Implemented a robust user authentication system for the
+                  application.
+                </li>
+                <li>
+                  Designed and developed a reusable Filters module for use
+                  across web pages.
+                </li>
+                <li>
+                  Mentored team members on technical design, debugging, and
+                  optimization of APIs to meet customer requirements.
+                </li>
+                <li>Developed REST APIs essential for the application.</li>
+                <li>
+                  Conducted bi-weekly customer calls for requirements gathering.
+                </li>
+                <li>
+                  Collaborated with product managers, users, and the team to
+                  design new features that added value to the platform.
+                </li>
+              </ul>
+            </div>
+            <div class="qd modal-details">
+              <div class="abstract">Abstract</div>
+
+              <div class="abstract-details">
+                The goal is to build an application that would be utilized for
+                predicting Quality Scores and individual Output Parameter values
+                for each batch being produced in the plant today.
+              </div>
+
+              <div class="res-title">
+                Key
+                <span>Responsibilities</span>
+              </div>
+
+              <ul class="res-details">
+                <li>
+                  Owned End-To-End Design, Development, and Integration of
+                  entire Front-End Application from scratch.
+                </li>
+                <li>
+                  Working alongside UX designers for various web design
+                  features.
+                </li>
+                <li>
+                  Setting up the Application with Django, Node, and Angular
+                  framework.
+                </li>
+                <li>
+                  Adding the user authentication system to the application.
+                </li>
+                <li>
+                  Development of generic Filters module which can be reused
+                  across webpages.
+                </li>
+                <li>
+                  Provided guidance to team members on technical design,
+                  debugging, and optimizing the APIs to meet the requirements
+                  for the customer.
+                </li>
+                <li>Developed REST APIs needed for the application.</li>
+                <li>
+                  Involved in Bi-Weekly customer calls for requirements
+                  gathering.
+                </li>
+                <li>
+                  Brainstorming with product managers and users and team for
+                  designing new features in the platform which add value to the
+                  product.
+                </li>
+              </ul>
+            </div>
+            <div class="pfep modal-details">
+              <div class="abstract">Abstract</div>
+
+              <div class="abstract-details">
+                Application's goal is to increase competitiveness and customer
+                satisfaction through Optimized Inventory Management (higher
+                Inventory Turns), better portfolio management, and transparency
+                on constraints.
+              </div>
+
+              <div class="res-title">
+                Key
+                <span>Responsibilities</span>
+              </div>
+
+              <ul class="res-details">
+                <li>
+                  Involved in weekly customer calls for requirement gathering.
+                </li>
+                <li>Perform monthly data loads.</li>
+                <li>
+                  Design, Develop, and Deployment of Batch Module – A new
+                  dashboard specifically designed to visualize the performance
+                  of the company at a batch level.
+                </li>
+                <li>
+                  Optimization of filter module for high performance and quick
+                  load.
+                </li>
+                <li>Involved in making the application responsive.</li>
+                <li>Fixing bugs raised by the customers.</li>
+                <li>Developed REST APIs needed for the application.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
     <script type="text/javascript" src="js/app.js"></script>
-</body>
-
+  </body>
 </html>
