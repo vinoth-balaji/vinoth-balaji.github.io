@@ -162,6 +162,7 @@ header nav .branding {
   transform: scale(1.2);
   transition: all 2s ease-in-out;
   cursor: pointer;
+  border-bottom-right-radius: 150px;
 }
 .hero .left img:hover {
   filter: grayscale(100%);
