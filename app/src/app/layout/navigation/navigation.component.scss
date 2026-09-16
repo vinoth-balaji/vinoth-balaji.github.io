@@ -134,7 +134,6 @@
   // ─── Desktop Links ─────────────────────────────────────────────────────────
 
   &__links {
-    display: flex;
     align-items: center;
     gap: var(--space-1);
     margin-left: auto;
@@ -191,7 +190,6 @@
   // ─── Hamburger ─────────────────────────────────────────────────────────────
 
   &__hamburger {
-    display: flex;
     flex-direction: column;
     gap: 5px;
     padding: var(--space-2);
