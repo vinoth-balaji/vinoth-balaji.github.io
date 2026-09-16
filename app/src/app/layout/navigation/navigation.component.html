@@ -1,0 +1,87 @@
+<header class="nav" [class.nav--scrolled]="isScrolled()">
+  <div class="nav__container">
+
+    <!-- Logo -->
+    <button class="nav__logo" (click)="scrollTo('hero')" aria-label="Scroll to top">
+      <img class="nav__logo-mark" src="/profile-removebg-preview.png" alt="Vinoth Balaji" />
+      <span class="nav__logo-text">Vinoth B</span>
+      <span class="nav__logo-role">Technical Lead</span>
+    </button>
+
+    <!-- Desktop links -->
+    <nav class="nav__links" aria-label="Main navigation">
+      @for (link of navLinks; track link.sectionId) {
+        <button
+          class="nav__link"
+          [class.nav__link--active]="isActive(link.sectionId)"
+          (click)="scrollTo(link.sectionId)"
+        >
+          {{ link.label }}
+        </button>
+      }
+    </nav>
+
+    <!-- Desktop CTA -->
+    <div class="nav__actions">
+      <button class="btn btn--outline btn--sm" (click)="scrollTo('contact')">
+        Let's Connect
+      </button>
+    </div>
+
+    <!-- Mobile hamburger -->
+    <button
+      class="nav__hamburger"
+      [class.nav__hamburger--open]="isMobileOpen()"
+      (click)="toggleMobileMenu()"
+      aria-label="Toggle navigation menu"
+      [attr.aria-expanded]="isMobileOpen()"
+      aria-controls="mobile-nav"
+    >
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+  </div>
+
+  <!-- Scroll-progress bar: GSAP scrubs scaleX 0→1 as page scrolls -->
+  <div class="nav__progress-bar" aria-hidden="true"></div>
+</header>
+
+<!-- Mobile menu -->
+<div
+  id="mobile-nav"
+  class="mobile-menu"
+  [class.mobile-menu--open]="isMobileOpen()"
+  (click)="closeMobileMenu()"
+  role="dialog"
+  aria-label="Navigation menu"
+  aria-modal="true"
+>
+  <div class="mobile-menu__panel" (click)="$event.stopPropagation()">
+    <div class="mobile-menu__header">
+      <span class="nav__logo-text">Vinoth B</span>
+      <button class="mobile-menu__close" (click)="closeMobileMenu()" aria-label="Close navigation menu">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+          <path d="M15 5L5 15M5 5l10 10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+      </button>
+    </div>
+    <nav class="mobile-menu__links" aria-label="Mobile navigation">
+      @for (link of mobileNavLinks; track link.sectionId) {
+        <button
+          class="mobile-menu__link"
+          [class.mobile-menu__link--active]="isActive(link.sectionId)"
+          (click)="scrollTo(link.sectionId)"
+        >
+          {{ link.label }}
+        </button>
+      }
+    </nav>
+    <div class="mobile-menu__footer">
+      <button class="btn btn--primary" style="width: 100%" (click)="scrollTo('contact')">
+        Let's Connect
+      </button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,229 @@
+<section class="impact">
+  <div class="container">
+
+    <!-- ─── Section header ──────────────────────────────────────────────── -->
+    <header class="impact__header observe-me">
+      <span class="text-label--accent">Impact</span>
+      <h2 class="impact__heading">Delivering results,<br> consistently.</h2>
+    </header>
+
+    <div class="impact__stats observe-me" aria-label="Key career highlights">
+      <div class="impact-stat">
+        <span class="impact-stat__value">8+</span>
+        <span class="impact-stat__label">Years building enterprise products</span>
+      </div>
+      <div class="impact-stat">
+        <span class="impact-stat__value">5</span>
+        <span class="impact-stat__label">Major platforms delivered</span>
+      </div>
+      <div class="impact-stat">
+        <span class="impact-stat__value">30+</span>
+        <span class="impact-stat__label">Engineers mentored and developed</span>
+      </div>
+      <div class="impact-stat">
+        <span class="impact-stat__value">3</span>
+        <span class="impact-stat__label">Core industries served</span>
+      </div>
+    </div>
+
+    <!-- ─── Bento grid ─────────────────────────────────────────────────── -->
+    <div class="bento" role="list">
+
+      <!-- ══════════════════════════════════════════════════════════════════
+           C1 — 8+ Years  [tall, 4 cols × 2 rows]
+           ══════════════════════════════════════════════════════════════════ -->
+      <article class="bento-card bc--blue c-years" role="listitem" aria-label="8+ years of experience">
+
+        <!-- Vertical year-dot timeline (decorative) -->
+        <div class="yr-dots" aria-hidden="true">
+          @for (d of yearDots; track d; let i = $index) {
+            <div class="yr-dot" [style.animation-delay]="i * 90 + 'ms'"></div>
+          }
+        </div>
+
+        <div class="bc-inner">
+          <div class="bc-metric">
+            <span class="bc-val">8</span><span class="bc-sup">+</span>
+          </div>
+          <span class="bc-label">Years</span>
+          <span class="bc-sublabel">Enterprise Software Engineering</span>
+          <p class="bc-copy">
+            From monolith migrations to cloud-native AI platforms —
+            spanning Aviation, BFSI, Healthcare, and Retail.
+          </p>
+        </div>
+
+        <!-- Subtle corner glow -->
+        <div class="bc-glow bc-glow--blue" aria-hidden="true"></div>
+      </article>
+
+      <!-- ══════════════════════════════════════════════════════════════════
+           C2 — 5 Major Products  [wide, 5 cols]
+           ══════════════════════════════════════════════════════════════════ -->
+      <article class="bento-card bc--cyan c-products" role="listitem" aria-label="5 major products led">
+
+        <div class="bc-inner">
+          <div class="bc-metric">
+            <span class="bc-val bc-val--cyan">5</span>
+          </div>
+          <span class="bc-label">Major Products</span>
+          <p class="bc-copy">Led concurrently, each with full technical and delivery ownership.</p>
+
+          <div class="product-row" aria-label="Products: Aviation, Pricing, CDP, VaR, MyOps">
+            @for (p of products; track p) {
+              <span class="product-chip">{{ p }}</span>
+            }
+          </div>
+        </div>
+
+        <div class="bc-glow bc-glow--cyan" aria-hidden="true"></div>
+      </article>
+
+      <!-- ══════════════════════════════════════════════════════════════════
+           C3 — 100% Milestone Delivery  [small, 3 cols]
+           ══════════════════════════════════════════════════════════════════ -->
+      <article class="bento-card bc--blue c-milestone" role="listitem" aria-label="100% milestone delivery rate">
+
+        <!-- Animated SVG progress ring (circumference of r=32 ≈ 201) -->
+        <svg class="ring-svg" viewBox="0 0 80 80" aria-hidden="true">
+          <defs>
+            <linearGradient id="ring-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%"   stop-color="#3b82f6"/>
+              <stop offset="100%" stop-color="#8b5cf6"/>
+            </linearGradient>
+          </defs>
+          <circle class="ring-track" cx="40" cy="40" r="32"/>
+          <circle class="ring-fill"  cx="40" cy="40" r="32"/>
+        </svg>
+
+        <div class="bc-inner">
+          <div class="bc-metric">
+            <span class="bc-val bc-val--sm">100<span class="bc-pct">%</span></span>
+          </div>
+          <span class="bc-label">Milestone Delivery</span>
+          <p class="bc-copy">Every committed deadline, every time. Across 8+ concurrent deliveries.</p>
+        </div>
+      </article>
+
+      <!-- ══════════════════════════════════════════════════════════════════
+           C4 — 30+ Engineers Mentored  [medium, 3 cols]
+           ══════════════════════════════════════════════════════════════════ -->
+      <article class="bento-card bc--violet c-engineers" role="listitem" aria-label="30 plus engineers mentored">
+
+        <!-- Avatar stack -->
+        <div class="avatar-stack" aria-hidden="true">
+          @for (n of [0,1,2,3,4]; track n) {
+            <div class="avatar-item" [style.margin-left.px]="n > 0 ? -10 : 0">
+              <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="16" cy="16" r="16" fill="rgba(139,92,246,0.15)"/>
+                <circle cx="16" cy="12" r="5.5" fill="rgba(139,92,246,0.5)"/>
+                <path d="M5 30c0-6.075 4.925-11 11-11s11 4.925 11 11" fill="rgba(139,92,246,0.35)"/>
+              </svg>
+            </div>
+          }
+        </div>
+
+        <div class="bc-inner">
+          <div class="bc-metric">
+            <span class="bc-val bc-val--violet">30+</span>
+          </div>
+          <span class="bc-label">Engineers Mentored</span>
+          <p class="bc-copy">Grew into independent feature owners and client-facing contributors.</p>
+        </div>
+      </article>
+
+      <!-- ══════════════════════════════════════════════════════════════════
+           C5 — 0 Critical Escalations  [narrow, 2 cols]
+           ══════════════════════════════════════════════════════════════════ -->
+      <article class="bento-card bc--zero c-escalate" role="listitem" aria-label="Zero critical delivery escalations">
+        <div class="bc-inner bc-inner--center">
+          <span class="zero-val" aria-hidden="true">0</span>
+          <span class="bc-label">Critical<br>Escalations</span>
+          <p class="bc-copy bc-copy--xs">Clean delivery record.</p>
+        </div>
+      </article>
+
+      <!-- ══════════════════════════════════════════════════════════════════
+           C6 — AI-First Engineering  [medium, 3 cols]
+           ══════════════════════════════════════════════════════════════════ -->
+      <article class="bento-card bc--ai c-ai" role="listitem" aria-label="AI-first engineering">
+
+        <!-- Sparkle icon -->
+        <div class="ai-sparkle" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2c0 0 .7 6.5 2.1 8.5 1.4 2 8.4 1.5 8.4 1.5s-7 0-8.4 1.5C12.7 15.5 12 22 12 22s-.7-6.5-2.1-8.5C8.5 11.5 2 12 2 12s6.5-.5 7.9-1.5C11.3 8.5 12 2 12 2z"/>
+          </svg>
+        </div>
+
+        <div class="bc-inner">
+          <span class="bc-label bc-label--lg">AI-First<br>Engineering</span>
+          <p class="bc-copy">Driving GenAI adoption, AI-assisted development, and LLM orchestration in production environments.</p>
+          <div class="ai-tag-row">
+            @for (tag of aiTags; track tag) {
+              <span class="ai-chip">{{ tag }}</span>
+            }
+          </div>
+        </div>
+
+        <div class="bc-glow bc-glow--violet" aria-hidden="true"></div>
+      </article>
+
+      <!-- ══════════════════════════════════════════════════════════════════
+           C7 — Client Partnership  [medium-wide, 5 cols]
+           ══════════════════════════════════════════════════════════════════ -->
+      <article class="bento-card bc--blue c-client" role="listitem" aria-label="Client partnership">
+
+        <div class="bc-icon-mark" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+               stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+            <circle cx="9" cy="7" r="4"/>
+            <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/>
+          </svg>
+        </div>
+
+        <div class="bc-inner">
+          <span class="bc-label bc-label--lg">Client<br>Partnership</span>
+          <p class="bc-copy bc-copy--quote">
+            Not "I built what was requested" — "I helped the client arrive at the right solution."
+          </p>
+        </div>
+
+        <div class="bc-glow bc-glow--blue" aria-hidden="true"></div>
+      </article>
+
+      <!-- ══════════════════════════════════════════════════════════════════
+           C8 — Full-Stack Ownership  [very wide, 7 cols]
+           ══════════════════════════════════════════════════════════════════ -->
+      <article class="bento-card bc--gradient c-fullstack" role="listitem" aria-label="Full-stack ownership">
+
+        <div class="bc-inner">
+          <span class="bc-label bc-label--lg">Full-Stack Ownership</span>
+          <p class="bc-copy bc-copy--pipeline">
+            End-to-end responsibility — from first line of UI to cloud infrastructure and production monitoring.
+          </p>
+
+          <div class="pipeline" aria-label="Technology stack: Frontend to Production">
+            @for (stage of pipeline; track stage; let last = $last; let i = $index) {
+              <div class="pipeline__stage" [style.animation-delay]="(i * 70) + 'ms'">
+                {{ stage }}
+              </div>
+              @if (!last) {
+                <div class="pipeline__arrow" aria-hidden="true">
+                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                    <path d="M2 7h10M8 3l4 4-4 4"
+                          stroke="currentColor" stroke-width="1.25"
+                          stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </div>
+              }
+            }
+          </div>
+        </div>
+
+        <div class="bc-glow bc-glow--gradient" aria-hidden="true"></div>
+      </article>
+
+    </div><!-- /.bento -->
+  </div><!-- /.container -->
+</section>

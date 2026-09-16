@@ -1,0 +1,81 @@
+:host {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  display: block;
+  pointer-events: none;
+  background: #07090d;
+}
+
+.ambient-bg__canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.9;
+}
+
+.ambient-bg__grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 64px 64px;
+  mask-image: radial-gradient(ellipse 120% 100% at 50% 40%, black 40%, transparent 96%);
+}
+
+.ambient-bg__orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(100px);
+}
+
+.ambient-bg__orb--blue {
+  width: clamp(480px, 60vw, 900px);
+  height: clamp(480px, 60vw, 900px);
+  top: -20%;
+  left: -15%;
+  background: radial-gradient(circle at 35% 35%, rgba(59, 130, 246, 0.3) 0%, transparent 65%);
+  animation: ambient-orb-a 26s ease-in-out infinite;
+}
+
+.ambient-bg__orb--violet {
+  width: clamp(320px, 42vw, 620px);
+  height: clamp(320px, 42vw, 620px);
+  top: 35%;
+  right: -18%;
+  background: radial-gradient(circle at 60% 40%, rgba(139, 92, 246, 0.22) 0%, transparent 65%);
+  animation: ambient-orb-b 32s ease-in-out infinite;
+}
+
+.ambient-bg__orb--cyan {
+  width: clamp(260px, 34vw, 480px);
+  height: clamp(260px, 34vw, 480px);
+  bottom: -12%;
+  left: 30%;
+  background: radial-gradient(circle at 50% 50%, rgba(34, 211, 238, 0.16) 0%, transparent 65%);
+  animation: ambient-orb-c 20s ease-in-out infinite 4s;
+}
+
+@keyframes ambient-orb-a {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33%       { transform: translate(24px, -18px) scale(1.03); }
+  66%       { transform: translate(-14px, 22px) scale(0.97); }
+}
+
+@keyframes ambient-orb-b {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50%       { transform: translate(-28px, 20px) scale(1.05); }
+}
+
+@keyframes ambient-orb-c {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50%       { transform: translate(14px, -20px) scale(1.08); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ambient-bg__orb {
+    animation: none;
+  }
+}

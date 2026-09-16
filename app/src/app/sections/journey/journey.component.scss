@@ -1,0 +1,492 @@
+// ─── Section ──────────────────────────────────────────────────────────────────
+
+.ct {
+  padding: clamp(80px, 10vw, 130px) 0;
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 20%;
+    right: 0;
+    width: 480px;
+    height: 480px;
+    background: radial-gradient(ellipse at right, rgba(139, 92, 246, 0.05) 0%, transparent 65%);
+    pointer-events: none;
+    animation: journey-ambient 16s ease-in-out infinite alternate;
+  }
+}
+
+@keyframes journey-ambient {
+  from { transform: translateX(0) scale(1); }
+  to   { transform: translateX(-6%) scale(1.08); }
+}
+
+// ─── Header ───────────────────────────────────────────────────────────────────
+
+.ct-header {
+  max-width: 540px;
+  margin: 0 0 56px;
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+  &.is-visible { opacity: 1; transform: translateY(0); }
+}
+
+.ct-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-violet-light);
+  margin-bottom: 14px;
+}
+
+.ct-eyebrow__dot {
+  display: block;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: currentColor;
+}
+
+.ct-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.25rem, 4.5vw, 3.5rem);
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  line-height: 1.05;
+  color: var(--color-text-primary);
+  margin: 0 0 16px;
+}
+
+.ct-title-accent {
+  background: linear-gradient(135deg, #a78bfa 0%, #60a5fa 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.ct-subtitle {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.65;
+  color: var(--color-text-muted);
+  max-width: 420px;
+}
+
+// ─── Track wrapper ────────────────────────────────────────────────────────────
+
+.ct-track-wrap {
+  position: relative;
+  margin-bottom: 40px;
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s ease 0.1s, transform 0.7s ease 0.1s;
+  &.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+
+    .ct-rail__fill { transform: scaleX(1); }
+
+    .ct-stage {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+// ─── Rail line ────────────────────────────────────────────────────────────────
+
+.ct-rail {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: var(--color-border-subtle);
+  z-index: 0;
+  overflow: hidden;
+}
+
+.ct-rail__fill {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to right,
+    rgba(100, 116, 139, 0.5) 0%,
+    rgba(59, 130, 246, 0.6) 40%,
+    rgba(34, 211, 238, 0.7) 70%,
+    rgba(139, 92, 246, 0.9) 100%
+  );
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 1.2s cubic-bezier(0.4, 0, 0.2, 1) 0.3s;
+}
+
+// ─── Stages container ─────────────────────────────────────────────────────────
+
+.ct-stages {
+  display: flex;
+  align-items: flex-end;
+  gap: 2px;
+  position: relative;
+}
+
+// ─── Individual stage card ────────────────────────────────────────────────────
+
+.ct-stage {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  flex: 1;
+  min-height: var(--card-min-h, 120px);
+  cursor: pointer;
+  border-radius: 10px 10px 0 0;
+  padding-bottom: 24px;
+  overflow: visible;
+
+  // Stagger entrance per stage
+  opacity: 0;
+  transform: translateY(16px);
+  transition:
+    opacity 0.5s ease calc(var(--si) * 90ms + 0.2s),
+    transform 0.5s ease calc(var(--si) * 90ms + 0.2s);
+
+  // Ascending minimum heights (creates staircase)
+  &:nth-child(1) { --card-min-h: 108px; }
+  &:nth-child(2) { --card-min-h: 152px; }
+  &:nth-child(3) { --card-min-h: 200px; }
+  &:nth-child(4) { --card-min-h: 248px; }
+  &:nth-child(5) {
+    --card-min-h: 0px;  // current: height is content-driven (always expanded)
+    flex: 1.55;         // slightly wider
+    cursor: default;
+  }
+}
+
+// ─── Color tokens per accent ──────────────────────────────────────────────────
+
+.ct-stage--slate  { --c: 100, 116, 139; }
+.ct-stage--blue   { --c: 59, 130, 246;  }
+.ct-stage--cyan   { --c: 34, 211, 238;  }
+.ct-stage--violet { --c: 139, 92, 246;  }
+
+// ─── Ascending bar (visual staircase) ────────────────────────────────────────
+
+.ct-stage__bar {
+  position: absolute;
+  inset: 0 0 0 0;
+  border-radius: 10px 10px 0 0;
+  background: rgba(var(--c), 0.04);
+  border: 1px solid rgba(var(--c), 0.12);
+  border-bottom: none;
+  transition: background 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+  z-index: 0;
+}
+
+// ─── Hover / active state ─────────────────────────────────────────────────────
+
+.ct-stage--active,
+.ct-stage:hover {
+  .ct-stage__bar {
+    background: rgba(var(--c), 0.08);
+    border-color: rgba(var(--c), 0.28);
+    box-shadow: 0 0 0 1px rgba(var(--c), 0.1) inset;
+  }
+
+  .ct-stage__hint { opacity: 0; }
+
+  .ct-stage__achievements {
+    grid-template-rows: 1fr;
+  }
+
+  .ct-stage__achievement {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// ─── Current stage ────────────────────────────────────────────────────────────
+
+.ct-stage--current {
+  cursor: default;
+
+  .ct-stage__bar {
+    background: rgba(var(--c), 0.07);
+    border-color: rgba(var(--c), 0.3);
+    box-shadow:
+      0 0 0 1px rgba(var(--c), 0.12) inset,
+      0 0 40px rgba(var(--c), 0.08);
+  }
+
+  // Always expanded
+  .ct-stage__achievements {
+    grid-template-rows: 1fr;
+  }
+
+  .ct-stage__achievement {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .ct-stage__hint { display: none; }
+}
+
+// ─── Dot on the rail ─────────────────────────────────────────────────────────
+
+.ct-stage__dot {
+  position: absolute;
+  bottom: -4px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgb(var(--c));
+  z-index: 2;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+  .ct-stage--current & {
+    width: 12px;
+    height: 12px;
+    bottom: -6px;
+    box-shadow: 0 0 0 3px rgba(var(--c), 0.25), 0 0 12px rgba(var(--c), 0.4);
+  }
+
+  .ct-stage--active &,
+  .ct-stage:hover & {
+    transform: translateX(-50%) scale(1.35);
+    box-shadow: 0 0 0 3px rgba(var(--c), 0.2);
+  }
+}
+
+.ct-stage__dot-ring {
+  position: absolute;
+  inset: -6px;
+  border-radius: 50%;
+  border: 1px solid rgba(139, 92, 246, 0.45);
+  animation: dot-pulse 2.5s ease-in-out infinite;
+}
+
+@keyframes dot-pulse {
+  0%, 100% { transform: scale(1);    opacity: 0.8; }
+  60%       { transform: scale(1.7); opacity: 0; }
+}
+
+// ─── Card body ────────────────────────────────────────────────────────────────
+
+.ct-stage__body {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding: 0 14px;
+}
+
+.ct-stage__year {
+  font-family: var(--font-mono);
+  font-size: 0.625rem;
+  letter-spacing: 0.1em;
+  color: rgb(var(--c));
+  font-weight: 600;
+  opacity: 0.85;
+  display: block;
+  margin-bottom: 2px;
+}
+
+.ct-stage__role-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.ct-stage__role {
+  font-family: var(--font-display);
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  line-height: 1.25;
+  color: var(--color-text-primary);
+  margin: 0;
+
+  &--alt {
+    color: var(--color-text-muted);
+    font-size: 0.75rem;
+    font-weight: 500;
+
+    .ct-stage--current & { color: rgba(139, 92, 246, 0.8); }
+  }
+}
+
+.ct-stage__phase {
+  font-family: var(--font-mono);
+  font-size: 0.5625rem;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  display: block;
+  margin-top: 3px;
+  line-height: 1.3;
+}
+
+// ─── Achievements (grid-template-rows expand trick) ───────────────────────────
+
+.ct-stage__achievements {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  margin-top: 2px;
+}
+
+.ct-stage__achievements-inner {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  padding-top: 10px;
+}
+
+.ct-stage__achievement {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  line-height: 1.55;
+  color: var(--color-text-secondary);
+  padding-left: 10px;
+  position: relative;
+  opacity: 0;
+  transform: translateY(4px);
+  transition:
+    opacity 0.25s ease calc(var(--ai, 0) * 60ms + 0.1s),
+    transform 0.25s ease calc(var(--ai, 0) * 60ms + 0.1s);
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 7px;
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    background: rgba(var(--c), 0.7);
+  }
+
+  .ct-stage--current & {
+    color: var(--color-text-secondary);
+    font-size: 0.8125rem;
+  }
+}
+
+// ─── Hover hint ───────────────────────────────────────────────────────────────
+
+.ct-stage__hint {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: rgba(var(--c), 0.4);
+  opacity: 1;
+  transition: opacity 0.2s ease;
+  z-index: 1;
+}
+
+// ─── Evolution flow row ───────────────────────────────────────────────────────
+
+.ct-evolution {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px 4px;
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 0.5s ease 0.5s, transform 0.5s ease 0.5s;
+
+  &.is-visible { opacity: 1; transform: translateY(0); }
+}
+
+.ct-evo {
+  font-family: var(--font-mono);
+  font-size: 0.625rem;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+  border: 1px solid transparent;
+  color: var(--color-text-muted);
+  background: rgba(255, 255, 255, 0.03);
+  transition: all 0.2s ease;
+
+  &--slate  { --c-evo: 100, 116, 139; }
+  &--blue   { --c-evo: 59, 130, 246;  }
+  &--cyan   { --c-evo: 34, 211, 238;  }
+  &--violet { --c-evo: 139, 92, 246;  }
+
+  &--current {
+    background: rgba(var(--c-evo), 0.1);
+    border-color: rgba(var(--c-evo), 0.3);
+    color: rgb(var(--c-evo));
+    font-weight: 600;
+  }
+}
+
+.ct-evo-arrow {
+  font-family: var(--font-mono);
+  font-size: 0.5625rem;
+  color: var(--color-text-muted);
+  opacity: 0.35;
+  user-select: none;
+}
+
+// ─── Mobile ───────────────────────────────────────────────────────────────────
+
+@media (max-width: 860px) {
+  .ct-stages {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1px;
+  }
+
+  .ct-rail { display: none; }
+
+  .ct-stage {
+    min-height: 0 !important;
+    border-radius: 8px;
+    padding: 14px;
+    padding-bottom: 14px;
+    flex: none !important;
+    cursor: pointer;
+
+    &:nth-child(5) { cursor: default; }
+  }
+
+  .ct-stage__bar {
+    inset: 0;
+    border-radius: 8px;
+    border-bottom: 1px solid rgba(var(--c), 0.12);
+  }
+
+  .ct-stage__dot { display: none; }
+
+  .ct-stage__body { padding: 0; }
+
+  .ct-stage__role { font-size: 0.9375rem; }
+
+  .ct-stage--current {
+    .ct-stage__bar {
+      background: rgba(var(--c), 0.1);
+      border-color: rgba(var(--c), 0.3);
+    }
+  }
+
+  // On mobile: show all achievements for current, tap to reveal for others
+  .ct-evolution { gap: 4px 2px; }
+  .ct-evo { font-size: 0.5625rem; padding: 3px 7px; }
+}
+
+@media (max-width: 560px) {
+  .ct-evolution { display: none; }
+}

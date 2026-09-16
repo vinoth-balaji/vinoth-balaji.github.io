@@ -1,0 +1,164 @@
+@if (isOpen()) {
+  <!-- Backdrop -->
+  <div
+    class="cp-overlay"
+    (click)="close()"
+    role="dialog"
+    aria-modal="true"
+    aria-label="Command palette"
+  >
+    <!-- Dialog -->
+    <div class="cp-dialog" (click)="$event.stopPropagation()">
+
+      <!-- ── Search row ─────────────────────────────────────────────── -->
+      <div class="cp-search">
+        <svg class="cp-search__icon" width="16" height="16" viewBox="0 0 24 24"
+             fill="none" stroke="currentColor" stroke-width="2"
+             stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="11" cy="11" r="8"/>
+          <path d="M21 21l-4.35-4.35"/>
+        </svg>
+
+        <input
+          #searchInput
+          class="cp-search__input"
+          type="text"
+          placeholder="Type a command or search…"
+          [value]="query()"
+          (input)="onInput($event)"
+          (keydown)="onSearchKeydown($event)"
+          autocomplete="off"
+          spellcheck="false"
+          aria-label="Search commands"
+          aria-autocomplete="list"
+          [attr.aria-activedescendant]="'cp-item-' + selectedIndex()"
+        >
+
+        <kbd class="cp-search__esc" (click)="close()">Esc</kbd>
+      </div>
+
+      <!-- ── Results ────────────────────────────────────────────────── -->
+      <div class="cp-results" #listbox role="listbox" aria-label="Commands">
+
+        @if (filteredGroups().length === 0) {
+          <div class="cp-empty">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+                 stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+              <circle cx="11" cy="11" r="8"/>
+              <path d="M21 21l-4.35-4.35"/>
+            </svg>
+            No results for <em class="cp-empty__term">{{ query() }}</em>
+          </div>
+        }
+
+        @for (group of filteredGroups(); track group.category) {
+          <div class="cp-group">
+            <div class="cp-group__label" aria-hidden="true">{{ group.category }}</div>
+
+            @for (cmd of group.commands; track cmd.id) {
+              <button
+                class="cp-item"
+                [class.cp-item--active]="isSelected(cmd.flatIndex)"
+                [id]="'cp-item-' + cmd.flatIndex"
+                [attr.data-index]="cmd.flatIndex"
+                role="option"
+                [attr.aria-selected]="isSelected(cmd.flatIndex)"
+                (click)="execute(cmd)"
+                (mouseenter)="hover(cmd.flatIndex)"
+              >
+                <!-- Icon -->
+                <span class="cp-item__icon" aria-hidden="true">
+                  @switch (cmd.iconName) {
+                    @case ('user') {
+                      <svg width="15" height="15" viewBox="0 0 24 24" fill="none"
+                           stroke="currentColor" stroke-width="1.75" stroke-linecap="round">
+                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                        <circle cx="12" cy="7" r="4"/>
+                      </svg>
+                    }
+                    @case ('grid') {
+                      <svg width="15" height="15" viewBox="0 0 24 24" fill="none"
+                           stroke="currentColor" stroke-width="1.75" stroke-linecap="round">
+                        <rect x="3" y="3" width="7" height="7" rx="1"/>
+                        <rect x="14" y="3" width="7" height="7" rx="1"/>
+                        <rect x="3" y="14" width="7" height="7" rx="1"/>
+                        <rect x="14" y="14" width="7" height="7" rx="1"/>
+                      </svg>
+                    }
+                    @case ('ai') {
+                      <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2c0 0 .6 6.3 1.8 8.2C15 12 22 12 22 12s-7 0-8.2 1.8C12.6 15.7 12 22 12 22s-.6-6.3-1.8-8.2C9 12 2 12 2 12s7 0 8.2-1.8C11.4 8.3 12 2 12 2z"/>
+                      </svg>
+                    }
+                    @case ('mail') {
+                      <svg width="15" height="15" viewBox="0 0 24 24" fill="none"
+                           stroke="currentColor" stroke-width="1.75" stroke-linecap="round">
+                        <rect x="2" y="4" width="20" height="16" rx="2"/>
+                        <path d="M22 7L12 13 2 7"/>
+                      </svg>
+                    }
+                    @case ('github') {
+                      <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844a9.59 9.59 0 0 1 2.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0 0 22 12.017C22 6.484 17.522 2 12 2z"/>
+                      </svg>
+                    }
+                    @case ('linkedin') {
+                      <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+                        <rect x="2" y="9" width="4" height="12"/>
+                        <circle cx="4" cy="4" r="2"/>
+                      </svg>
+                    }
+                    @case ('download') {
+                      <svg width="15" height="15" viewBox="0 0 24 24" fill="none"
+                           stroke="currentColor" stroke-width="1.75" stroke-linecap="round">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                        <polyline points="7 10 12 15 17 10"/>
+                        <line x1="12" y1="15" x2="12" y2="3"/>
+                      </svg>
+                    }
+                    @case ('palette') {
+                      <svg width="15" height="15" viewBox="0 0 24 24" fill="none"
+                           stroke="currentColor" stroke-width="1.75" stroke-linecap="round">
+                        <circle cx="12" cy="12" r="10"/>
+                        <path d="M12 2a10 10 0 0 1 0 20c-1.1 0-2-.9-2-2v-1c0-1.1-.9-2-2-2H5a3 3 0 0 1-3-3 10 10 0 0 1 10-12z"/>
+                      </svg>
+                    }
+                  }
+                </span>
+
+                <!-- Label with fuzzy-match highlights -->
+                <span class="cp-item__label">
+                  @for (seg of cmd.segments; track $index) {
+                    <span [class.cp-item__match]="seg.matched">{{ seg.char }}</span>
+                  }
+                </span>
+
+                @if (cmd.hint) {
+                  <span class="cp-item__hint">{{ cmd.hint }}</span>
+                }
+              </button>
+            }
+          </div>
+        }
+      </div>
+
+      <!-- ── Footer ─────────────────────────────────────────────────── -->
+      <div class="cp-footer" aria-hidden="true">
+        <span class="cp-footer__group">
+          <kbd>↑</kbd><kbd>↓</kbd> navigate
+        </span>
+        <span class="cp-footer__group">
+          <kbd>↵</kbd> select
+        </span>
+        <span class="cp-footer__group">
+          <kbd>Esc</kbd> close
+        </span>
+        <span class="cp-footer__right">
+          <kbd>⌘</kbd><kbd>K</kbd>
+        </span>
+      </div>
+
+    </div>
+  </div>
+}

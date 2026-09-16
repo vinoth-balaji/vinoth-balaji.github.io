@@ -1,4 +1,3 @@
 {
-  "python.formatting.provider": "autopep8",
-  "liveServer.settings.port": 5501
+    "git.ignoreLimitWarning": true
 }

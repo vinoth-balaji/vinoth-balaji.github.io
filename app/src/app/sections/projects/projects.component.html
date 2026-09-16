@@ -1,0 +1,606 @@
+<div class="proj-track" #trackWrapper>
+  <div class="proj-sticky">
+
+    <!-- ── Top bar ──────────────────────────────────────────────── -->
+    <div class="proj-topbar">
+      <span class="proj-topbar__label">Featured Work</span>
+
+      <nav class="proj-pips" aria-label="Project navigation">
+        @for (p of projects; track p.id; let i = $index) {
+          <button
+            class="proj-pip"
+            [class.proj-pip--active]="activeIndex() === i"
+            [attr.aria-label]="'Navigate to ' + p.name"
+            [attr.aria-pressed]="activeIndex() === i"
+            (click)="scrollToProject(i)">
+          </button>
+        }
+      </nav>
+
+      <span class="proj-counter" aria-live="polite">
+        <span class="proj-counter__cur">{{ (activeIndex() + 1).toString().padStart(2, '0') }}</span>
+        <span class="proj-counter__sep">/</span>
+        <span class="proj-counter__tot">05</span>
+      </span>
+    </div>
+
+    <!-- ── Horizontal slider ────────────────────────────────────── -->
+    <div class="proj-slider" #slider role="list" aria-label="Featured projects">
+
+      @for (p of projects; track p.id) {
+        <article
+          class="pc"
+          [class]="'pc pc--' + p.accent"
+          [attr.id]="'proj-' + p.id"
+          role="listitem"
+          [attr.aria-label]="p.name">
+
+          <div class="pc__tilt">
+
+            <!-- ── Left: Case Study Content ─────────────────────── -->
+            <div class="pc__content">
+
+              <div class="pc__meta-row">
+                <span class="pc__num">{{ p.number }}</span>
+                <span class="pc__divider" aria-hidden="true"></span>
+                <span class="pc__industry">{{ p.industry }}</span>
+                <span class="pc__year">{{ p.year }}</span>
+              </div>
+
+              <h3 class="pc__title">{{ p.name }}</h3>
+              <p class="pc__scale">{{ p.scale }}</p>
+
+              <div class="pc__blocks">
+
+                <div class="pc__block">
+                  <span class="pc__block-label">
+                    <svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true">
+                      <circle cx="5" cy="5" r="4" fill="currentColor" opacity="0.5"/>
+                    </svg>
+                    The Problem
+                  </span>
+                  <p class="pc__block-body">{{ p.problem }}</p>
+                </div>
+
+                <div class="pc__block">
+                  <span class="pc__block-label">
+                    <svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true">
+                      <circle cx="5" cy="5" r="4" fill="currentColor" opacity="0.5"/>
+                    </svg>
+                    What I Led
+                  </span>
+                  <p class="pc__block-body">{{ p.led }}</p>
+                </div>
+
+                <div class="pc__block">
+                  <span class="pc__block-label">
+                    <svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true">
+                      <circle cx="5" cy="5" r="4" fill="currentColor" opacity="0.5"/>
+                    </svg>
+                    Engineering Challenges
+                  </span>
+                  <ul class="pc__challenges" role="list">
+                    @for (c of p.challenges; track c) {
+                      <li class="pc__ch">{{ c }}</li>
+                    }
+                  </ul>
+                </div>
+
+                <div class="pc__block pc__block--impact">
+                  <span class="pc__block-label">
+                    <svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true">
+                      <circle cx="5" cy="5" r="4" fill="currentColor" opacity="0.5"/>
+                    </svg>
+                    Business Impact
+                  </span>
+                  <p class="pc__impact-text">{{ p.impact }}</p>
+                </div>
+
+              </div>
+
+              <div class="pc__tech-row" aria-label="Technologies used">
+                @for (t of p.tech; track t) {
+                  <span class="pc__tech-tag">{{ t }}</span>
+                }
+              </div>
+
+            </div>
+
+            <!-- ── Right: Abstract Visual Mock ──────────────────── -->
+            <div class="pc__visual" aria-hidden="true">
+
+              @switch (p.visual) {
+
+                <!-- ═══════════════════════════════════════════════
+                     AVIATION — Commercial Platform + AI Copilot
+                     ═══════════════════════════════════════════════ -->
+                @case ('aviation') {
+                  <div class="viz viz--aviation">
+                    <!-- Window chrome -->
+                    <div class="viz__chrome">
+                      <span class="viz__dot viz__dot--r"></span>
+                      <span class="viz__dot viz__dot--y"></span>
+                      <span class="viz__dot viz__dot--g"></span>
+                      <span class="viz__title-bar">Aviation Commercial · Dashboard</span>
+                    </div>
+
+                    <!-- KPI row -->
+                    <div class="viz__kpi-row">
+                      <div class="viz__kpi">
+                        <span class="viz__kpi-label">Win Rate</span>
+                        <span class="viz__kpi-val viz__kpi-val--blue">73.2%</span>
+                        <span class="viz__kpi-delta viz__kpi-delta--up">↑ 4.1%</span>
+                      </div>
+                      <div class="viz__kpi">
+                        <span class="viz__kpi-label">Active Bids</span>
+                        <span class="viz__kpi-val viz__kpi-val--blue">847</span>
+                        <span class="viz__kpi-delta viz__kpi-delta--up">↑ 12</span>
+                      </div>
+                      <div class="viz__kpi">
+                        <span class="viz__kpi-label">Revenue Impact</span>
+                        <span class="viz__kpi-val viz__kpi-val--blue">$12.4M</span>
+                        <span class="viz__kpi-delta viz__kpi-delta--up">↑ 8.3%</span>
+                      </div>
+                    </div>
+
+                    <!-- AI Copilot insight -->
+                    <div class="viz__ai-card">
+                      <div class="viz__ai-header">
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
+                          <path d="M12 2c0 0 .6 6 1.8 8C15 12 22 12 22 12s-7 0-8.2 1.8C12.6 15.7 12 22 12 22s-.6-6.3-1.8-8.2C9 12 2 12 2 12s7 0 8.2-1.8C11.4 8.3 12 2 12 2z"/>
+                        </svg>
+                        <span>AI Copilot — Negotiation Intelligence</span>
+                        <span class="viz__ai-live">LIVE</span>
+                      </div>
+                      <p class="viz__ai-insight">
+                        ORD shows <strong>34% cargo growth</strong> potential.
+                        Historical bid tolerance suggests <strong>−8% rate adjustment</strong>
+                        increases win probability to 81%.
+                      </p>
+                      <div class="viz__ai-chips">
+                        <span>Bid Risk: Low</span>
+                        <span>Margin: +2.1%</span>
+                        <span>Confidence: High</span>
+                      </div>
+                    </div>
+
+                    <!-- Bar chart — bid volume by airport -->
+                    <div class="viz__chart-label">Bid Volume by Airport (trailing 6M)</div>
+                    <div class="viz__bars">
+                      <div class="viz__bar-col">
+                        <div class="viz__bar viz__bar--blue" style="--h:72%"><span>ORD</span></div>
+                      </div>
+                      <div class="viz__bar-col">
+                        <div class="viz__bar viz__bar--blue" style="--h:55%"><span>LAX</span></div>
+                      </div>
+                      <div class="viz__bar-col">
+                        <div class="viz__bar viz__bar--blue" style="--h:88%"><span>DFW</span></div>
+                      </div>
+                      <div class="viz__bar-col">
+                        <div class="viz__bar viz__bar--blue" style="--h:41%"><span>ATL</span></div>
+                      </div>
+                      <div class="viz__bar-col">
+                        <div class="viz__bar viz__bar--blue" style="--h:63%"><span>JFK</span></div>
+                      </div>
+                      <div class="viz__bar-col">
+                        <div class="viz__bar viz__bar--blue" style="--h:34%"><span>MIA</span></div>
+                      </div>
+                    </div>
+                  </div>
+                }
+
+                <!-- ═══════════════════════════════════════════════
+                     PRICING — Pricing Analytics Dashboard
+                     ═══════════════════════════════════════════════ -->
+                @case ('pricing') {
+                  <div class="viz viz--pricing">
+                    <div class="viz__chrome">
+                      <span class="viz__dot viz__dot--r"></span>
+                      <span class="viz__dot viz__dot--y"></span>
+                      <span class="viz__dot viz__dot--g"></span>
+                      <span class="viz__title-bar">Pricing Analytics · Explorer</span>
+                    </div>
+
+                    <!-- Semantic search bar -->
+                    <div class="viz__search">
+                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none"
+                           stroke="currentColor" stroke-width="2">
+                        <circle cx="11" cy="11" r="8"/>
+                        <path d="M21 21l-4.35-4.35"/>
+                      </svg>
+                      <span class="viz__search-text">Search instruments, sectors, or ask a question</span>
+                      <span class="viz__cursor"></span>
+                    </div>
+
+                    <!-- Filter chips -->
+                    <div class="viz__filter-chips">
+                      <span class="viz__chip viz__chip--active">Equities</span>
+                      <span class="viz__chip">Fixed Income</span>
+                      <span class="viz__chip">Derivatives</span>
+                      <span class="viz__chip">YTD</span>
+                    </div>
+
+                    <!-- SVG line chart -->
+                    <svg class="viz__line-chart" viewBox="0 0 320 100" preserveAspectRatio="none">
+                      <defs>
+                        <linearGradient id="price-grad" x1="0" y1="0" x2="0" y2="1">
+                          <stop offset="0%" stop-color="#22d3ee" stop-opacity="0.3"/>
+                          <stop offset="100%" stop-color="#22d3ee" stop-opacity="0"/>
+                        </linearGradient>
+                      </defs>
+                      <!-- Grid lines -->
+                      <line x1="0" y1="25" x2="320" y2="25" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+                      <line x1="0" y1="50" x2="320" y2="50" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+                      <line x1="0" y1="75" x2="320" y2="75" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+                      <!-- Area fill -->
+                      <path class="viz__area" d="M0,80 L40,65 L80,70 L120,45 L160,50 L200,28 L240,35 L280,20 L320,15 L320,100 L0,100Z"
+                            fill="url(#price-grad)"/>
+                      <!-- Price line -->
+                      <path class="viz__line viz__line--cyan"
+                            d="M0,80 L40,65 L80,70 L120,45 L160,50 L200,28 L240,35 L280,20 L320,15"
+                            fill="none" stroke="#22d3ee" stroke-width="2"
+                            stroke-dasharray="600" stroke-dashoffset="600"/>
+                      <!-- Second line -->
+                      <path class="viz__line viz__line--muted"
+                            d="M0,90 L40,85 L80,88 L120,72 L160,78 L200,62 L240,68 L280,55 L320,58"
+                            fill="none" stroke="rgba(139,92,246,0.5)" stroke-width="1.5"
+                            stroke-dasharray="600" stroke-dashoffset="600"/>
+                    </svg>
+
+                    <!-- Instrument table -->
+                    <div class="viz__table">
+                      <div class="viz__table-head">
+                        <span>Instrument</span>
+                        <span>Price</span>
+                        <span>Δ 1D</span>
+                        <span>Volume</span>
+                      </div>
+                      <div class="viz__table-row">
+                        <span class="viz__instrument">
+                          <span class="viz__instrument-dot viz__instrument-dot--cyan"></span>
+                          AAPL US
+                        </span>
+                        <span>$182.46</span>
+                        <span class="viz__pos">+1.24%</span>
+                        <span class="viz__muted">84.2M</span>
+                      </div>
+                      <div class="viz__table-row">
+                        <span class="viz__instrument">
+                          <span class="viz__instrument-dot viz__instrument-dot--blue"></span>
+                          MSFT US
+                        </span>
+                        <span>$374.12</span>
+                        <span class="viz__neg">−0.38%</span>
+                        <span class="viz__muted">32.1M</span>
+                      </div>
+                      <div class="viz__table-row">
+                        <span class="viz__instrument">
+                          <span class="viz__instrument-dot viz__instrument-dot--violet"></span>
+                          NVDA US
+                        </span>
+                        <span>$621.84</span>
+                        <span class="viz__pos">+3.71%</span>
+                        <span class="viz__muted">210.5M</span>
+                      </div>
+                    </div>
+                  </div>
+                }
+
+                <!-- ═══════════════════════════════════════════════
+                     CDP — Excel Plugin & Web Application
+                     ═══════════════════════════════════════════════ -->
+                @case ('cdp') {
+                  <div class="viz viz--cdp">
+                    <div class="viz__chrome">
+                      <span class="viz__dot viz__dot--r"></span>
+                      <span class="viz__dot viz__dot--y"></span>
+                      <span class="viz__dot viz__dot--g"></span>
+                      <span class="viz__title-bar">CDP Data Explorer · Web + Excel</span>
+                    </div>
+
+                    <!-- Hierarchical filters -->
+                    <div class="viz__hier-filters">
+                      <div class="viz__hier-node viz__hier-node--root">
+                        <svg width="10" height="10" viewBox="0 0 10 10">
+                          <rect x="1" y="1" width="8" height="8" rx="2"
+                                fill="rgba(139,92,246,0.4)" stroke="rgba(139,92,246,0.6)" stroke-width="0.5"/>
+                        </svg>
+                        Global
+                      </div>
+                      <div class="viz__hier-children">
+                        <div class="viz__hier-node viz__hier-node--l1">
+                          <span class="viz__hier-connector"></span>
+                          North America
+                          <span class="viz__hier-badge">14</span>
+                        </div>
+                        <div class="viz__hier-node viz__hier-node--l1 viz__hier-node--active">
+                          <span class="viz__hier-connector"></span>
+                          EMEA
+                          <span class="viz__hier-badge viz__hier-badge--active">8</span>
+                        </div>
+                        <div class="viz__hier-node viz__hier-node--l1">
+                          <span class="viz__hier-connector"></span>
+                          APAC
+                          <span class="viz__hier-badge">11</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Excel-style grid -->
+                    <div class="viz__excel">
+                      <div class="viz__excel-toolbar">
+                        <span class="viz__excel-btn">
+                          <svg width="10" height="10" viewBox="0 0 24 24" fill="none"
+                               stroke="currentColor" stroke-width="2">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                            <polyline points="7 10 12 15 17 10"/>
+                            <line x1="12" y1="15" x2="12" y2="3"/>
+                          </svg>
+                          Export to Excel
+                        </span>
+                        <span class="viz__excel-btn">
+                          <svg width="10" height="10" viewBox="0 0 24 24" fill="none"
+                               stroke="currentColor" stroke-width="2">
+                            <polyline points="23 4 23 10 17 10"/>
+                            <path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/>
+                          </svg>
+                          Refresh
+                        </span>
+                        <span class="viz__excel-live">● Live</span>
+                      </div>
+                      <table class="viz__grid">
+                        <thead>
+                          <tr>
+                            <th></th>
+                            <th>A</th>
+                            <th>B</th>
+                            <th>C</th>
+                            <th>D</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td class="viz__row-num">1</td>
+                            <td class="viz__cell viz__cell--header">Region</td>
+                            <td class="viz__cell viz__cell--header">Category</td>
+                            <td class="viz__cell viz__cell--header">Value</td>
+                            <td class="viz__cell viz__cell--header">YoY %</td>
+                          </tr>
+                          <tr>
+                            <td class="viz__row-num">2</td>
+                            <td class="viz__cell">EMEA</td>
+                            <td class="viz__cell">Electronics</td>
+                            <td class="viz__cell viz__cell--num">2,847,392</td>
+                            <td class="viz__cell viz__cell--pos">+12.4%</td>
+                          </tr>
+                          <tr>
+                            <td class="viz__row-num">3</td>
+                            <td class="viz__cell">EMEA</td>
+                            <td class="viz__cell">Apparel</td>
+                            <td class="viz__cell viz__cell--num">1,234,810</td>
+                            <td class="viz__cell viz__cell--neg">−3.2%</td>
+                          </tr>
+                          <tr>
+                            <td class="viz__row-num">4</td>
+                            <td class="viz__cell">EMEA</td>
+                            <td class="viz__cell">Home &amp; Living</td>
+                            <td class="viz__cell viz__cell--num">983,441</td>
+                            <td class="viz__cell viz__cell--pos">+7.8%</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+
+                    <div class="viz__cdp-footer">
+                      <span class="viz__cdp-source">Source: Databricks · PROD</span>
+                      <span class="viz__cdp-updated">Updated: just now</span>
+                    </div>
+                  </div>
+                }
+
+                <!-- ═══════════════════════════════════════════════
+                     VAR — Risk Analytics & Scenario Platform
+                     ═══════════════════════════════════════════════ -->
+                @case ('var') {
+                  <div class="viz viz--var">
+                    <div class="viz__chrome">
+                      <span class="viz__dot viz__dot--r"></span>
+                      <span class="viz__dot viz__dot--y"></span>
+                      <span class="viz__dot viz__dot--g"></span>
+                      <span class="viz__title-bar">VaR Risk Platform · Scenario Analysis</span>
+                    </div>
+
+                    <!-- Risk KPIs -->
+                    <div class="viz__risk-kpis">
+                      <div class="viz__risk-kpi">
+                        <span class="viz__risk-kpi-label">Value at Risk (95%)</span>
+                        <span class="viz__risk-kpi-val viz__risk-kpi-val--amber">$2.4M</span>
+                        <div class="viz__risk-bar">
+                          <div class="viz__risk-fill viz__risk-fill--amber" style="width:62%"></div>
+                        </div>
+                      </div>
+                      <div class="viz__risk-kpi">
+                        <span class="viz__risk-kpi-label">Total Exposure</span>
+                        <span class="viz__risk-kpi-val viz__risk-kpi-val--amber">$8.7M</span>
+                        <div class="viz__risk-bar">
+                          <div class="viz__risk-fill viz__risk-fill--amber" style="width:78%"></div>
+                        </div>
+                      </div>
+                      <div class="viz__risk-kpi">
+                        <span class="viz__risk-kpi-label">Scenario Breach</span>
+                        <span class="viz__risk-kpi-val viz__risk-kpi-val--amber">3 / 12</span>
+                        <div class="viz__risk-bar">
+                          <div class="viz__risk-fill viz__risk-fill--red" style="width:25%"></div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Multi-line risk chart -->
+                    <svg class="viz__risk-chart" viewBox="0 0 320 110" preserveAspectRatio="none">
+                      <defs>
+                        <linearGradient id="scenario-grad" x1="0" y1="0" x2="0" y2="1">
+                          <stop offset="0%" stop-color="#f59e0b" stop-opacity="0.15"/>
+                          <stop offset="100%" stop-color="#f59e0b" stop-opacity="0.03"/>
+                        </linearGradient>
+                      </defs>
+                      <!-- Grid -->
+                      <line x1="0" y1="27" x2="320" y2="27" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+                      <line x1="0" y1="55" x2="320" y2="55" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+                      <line x1="0" y1="83" x2="320" y2="83" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+                      <!-- Scenario band -->
+                      <path d="M0,60 L60,52 L120,65 L180,40 L240,55 L320,35 L320,80 L240,75 L180,70 L120,88 L60,75 L0,80Z"
+                            fill="url(#scenario-grad)"/>
+                      <!-- VaR line -->
+                      <path class="viz__line viz__line--amber"
+                            d="M0,70 L60,58 L120,74 L180,48 L240,62 L320,42"
+                            fill="none" stroke="#f59e0b" stroke-width="2"
+                            stroke-dasharray="500" stroke-dashoffset="500"/>
+                      <!-- Exposure line -->
+                      <path class="viz__line viz__line--cyan-dim"
+                            d="M0,40 L60,35 L120,42 L180,25 L240,32 L320,18"
+                            fill="none" stroke="rgba(34,211,238,0.6)" stroke-width="1.5"
+                            stroke-dasharray="500" stroke-dashoffset="500"/>
+                      <!-- Scenario upper bound -->
+                      <path d="M0,60 L60,52 L120,65 L180,40 L240,55 L320,35"
+                            fill="none" stroke="rgba(245,158,11,0.3)" stroke-width="1"
+                            stroke-dasharray="4 3"/>
+                      <!-- Scenario lower bound -->
+                      <path d="M0,80 L60,75 L120,88 L180,70 L240,75 L320,80"
+                            fill="none" stroke="rgba(245,158,11,0.3)" stroke-width="1"
+                            stroke-dasharray="4 3"/>
+                    </svg>
+
+                    <!-- Positions table -->
+                    <div class="viz__table viz__table--compact">
+                      <div class="viz__table-head">
+                        <span>Position</span>
+                        <span>Curve</span>
+                        <span>Leg</span>
+                        <span>VaR Δ</span>
+                      </div>
+                      <div class="viz__table-row">
+                        <span class="viz__muted">EQ-LON-01</span>
+                        <span class="viz__muted">GBP LIBOR 3M</span>
+                        <span class="viz__muted">Recv</span>
+                        <span class="viz__amber">+$84K</span>
+                      </div>
+                      <div class="viz__table-row">
+                        <span class="viz__muted">CR-NYC-04</span>
+                        <span class="viz__muted">USD OIS</span>
+                        <span class="viz__muted">Pay</span>
+                        <span class="viz__neg">−$212K</span>
+                      </div>
+                      <div class="viz__table-row">
+                        <span class="viz__muted">FX-SNG-11</span>
+                        <span class="viz__muted">SGD SORA</span>
+                        <span class="viz__muted">Recv</span>
+                        <span class="viz__amber">+$31K</span>
+                      </div>
+                    </div>
+                  </div>
+                }
+
+                <!-- ═══════════════════════════════════════════════
+                     MYOPS — Operational Intelligence Suite
+                     ═══════════════════════════════════════════════ -->
+                @case ('myops') {
+                  <div class="viz viz--myops">
+                    <div class="viz__chrome">
+                      <span class="viz__dot viz__dot--r"></span>
+                      <span class="viz__dot viz__dot--y"></span>
+                      <span class="viz__dot viz__dot--g"></span>
+                      <span class="viz__title-bar">MyOps · Work Order Visualizer</span>
+                    </div>
+
+                    <!-- Status summary -->
+                    <div class="viz__ops-summary">
+                      <div class="viz__ops-stat">
+                        <span class="viz__ops-num viz__ops-num--green">142</span>
+                        <span class="viz__ops-label">On Track</span>
+                      </div>
+                      <div class="viz__ops-stat">
+                        <span class="viz__ops-num viz__ops-num--amber">18</span>
+                        <span class="viz__ops-label">At Risk</span>
+                      </div>
+                      <div class="viz__ops-stat">
+                        <span class="viz__ops-num viz__ops-num--red">4</span>
+                        <span class="viz__ops-label">Blocked</span>
+                      </div>
+                      <div class="viz__ops-stat">
+                        <span class="viz__ops-num viz__ops-num--muted">37</span>
+                        <span class="viz__ops-label">Completed</span>
+                      </div>
+                    </div>
+
+                    <!-- Work-center network SVG -->
+                    <svg class="viz__network" viewBox="0 0 320 130">
+                      <!-- Edge lines -->
+                      <line x1="65" y1="65" x2="160" y2="40" stroke="rgba(16,185,129,0.25)" stroke-width="1.5"/>
+                      <line x1="65" y1="65" x2="160" y2="90" stroke="rgba(16,185,129,0.25)" stroke-width="1.5"/>
+                      <line x1="160" y1="40" x2="255" y2="25" stroke="rgba(16,185,129,0.2)" stroke-width="1.5"/>
+                      <line x1="160" y1="40" x2="255" y2="65" stroke="rgba(16,185,129,0.2)" stroke-width="1.5"/>
+                      <line x1="160" y1="90" x2="255" y2="65" stroke="rgba(16,185,129,0.2)" stroke-width="1.5"/>
+                      <line x1="160" y1="90" x2="255" y2="105" stroke="rgba(16,185,129,0.2)" stroke-width="1.5"/>
+                      <!-- Nodes -->
+                      <!-- Hub node -->
+                      <circle cx="65" cy="65" r="14" fill="rgba(16,185,129,0.15)" stroke="rgba(16,185,129,0.5)" stroke-width="1.5"/>
+                      <circle cx="65" cy="65" r="6" fill="#10b981" class="viz__node-pulse"/>
+                      <!-- Mid nodes -->
+                      <circle cx="160" cy="40" r="10" fill="rgba(16,185,129,0.12)" stroke="rgba(16,185,129,0.4)" stroke-width="1.5"/>
+                      <circle cx="160" cy="40" r="4" fill="rgba(16,185,129,0.8)"/>
+                      <circle cx="160" cy="90" r="10" fill="rgba(16,185,129,0.12)" stroke="rgba(16,185,129,0.4)" stroke-width="1.5"/>
+                      <circle cx="160" cy="90" r="4" fill="rgba(16,185,129,0.8)"/>
+                      <!-- Leaf nodes -->
+                      <circle cx="255" cy="25" r="7" fill="rgba(16,185,129,0.10)" stroke="rgba(16,185,129,0.3)" stroke-width="1"/>
+                      <circle cx="255" cy="65" r="7" fill="rgba(16,185,129,0.10)" stroke="rgba(16,185,129,0.3)" stroke-width="1"/>
+                      <circle cx="255" cy="105" r="7" fill="rgba(16,185,129,0.10)" stroke="rgba(16,185,129,0.3)" stroke-width="1"/>
+                      <!-- Node labels -->
+                      <text x="65" y="86" text-anchor="middle" font-size="7" fill="rgba(255,255,255,0.4)">MRO Hub</text>
+                      <text x="160" y="28" text-anchor="middle" font-size="7" fill="rgba(255,255,255,0.4)">Line Maint</text>
+                      <text x="160" y="108" text-anchor="middle" font-size="7" fill="rgba(255,255,255,0.4)">Heavy Maint</text>
+                      <text x="255" y="15" text-anchor="middle" font-size="7" fill="rgba(255,255,255,0.4)">WC-01</text>
+                      <text x="255" y="55" text-anchor="middle" font-size="7" fill="rgba(255,255,255,0.4)">WC-04</text>
+                      <text x="255" y="120" text-anchor="middle" font-size="7" fill="rgba(255,255,255,0.4)">WC-07</text>
+                    </svg>
+
+                    <!-- Work order list -->
+                    <div class="viz__wo-list">
+                      <div class="viz__wo-row">
+                        <span class="viz__wo-status viz__wo-status--green"></span>
+                        <span class="viz__wo-id">WO-2241</span>
+                        <span class="viz__wo-desc">A320 Line Check · Gate B14</span>
+                        <span class="viz__wo-time">14:30</span>
+                      </div>
+                      <div class="viz__wo-row">
+                        <span class="viz__wo-status viz__wo-status--amber"></span>
+                        <span class="viz__wo-id">WO-2198</span>
+                        <span class="viz__wo-desc">Engine Borescope · Hangar 3</span>
+                        <span class="viz__wo-time viz__wo-time--amber">+2h delay</span>
+                      </div>
+                      <div class="viz__wo-row">
+                        <span class="viz__wo-status viz__wo-status--red"></span>
+                        <span class="viz__wo-id">WO-2187</span>
+                        <span class="viz__wo-desc">Avionics Swap · Hangar 1</span>
+                        <span class="viz__wo-time viz__wo-time--red">Blocked</span>
+                      </div>
+                    </div>
+                  </div>
+                }
+
+              }
+
+            </div>
+            <!-- /.pc__visual -->
+
+          </div>
+          <!-- /.pc__tilt -->
+        </article>
+      }
+
+    </div>
+    <!-- /.proj-slider -->
+
+  </div>
+  <!-- /.proj-sticky -->
+</div>
+<!-- /.proj-track -->

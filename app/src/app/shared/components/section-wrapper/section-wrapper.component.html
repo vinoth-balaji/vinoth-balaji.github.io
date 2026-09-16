@@ -1,0 +1,23 @@
+<section class="section" [class.section--compact]="compact">
+  <div class="container">
+
+    @if (label || heading) {
+      <header class="section__header" [class.section__header--centered]="centered">
+        @if (label) {
+          <span class="section-label text-label--accent">{{ label }}</span>
+        }
+        @if (heading) {
+          <h2 class="section__heading">{{ heading }}</h2>
+        }
+        @if (subheading) {
+          <p class="section__subheading text-lead">{{ subheading }}</p>
+        }
+      </header>
+    }
+
+    <div class="section__body">
+      <ng-content></ng-content>
+    </div>
+
+  </div>
+</section>

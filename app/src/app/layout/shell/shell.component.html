@@ -1,0 +1,45 @@
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<app-ambient-background></app-ambient-background>
+<div class="noise-overlay" aria-hidden="true"></div>
+
+<app-navigation></app-navigation>
+
+<main class="main-content" id="main-content">
+  <app-hero id="hero"></app-hero>
+  <app-about id="about"></app-about>
+  <app-metrics id="metrics"></app-metrics>
+  <app-projects id="projects"></app-projects>
+  <app-capabilities id="capabilities"></app-capabilities>
+  <app-leadership id="leadership"></app-leadership>
+  <app-journey id="journey"></app-journey>
+  <app-ai-copilot id="ai-copilot"></app-ai-copilot>
+  <app-contact id="contact"></app-contact>
+</main>
+
+<app-ai-floating aria-label="AI assistant"></app-ai-floating>
+<app-command-palette></app-command-palette>
+
+<button
+  class="scroll-top-btn"
+  [class.scroll-top-btn--visible]="showScrollTop()"
+  aria-label="Scroll to top"
+  type="button"
+  (click)="scrollToTop()">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <path d="M12 19V5M5 12l7-7 7 7"/>
+  </svg>
+</button>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="site-footer__inner">
+      <p class="text-xs text-muted">
+        &copy; {{ currentYear }} Vinoth B. Built with Angular &amp; precision.
+      </p>
+      <p class="text-xs text-muted">
+        Technical Lead · Associate Manager · AI Engineer
+      </p>
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,65 @@
+<section class="aic-section" aria-labelledby="aic-heading">
+  <div class="container">
+
+    <!-- ── Header ──────────────────────────────────────────────────────── -->
+    <div class="aic-header observe-me">
+      <div class="aic-eyebrow">
+        <span class="aic-eyebrow__dot" aria-hidden="true"></span>
+        <span class="aic-eyebrow__label">Portfolio Intelligence</span>
+      </div>
+      <h2 class="aic-heading" id="aic-heading">
+        Ask <span class="aic-heading__accent">Vinoth AI</span>
+      </h2>
+      <p class="aic-subtext">
+        A structured knowledge base that understands the depth behind the work.
+        Ask anything — about technology decisions, leadership style, specific projects,
+        or how Vinoth approaches complex engineering problems.
+      </p>
+    </div>
+
+    <!-- ── Main layout ──────────────────────────────────────────────────── -->
+    <div class="aic-layout observe-me">
+
+      <!-- Left: context panel -->
+      <aside class="aic-context" aria-label="What you can ask">
+
+        <div class="aic-context__block">
+          <h3 class="aic-context__title">What you can ask</h3>
+          <ul class="aic-context__list" role="list">
+            <li>Technical decisions behind specific projects</li>
+            <li>How I approach AI and Gen AI integration</li>
+            <li>Leadership and mentoring philosophy</li>
+            <li>Enterprise platform engineering patterns</li>
+            <li>Cloud and data architecture choices</li>
+            <li>What makes me a strong team fit</li>
+          </ul>
+        </div>
+
+        <div class="aic-context__block">
+          <h3 class="aic-context__title">Knowledge coverage</h3>
+          <div class="aic-context__tags" role="list">
+            @for (tag of knowledgeTags; track tag) {
+              <span class="aic-context__tag" role="listitem">{{ tag }}</span>
+            }
+          </div>
+        </div>
+
+        <div class="aic-context__note">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M12 2c0 0 .6 6.3 1.8 8.2C15 12 22 12 22 12s-7 0-8.2 1.8C12.6 15.7 12 22 12 22s-.6-6.3-1.8-8.2C9 12 2 12 2 12s7 0 8.2-1.8C11.4 8.3 12 2 12 2z"/>
+          </svg>
+          <span>LLM-ready architecture — local knowledge base today, GPT-4o tomorrow.</span>
+        </div>
+
+      </aside>
+
+      <!-- Right: chat window -->
+      <div class="aic-chat-wrap" aria-label="AI chat interface">
+        <app-ai-chat />
+      </div>
+
+    </div>
+    <!-- /.aic-layout -->
+
+  </div>
+</section>

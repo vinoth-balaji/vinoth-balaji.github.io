@@ -1,0 +1,383 @@
+// ─── Root ─────────────────────────────────────────────────────────────────────
+
+.hero {
+  position: relative;
+  min-height: 58dvh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background: transparent;
+}
+
+// ─── Layout ───────────────────────────────────────────────────────────────────
+
+.hero__container {
+  position: relative;
+  z-index: 10;
+  padding-block: clamp(0.9rem, 2vw, 1.8rem);
+}
+
+.hero__content {
+  max-width: 1100px;
+}
+
+// ─── Eyebrow ──────────────────────────────────────────────────────────────────
+
+.hero__eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-bottom: clamp(1.1rem, 2.2vw, 1.9rem);
+  animation: fade-up 0.7s ease-out 0.05s both;
+}
+
+.hero__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: 6px 0.9rem;
+  background: rgba(59, 130, 246, 0.07);
+  border: 1px solid rgba(59, 130, 246, 0.22);
+  border-radius: var(--radius-full);
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-blue-light);
+  white-space: nowrap;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.03);
+}
+
+.hero__badge-dot {
+  display: block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--color-cyan);
+  flex-shrink: 0;
+  animation: badge-pulse 2.5s ease-out infinite;
+}
+
+@keyframes badge-pulse {
+  0%   { box-shadow: 0 0 0 0   rgba(34, 211, 238, 0.80); }
+  70%  { box-shadow: 0 0 0 8px rgba(34, 211, 238, 0); }
+  100% { box-shadow: 0 0 0 0   rgba(34, 211, 238, 0); }
+}
+
+.hero__loc {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  white-space: nowrap;
+}
+
+.hero__loc-sep {
+  margin-inline: 2px;
+  opacity: 0.5;
+}
+
+// ─── Name ─────────────────────────────────────────────────────────────────────
+
+.hero__name {
+  display: block;
+  font-family: var(--font-display);
+  font-size: clamp(3.1rem, 7.4vw, 6.8rem);
+  font-weight: 280;
+  line-height: 0.9;
+  letter-spacing: -0.055em;
+  margin-bottom: clamp(0.7rem, 1.2vw, 1rem);
+  animation: fade-up 0.85s ease-out 0.15s both;
+}
+
+.hero__name-ln {
+  display: block;
+  color: var(--color-text-primary);
+
+  // Second name line is 70% opacity for cinematic depth
+  &--dim { color: rgba(232, 237, 245, 0.70); }
+}
+
+// ─── Role / Title ─────────────────────────────────────────────────────────────
+
+.hero__role {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+  margin-bottom: clamp(0.9rem, 1.8vw, 1.4rem);
+  animation: fade-up 0.85s ease-out 0.22s both;
+}
+
+.hero__role-text {
+  font-family: var(--font-display);
+  font-size: clamp(0.9375rem, 2vw, 1.375rem);
+  font-weight: 500;
+  letter-spacing: -0.015em;
+  background: linear-gradient(135deg, var(--color-blue-light) 0%, var(--color-violet-light) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  filter: drop-shadow(0 1px 12px rgba(7, 9, 13, 0.55));
+}
+
+.hero__role-sep {
+  font-family: var(--font-display);
+  font-size: clamp(0.9375rem, 2vw, 1.375rem);
+  color: var(--color-border-strong);
+  opacity: 0.5;
+}
+
+// ─── Tagline ──────────────────────────────────────────────────────────────────
+
+.hero__tagline {
+  font-family: var(--font-body);
+  font-size: clamp(1rem, 1.4vw, 1.15rem);
+  font-weight: 400;
+  line-height: 1.42;
+  color: var(--color-text-primary);
+  max-width: 760px;
+  margin-bottom: 0.65rem;
+  animation: fade-up 0.85s ease-out 0.30s both;
+}
+
+// ─── Secondary line ───────────────────────────────────────────────────────────
+
+.hero__secondary {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  line-height: 1.6;
+  max-width: 720px;
+  margin-bottom: clamp(0.95rem, 1.8vw, 1.4rem);
+  animation: fade-up 0.85s ease-out 0.38s both;
+}
+
+.hero__mdot {
+  margin-inline: var(--space-2);
+  opacity: 0.4;
+}
+
+// ─── Stack tags ───────────────────────────────────────────────────────────────
+
+.hero__stack {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-1) var(--space-2);
+  margin-bottom: clamp(1.4rem, 2.6vw, 2.1rem);
+  animation: fade-up 0.85s ease-out 0.46s both;
+}
+
+.hero__stack-tag {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.04em;
+  color: var(--color-text-secondary);
+  padding: 3px var(--space-3);
+  background: var(--color-bg-elevated);
+  border: 1px solid var(--color-border-default);
+  border-radius: var(--radius-full);
+  transition:
+    border-color var(--duration-fast) ease,
+    color        var(--duration-fast) ease,
+    background   var(--duration-fast) ease;
+
+  &:hover {
+    border-color: rgba(59, 130, 246, 0.4);
+    color: var(--color-blue-light);
+    background: var(--color-blue-dim);
+  }
+}
+
+.hero__stack-sep {
+  color: var(--color-border-strong);
+  font-size: 0.75rem;
+  user-select: none;
+}
+
+// ─── CTA row ──────────────────────────────────────────────────────────────────
+
+.hero__cta {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-bottom: clamp(2rem, 4vw, 3.25rem);
+  animation: fade-up 0.85s ease-out 0.55s both;
+
+  @media (max-width: 560px) {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.625rem;
+  }
+}
+
+// Shared button base
+.h-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.625rem;
+  min-height: 3.25rem;
+  padding: 0.85rem 1.35rem;
+  font-family: var(--font-body);
+  font-size: 0.9375rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  text-decoration: none;
+  transition: transform var(--duration-base) ease,
+              box-shadow var(--duration-base) ease,
+              border-color var(--duration-base) ease,
+              background var(--duration-base) ease,
+              color var(--duration-base) ease;
+  white-space: nowrap;
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(120deg, rgba(255,255,255,0.18), transparent 35%, transparent 65%, rgba(255,255,255,0.08));
+    opacity: 0;
+    transition: opacity var(--duration-base) ease;
+  }
+
+  &:hover::before {
+    opacity: 1;
+  }
+
+  @media (max-width: 560px) {
+    width: 100%;
+    justify-content: center;
+  }
+
+  @media (max-width: 480px) {
+    min-height: 3rem;
+    padding: 0.75rem 1.15rem;
+    font-size: 0.875rem;
+  }
+
+  &:active { transform: translateY(0) scale(0.985); }
+}
+
+// Gradient primary
+.h-btn--primary {
+  background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+  color: #fff;
+  box-shadow: 0 10px 30px rgba(59, 130, 246, 0.25);
+
+  &:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 16px 36px rgba(96, 165, 250, 0.28);
+  }
+}
+
+// AI sparkle — glass + violet tint
+.h-btn--ai {
+  background: rgba(139, 92, 246, 0.08);
+  border-color: rgba(139, 92, 246, 0.30);
+  color: var(--color-text-primary);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.04);
+
+  svg { color: var(--color-violet-light); }
+
+  &:hover {
+    background: rgba(139, 92, 246, 0.12);
+    border-color: rgba(139, 92, 246, 0.56);
+    box-shadow: 0 0 24px rgba(139, 92, 246, 0.18);
+    svg { color: var(--color-cyan); }
+  }
+}
+
+// Ghost / LinkedIn
+.h-btn--ghost {
+  background: rgba(255,255,255,0.02);
+  border-color: var(--color-border-default);
+  color: var(--color-text-secondary);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.04);
+
+  &:hover {
+    background: rgba(17, 24, 32, 0.9);
+    border-color: var(--color-border-strong);
+    color: var(--color-text-primary);
+    transform: translateY(-1px);
+  }
+}
+
+// ─── Scroll cue ───────────────────────────────────────────────────────────────
+
+.hero__scroll {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-2);
+  animation: fade-up 0.85s ease-out 0.70s both;
+
+  @media (max-width: 768px) { display: none; }
+}
+
+.hero__scroll-mouse {
+  width: 22px;
+  height: 36px;
+  border: 1.5px solid var(--color-border-strong);
+  border-radius: 11px;
+  display: flex;
+  justify-content: center;
+  padding-top: 6px;
+}
+
+.hero__scroll-wheel {
+  width: 3px;
+  height: 7px;
+  border-radius: var(--radius-full);
+  // Gradient wheel matches brand
+  background: linear-gradient(to bottom, var(--color-blue), var(--color-violet));
+  animation: scroll-wheel 2.2s ease-in-out infinite;
+}
+
+@keyframes scroll-wheel {
+  0%    { transform: translateY(0);    opacity: 1; }
+  75%   { transform: translateY(14px); opacity: 0; }
+  100%  { transform: translateY(0);    opacity: 0; }
+}
+
+.hero__scroll-label {
+  font-family: var(--font-mono);
+  font-size: 0.5625rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
+// ─── Reduced motion ───────────────────────────────────────────────────────────
+// The global rule in _animations.scss already stops all animations via
+// duration:0.01ms !important, but we add explicit component-level guards here
+// as a best practice so this component is self-contained.
+
+@media (prefers-reduced-motion: reduce) {
+  .hero__orb--blue,
+  .hero__orb--violet,
+  .hero__orb--cyan {
+    animation: none;
+    translate: 0 0; // freeze mouse parallax position too
+  }
+
+  .hero__badge-dot {
+    animation: none;
+  }
+
+  .hero__scroll-wheel {
+    animation: none;
+    opacity: 0.6;
+  }
+}

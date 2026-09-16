@@ -1,0 +1,137 @@
+<section class="ldr" id="leadership">
+  <div class="container">
+
+    <!-- ─── Header ─────────────────────────────────────────────────── -->
+    <div class="ldr__header observe-me">
+      <span class="text-label--accent">Leadership Philosophy</span>
+
+      <h2 class="ldr__h">
+        Engineering is a
+        <span class="ldr__h-team">Team Sport.</span>
+      </h2>
+
+      <p class="ldr__lead">
+        I develop engineers into independent owners, not task executors.
+      </p>
+
+      <!-- Mentoring stat -->
+      <div class="ldr__stat">
+        <span class="ldr__stat-num">30+</span>
+        <div class="ldr__stat-copy">
+          <span class="ldr__stat-label">Engineers mentored</span>
+          <span class="ldr__stat-detail">
+            while actively managing a 10+ engineer team through 1:1s · code reviews · progressive ownership
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ─── Progression track ─────────────────────────────────────── -->
+    <div class="prog-wrap">
+
+      <div
+        class="prog-track observe-me"
+        #progTrack
+        role="list"
+        aria-label="Engineering progression pathway">
+
+        @for (stage of stages; track stage.id; let i = $index; let last = $last) {
+
+          <!-- Stage node -->
+          <div class="prog-node" role="listitem" [style.--ni]="i" [attr.aria-label]="stage.label">
+            <div class="prog-circle">
+              <div class="prog-core"></div>
+              <!-- Pulsing ring on final stage (leader) -->
+              @if (last) {
+                <div class="prog-leader-ring" aria-hidden="true"></div>
+              }
+            </div>
+            <div class="prog-labels">
+              <span class="prog-step">
+                {{ (i + 1).toString().padStart(2, '0') }}
+              </span>
+              <span class="prog-label">{{ stage.label }}</span>
+              <span class="prog-desc">{{ stage.descriptor }}</span>
+            </div>
+          </div>
+
+          <!-- Connector arrow (not after last) -->
+          @if (!last) {
+            <div class="prog-conn" [style.--ni]="i" aria-hidden="true">
+              <div class="prog-conn-line">
+                <div class="prog-conn-fill"></div>
+              </div>
+              <svg class="prog-conn-arrow" viewBox="0 0 12 12" fill="none"
+                   xmlns="http://www.w3.org/2000/svg">
+                <path d="M1 6h10M7 2l4 4-4 4"
+                      stroke="currentColor" stroke-width="1.2"
+                      stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+          }
+
+        }
+      </div>
+
+    </div>
+
+    <!-- ─── Principles ────────────────────────────────────────────── -->
+    <div class="ldr__principles">
+
+      <h3 class="ldr__principles-heading observe-me">
+        What "independent ownership" means in practice
+      </h3>
+
+      <div
+        class="principles-grid observe-me"
+        role="list"
+        aria-label="Engineering principles">
+
+        @for (p of principles; track p.text; let i = $index) {
+          <div class="principle-item" role="listitem" [style.--pi]="i">
+            <div class="principle-mark" aria-hidden="true">
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                <circle cx="7" cy="7" r="6" stroke="currentColor" stroke-width="1"/>
+                <path d="M4.5 7l2 2L9.5 5"
+                      stroke="currentColor" stroke-width="1.2"
+                      stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <p class="principle-text">{{ p.text }}</p>
+          </div>
+        }
+
+      </div>
+    </div>
+
+    <!-- ─── AI-Assisted Engineering ──────────────────────────────── -->
+    <div class="ai-block observe-me">
+
+      <div class="ai-block__aside" aria-hidden="true">
+        <div class="ai-block__icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2c0 0 .6 6.3 1.8 8.2C15 12 22 12 22 12s-7 0-8.2 1.8C12.6 15.7 12 22 12 22s-.6-6.3-1.8-8.2C9 12 2 12 2 12s7 0 8.2-1.8C11.4 8.3 12 2 12 2z"/>
+          </svg>
+        </div>
+        <div class="ai-block__line" aria-hidden="true"></div>
+      </div>
+
+      <div class="ai-block__body">
+        <h4 class="ai-block__title">AI-Assisted Engineering</h4>
+        <p class="ai-block__text">
+          I actively promote AI-assisted engineering practices across the team —
+          not as a shortcut, but as a multiplier. From code generation to requirements
+          analysis and debugging, AI accelerates delivery and raises the quality floor
+          for everyone on the project.
+        </p>
+        <div class="ai-block__tags" aria-label="AI engineering practices">
+          @for (tag of aiTags; track tag) {
+            <span class="ai-block__tag">{{ tag }}</span>
+          }
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>

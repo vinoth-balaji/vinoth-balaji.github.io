@@ -1,0 +1,213 @@
+<div
+  class="chat"
+  [class.chat--compact]="compact"
+  [class.chat--fullscreen]="isFullscreen()">
+
+  <!-- ── Fullscreen backdrop ──────────────────────────────────────── -->
+  @if (isFullscreen()) {
+    <div
+      class="chat__backdrop"
+      (click)="toggleFullscreen()"
+      aria-hidden="true">
+    </div>
+  }
+
+  <!-- ── Chat window ─────────────────────────────────────────────── -->
+  <div class="chat__window">
+
+    <!-- ── Header ─────────────────────────────────────────────────── -->
+    <div class="chat__header">
+      <div class="chat__header-brand">
+        <div class="chat__avatar chat__avatar--header" aria-hidden="true">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2c0 0 .6 6.3 1.8 8.2C15 12 22 12 22 12s-7 0-8.2 1.8C12.6 15.7 12 22 12 22s-.6-6.3-1.8-8.2C9 12 2 12 2 12s7 0 8.2-1.8C11.4 8.3 12 2 12 2z"/>
+          </svg>
+        </div>
+        <div class="chat__header-meta">
+          <span class="chat__header-name">Ask Vinoth AI</span>
+          <span class="chat__header-status">
+            <span class="chat__status-dot" aria-hidden="true"></span>
+            Knowledge base · Ready
+          </span>
+        </div>
+      </div>
+
+      <div class="chat__header-actions">
+        @if (messages().length > 0) {
+          <button
+            class="chat__action-btn"
+            (click)="clearChat()"
+            title="Clear conversation"
+            aria-label="Clear conversation">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none"
+                 stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="3 6 5 6 21 6"/>
+              <path d="M19 6l-1 14H6L5 6"/>
+              <path d="M10 11v6M14 11v6"/>
+              <path d="M9 6V4h6v2"/>
+            </svg>
+          </button>
+        }
+        <button
+          class="chat__action-btn"
+          (click)="toggleFullscreen()"
+          [title]="isFullscreen() ? 'Exit fullscreen' : 'Expand to fullscreen'"
+          [attr.aria-label]="isFullscreen() ? 'Exit fullscreen' : 'Expand to fullscreen'">
+          @if (isFullscreen()) {
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none"
+                 stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="4 14 10 14 10 20"/>
+              <polyline points="20 10 14 10 14 4"/>
+              <line x1="10" y1="14" x2="3" y2="21"/>
+              <line x1="21" y1="3" x2="14" y2="10"/>
+            </svg>
+          } @else {
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none"
+                 stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="15 3 21 3 21 9"/>
+              <polyline points="9 21 3 21 3 15"/>
+              <line x1="21" y1="3" x2="14" y2="10"/>
+              <line x1="3" y1="21" x2="10" y2="14"/>
+            </svg>
+          }
+        </button>
+      </div>
+    </div>
+
+    <!-- ── Messages ────────────────────────────────────────────────── -->
+    <div class="chat__messages" #msgList role="log" aria-live="polite" aria-label="Conversation">
+
+      <!-- Empty / welcome state -->
+      @if (messages().length === 0 && !isTyping()) {
+        <div class="chat__welcome">
+          <div class="chat__welcome-icon" aria-hidden="true">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2c0 0 .6 6.3 1.8 8.2C15 12 22 12 22 12s-7 0-8.2 1.8C12.6 15.7 12 22 12 22s-.6-6.3-1.8-8.2C9 12 2 12 2 12s7 0 8.2-1.8C11.4 8.3 12 2 12 2z"/>
+            </svg>
+          </div>
+          <p class="chat__welcome-text">
+            Ask me anything about Vinoth's projects, technical skills, or leadership experience.
+          </p>
+        </div>
+      }
+
+      <!-- Message list -->
+      @for (msg of messages(); track msg.id) {
+
+        @if (msg.role === 'user') {
+          <!-- User message -->
+          <div class="chat__msg chat__msg--user">
+            <div class="chat__bubble chat__bubble--user">{{ msg.text }}</div>
+            <span class="chat__time">{{ formatTime(msg.timestamp) }}</span>
+          </div>
+        } @else {
+          <!-- Assistant message -->
+          <div class="chat__msg chat__msg--assistant">
+            <div class="chat__avatar" aria-hidden="true">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 2c0 0 .6 6.3 1.8 8.2C15 12 22 12 22 12s-7 0-8.2 1.8C12.6 15.7 12 22 12 22s-.6-6.3-1.8-8.2C9 12 2 12 2 12s7 0 8.2-1.8C11.4 8.3 12 2 12 2z"/>
+              </svg>
+            </div>
+            <div class="chat__msg-content">
+              <div
+                class="chat__bubble chat__bubble--assistant"
+                [innerHTML]="renderMarkdown(msg.text)">
+              </div>
+
+              <!-- Source links -->
+              @if (msg.sources && msg.sources.length > 0) {
+                <div class="chat__sources" aria-label="Related sections">
+                  <span class="chat__sources-label">See also:</span>
+                  @for (source of msg.sources; track source.label) {
+                    <button
+                      class="chat__source-chip"
+                      (click)="scrollToSourceSection(source.sectionId || '')"
+                      [attr.aria-label]="'Navigate to ' + source.label + ' section'">
+                      {{ source.label }}
+                      <svg width="10" height="10" viewBox="0 0 24 24" fill="none"
+                           stroke="currentColor" stroke-width="2.5"
+                           stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                      </svg>
+                    </button>
+                  }
+                </div>
+              }
+
+              <span class="chat__time">{{ formatTime(msg.timestamp) }}</span>
+            </div>
+          </div>
+        }
+
+      }
+
+      <!-- Typing indicator -->
+      @if (isTyping()) {
+        <div class="chat__msg chat__msg--assistant" aria-label="AI is responding">
+          <div class="chat__avatar" aria-hidden="true">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2c0 0 .6 6.3 1.8 8.2C15 12 22 12 22 12s-7 0-8.2 1.8C12.6 15.7 12 22 12 22s-.6-6.3-1.8-8.2C9 12 2 12 2 12s7 0 8.2-1.8C11.4 8.3 12 2 12 2z"/>
+            </svg>
+          </div>
+          <div class="chat__bubble chat__bubble--assistant chat__bubble--typing" aria-hidden="true">
+            <span class="typing-dot"></span>
+            <span class="typing-dot"></span>
+            <span class="typing-dot"></span>
+          </div>
+        </div>
+      }
+
+    </div>
+    <!-- /.chat__messages -->
+
+    <!-- ── Suggested prompts ───────────────────────────────────────── -->
+    @if (showSuggestions()) {
+      <div class="chat__suggestions" role="list" aria-label="Suggested questions">
+        @for (s of suggestions; track s) {
+          <button
+            class="chat__suggestion"
+            role="listitem"
+            (click)="usePrompt(s)"
+            [attr.aria-label]="'Ask: ' + s">
+            {{ s }}
+          </button>
+        }
+      </div>
+    }
+
+    <!-- ── Input ───────────────────────────────────────────────────── -->
+    <div class="chat__input-area">
+      <input
+        #inputEl
+        class="chat__input"
+        type="text"
+        [value]="inputText()"
+        (input)="inputText.set($any($event.target).value)"
+        (keydown)="onKeydown($event)"
+        placeholder="Ask anything about Vinoth's work..."
+        [disabled]="isTyping()"
+        autocomplete="off"
+        aria-label="Type your question">
+
+      <button
+        class="chat__send"
+        (click)="send()"
+        [disabled]="!inputText().trim() || isTyping()"
+        aria-label="Send message">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+             stroke="currentColor" stroke-width="2"
+             stroke-linecap="round" stroke-linejoin="round">
+          <path d="M5 12h14M12 5l7 7-7 7"/>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Powered-by note -->
+    <div class="chat__footer-note" aria-hidden="true">
+      Powered by a structured knowledge base · LLM-ready architecture
+    </div>
+
+  </div>
+  <!-- /.chat__window -->
+
+</div>

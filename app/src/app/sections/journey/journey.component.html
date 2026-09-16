@@ -1,0 +1,112 @@
+<section class="ct" aria-labelledby="ct-heading">
+  <div class="container">
+
+    <!-- ── Header ───────────────────────────────────────────────────── -->
+    <header class="ct-header observe-me">
+      <div class="ct-eyebrow">
+        <span class="ct-eyebrow__dot" aria-hidden="true"></span>
+        <span>Career Progression</span>
+      </div>
+      <h2 id="ct-heading" class="ct-title">
+        8 Years.<br>
+        <span class="ct-title-accent">One Direction.</span>
+      </h2>
+      <p class="ct-subtitle">
+        Five distinct stages. Each one expanding the scope of what gets built,
+        who gets led, and what gets delivered.
+      </p>
+    </header>
+
+    <!-- ── Stage track ───────────────────────────────────────────────── -->
+    <div class="ct-track-wrap observe-me" aria-label="Career timeline">
+
+      <!-- Rail line -->
+      <div class="ct-rail" aria-hidden="true">
+        <div class="ct-rail__fill"></div>
+      </div>
+
+      <!-- Stage cards -->
+      <div class="ct-stages" role="list">
+
+        @for (stage of stages; track stage.id; let i = $index) {
+          <article
+            class="ct-stage ct-stage--{{ stage.accent }}"
+            [class.ct-stage--current]="stage.isCurrent"
+            [class.ct-stage--active]="isActive(stage.id)"
+            role="listitem"
+            [style.--si]="i"
+            (mouseenter)="setActive(stage.id)"
+            (mouseleave)="!stage.isCurrent && clearActive()"
+            (click)="toggleActive(stage.id)"
+            [attr.aria-label]="stage.year + ': ' + stage.role"
+            [attr.aria-expanded]="stage.isCurrent || isActive(stage.id)"
+          >
+
+            <!-- Ascending bar (fills upward, creates staircase shape) -->
+            <div class="ct-stage__bar" aria-hidden="true"></div>
+
+            <!-- Dot on the rail -->
+            <div class="ct-stage__dot" aria-hidden="true">
+              @if (stage.isCurrent) {
+                <span class="ct-stage__dot-ring"></span>
+              }
+            </div>
+
+            <!-- Card body: always at the bottom of the card -->
+            <div class="ct-stage__body">
+              <time class="ct-stage__year" [attr.datetime]="stage.year">
+                {{ stage.year }}
+              </time>
+              <div class="ct-stage__role-wrap">
+                <p class="ct-stage__role">{{ stage.role }}</p>
+                @if (stage.isCurrent) {
+                  <p class="ct-stage__role ct-stage__role--alt">Associate Manager</p>
+                }
+              </div>
+              <span class="ct-stage__phase">{{ stage.phase }}</span>
+
+              <!-- Achievements: always visible on current, revealed on hover for others -->
+              <div class="ct-stage__achievements" aria-live="polite" aria-atomic="true">
+                <div class="ct-stage__achievements-inner">
+                  @for (a of stage.achievements; track a; let ai = $index) {
+                    <p class="ct-stage__achievement" [style.--ai]="ai">{{ a }}</p>
+                  }
+                </div>
+              </div>
+            </div>
+
+            <!-- Hover hint icon on non-current stages (desktop) -->
+            @if (!stage.isCurrent) {
+              <span class="ct-stage__hint" aria-hidden="true">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none"
+                     stroke="currentColor" stroke-width="2"
+                     stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="18 15 12 9 6 15"/>
+                </svg>
+              </span>
+            }
+
+          </article>
+        }
+
+      </div>
+    </div>
+    <!-- /.ct-track-wrap -->
+
+    <!-- ── Evolution flow row ────────────────────────────────────────── -->
+    <div class="ct-evolution observe-me" role="list" aria-label="Career evolution phases">
+      @for (stage of stages; track stage.id; let last = $last) {
+        <span
+          class="ct-evo ct-evo--{{ stage.accent }}"
+          [class.ct-evo--current]="stage.isCurrent"
+          role="listitem">
+          {{ stage.phaseShort }}
+        </span>
+        @if (!last) {
+          <span class="ct-evo-arrow" aria-hidden="true">→</span>
+        }
+      }
+    </div>
+
+  </div>
+</section>

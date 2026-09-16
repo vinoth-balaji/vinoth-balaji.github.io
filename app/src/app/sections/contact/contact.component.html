@@ -1,0 +1,31 @@
+<app-section-wrapper
+  label="Contact"
+  heading="Let's build something exceptional"
+  subheading="Open to senior engineering leadership roles, fractional CTO engagements, and strategic AI consulting."
+  [centered]="true"
+>
+  <div class="contact-links">
+    @for (link of contactLinks; track link.platform) {
+      <a
+        class="contact-link card observe-me"
+        [href]="link.href"
+        target="_blank"
+        rel="noopener noreferrer"
+        [attr.aria-label]="link.platform + ' — ' + link.label + ', opens in new tab'"
+      >
+        <span class="contact-link__icon" aria-hidden="true">{{ link.icon }}</span>
+        <div class="contact-link__body">
+          <span class="contact-link__platform text-label">{{ link.platform }}</span>
+          <span class="contact-link__label">{{ link.label }}</span>
+        </div>
+        <svg class="contact-link__arrow" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+          <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+    }
+  </div>
+
+  <p class="contact-note text-sm text-muted">
+    Based in Houston, TX · Open to remote &amp; global opportunities · Response within 24h
+  </p>
+</app-section-wrapper>

@@ -1,0 +1,94 @@
+// ─── Design System ────────────────────────────────────────────────────────────
+@use 'styles/tokens'     as *;
+@use 'styles/typography' as *;
+@use 'styles/animations' as *;
+@use 'styles/utilities'  as *;
+
+// ─── CSS Reset ────────────────────────────────────────────────────────────────
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: 'kern' 1, 'liga' 1, 'calt' 1;
+}
+
+body {
+  background-color: var(--color-bg-base);
+  color: var(--color-text-primary);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.65;
+  overflow-x: hidden;
+  min-height: 100dvh;
+}
+
+// Scrollbar styling
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-bg-base);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-border-strong);
+  border-radius: var(--radius-full);
+
+  &:hover {
+    background: var(--color-text-muted);
+  }
+}
+
+// Selection
+::selection {
+  background: rgba(59, 130, 246, 0.25);
+  color: var(--color-text-primary);
+}
+
+// Links
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+// Images
+img, video, svg {
+  display: block;
+  max-width: 100%;
+}
+
+// Lists
+ul, ol {
+  list-style: none;
+}
+
+// Buttons
+button {
+  font-family: inherit;
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+// Inputs
+input, textarea, select {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+// ─── Focus Visible ────────────────────────────────────────────────────────────
+
+:focus-visible {
+  outline: 2px solid var(--color-blue);
+  outline-offset: 3px;
+  /* No border-radius override — outline follows the element's own border-radius in modern browsers */
+}
